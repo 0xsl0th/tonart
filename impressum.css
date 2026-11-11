@@ -1,0 +1,41 @@
+.impressum-header,
+.impressum-footer { background: var(--ink); color: var(--paper); }
+
+.impressum-header-inner,
+.impressum-footer .shell { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.impressum-header-inner { min-height: 90px; }
+.impressum-back,
+.impressum-footer a:last-child { font-family: var(--mono); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; }
+.impressum-back { display: inline-flex; align-items: center; gap: 10px; }
+.impressum-back span { font-size: 18px; }
+.impressum-back:hover,
+.impressum-footer a:last-child:hover { color: var(--orange); }
+
+.impressum-main { min-height: min(700px, 80svh); padding-block: clamp(75px, 9vw, 145px); }
+.impressum-main .section-kicker { margin-bottom: 26px; }
+.impressum-main h1 { max-width: 1100px; margin-bottom: clamp(70px, 8vw, 120px); font-size: clamp(55px, 7.4vw, 118px); line-height: .97; letter-spacing: -.08em; }
+.impressum-main h1 em { color: var(--orange); font-family: Georgia, 'Times New Roman', serif; font-weight: 400; }
+.impressum-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(40px, 6vw, 110px); }
+.impressum-grid section { padding-top: 24px; border-top: 1px solid var(--ink); }
+.impressum-grid h2 { margin-bottom: 20px; font-size: clamp(25px, 2.3vw, 34px); letter-spacing: -.045em; }
+.impressum-grid p,
+.impressum-grid address { margin: 0; font-size: clamp(16px, 1.35vw, 20px); line-height: 1.7; }
+.impressum-grid address { font-style: normal; }
+.impressum-grid address + p { margin-top: 20px; }
+.impressum-grid a { border-bottom: 1px solid var(--orange); overflow-wrap: anywhere; }
+.impressum-grid a:hover { color: #a9432b; }
+.impressum-footer .shell { min-height: 145px; }
+.impressum-footer .footer-wordmark { font-size: 52px; }
+
+@media (max-width: 720px) {
+  .impressum-grid { grid-template-columns: 1fr; }
+  .impressum-main { min-height: auto; }
+  .impressum-main h1 { margin-bottom: 64px; }
+}
+
+@media (max-width: 560px) {
+  .impressum-header-inner { min-height: 72px; }
+  .impressum-back { font-size: 9px; }
+  .impressum-footer .shell { min-height: 115px; }
+  .impressum-footer .footer-wordmark { font-size: 42px; }
+}
