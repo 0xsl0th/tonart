@@ -37,7 +37,7 @@
     pricingPerTrack: "USD / TEMA",
     pricingMasterTiming: "Primera versión en 3–5 días hábiles*",
     pricingMixTiming: "Primera versión en 7–10 días hábiles*",
-    pricingBook: "Reservar este servicio",
+    pricingBook: "Elegir este servicio",
     priceStereoTitle: "Masterización estéreo",
     priceStereoDesc: "Para una mezcla estéreo terminada que necesita una última perspectiva.",
     priceStereoItem1: "Una mezcla estéreo terminada",

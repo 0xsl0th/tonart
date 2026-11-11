@@ -1,8 +1,10 @@
 (() => {
-  // Set this to true only after confirming the PayPal.Me profile is configured
-  // for goods-and-services payments and the launch offer/policies are approved.
-  const PAYMENTS_ENABLED = false;
-  const PAYPAL_HANDLE = "EnriqueFolte670";
+  // Add one PayPal Business Payment Link per offer after the merchant account,
+  // package scope, and policies are ready. Empty links keep booking requests open.
+  const PAYMENT_LINKS = {
+    stereo: "", stem: "", mix: "", mixmaster: "",
+    "ep-stereo": "", "ep-stem": "", "ep-mixmaster": "",
+  };
   const offers = {
     stereo: {
       price: 39,
@@ -44,26 +46,44 @@
   const translations = {
     skip: "Ir al contenido", back: "Volver a precios", eyebrow: "TONART / RESERVA DE PROYECTO",
     title: "Un buen sonido empieza<br /><em>con una buena idea.</em>",
-    lede: "Elige una oferta de lanzamiento y revisa lo que incluye. Después de pagar, envíanos tus archivos y tu dirección artística para confirmar el trabajo.",
+    lede: "Elige una oferta de lanzamiento y revisa lo que incluye. Envíanos tu brief para solicitar una reserva.",
     choose: "ELIGE TU SERVICIO", offerTitle: "Tu oferta", serviceLabel: "SERVICIO",
     timelineLabel: "PRIMERA VERSIÓN", revisionLabel: "RONDAS DE CAMBIOS",
-    payButton: "Continuar a PayPal", payPending: "Pago pendiente de activación",
-    payNote: "PayPal se abre en otra pestaña. Elige «artículo o servicio» si aparece la opción. El destinatario puede figurar como Enrique Folte mientras preparamos el checkout de Tonart.",
-    payPendingNote: "El pago se habilitará cuando terminemos la configuración. Mientras tanto, puedes escribirnos sobre tu proyecto.",
+    payButton: "Preparar solicitud de reserva",
+    payNote: "PayPal se abre en otra pestaña. Comprueba el vendedor y el importe antes de pagar.",
+    payPendingNote: "Estamos preparando el pago en línea. Envíanos tu brief para confirmar el alcance y los detalles de pago.",
     next: "QUÉ SIGUE", stepsTitle: "Envía la música.",
-    step1Title: "Paga la oferta elegida", step1Text: "Completa el pago en PayPal. Conserva el correo usado para pagar e inclúyelo en tu mensaje.",
-    step2Title: "Envíanos el brief y los archivos", step2Text: "Escríbele a Murlek por Instagram con el título, el correo usado en PayPal, un enlace privado de descarga y referencias.",
-    step3Title: "Confirmamos el proyecto", step3Text: "Comprobamos el pago y los archivos y confirmamos el alcance y el plazo. El tiempo comienza cuando recibimos todo lo necesario.",
+    step1Title: "Envíanos tu brief y los archivos", step1Text: "Copia el brief y escríbele a Murlek por Instagram con un enlace privado de descarga.",
+    step2Title: "Confirmamos el alcance y el plazo", step2Text: "Revisamos los archivos y la disponibilidad, y confirmamos si la oferta elegida corresponde.",
+    step3Title: "Enviamos los detalles de pago", step3Text: "Tras confirmar la oferta, te enviamos los datos de pago. El plazo comienza al recibir el pago y los archivos utilizables.",
     briefLabel: "COPIA UN BRIEF DEL PROYECTO", copy: "Copiar brief", copied: "Brief copiado. Pégalo en un mensaje a Murlek.", copyFailed: "Selecciona el texto y cópialo manualmente.",
-    openInstagram: "Abrir Instagram de Murlek", faqKicker: "ANTES DE PAGAR", faqTitle: "Algunos detalles<br /><em>útiles.</em>",
+    openInstagram: "Abrir Instagram de Murlek", faqKicker: "ANTES DE RESERVAR", faqTitle: "Algunos detalles<br /><em>útiles.</em>",
     faq1Title: "¿Cuándo empieza el plazo?", faq1Text: "Después de recibir el pago, tu brief y los archivos finales utilizables, y confirmar el alcance. Los días hábiles excluyen fines de semana y feriados. Los plazos indicados son para una primera versión, no para todo el proceso de cambios.",
     faq2Title: "¿Y si mi proyecto supera los límites de la oferta?", faq2Text: "Escríbenos antes de pagar si el tema dura más de 10 minutos, tiene más pistas o stems que los incluidos, o necesita edición, afinación, producción o versiones alternativas.",
-    faq3Title: "¿La reserva es instantánea?", faq3Text: "El pago es inmediato; confirmamos el proyecto personalmente después de revisar los archivos y la disponibilidad. Si no podemos aceptarlo dentro del alcance anunciado, ofreceremos una cotización nueva o el reintegro completo antes de empezar.",
+    faq3Title: "¿La reserva es instantánea?", faq3Text: "Confirmamos cada proyecto personalmente tras revisar los archivos y la disponibilidad. Si la oferta no corresponde, acordaremos otro alcance antes de cobrar.",
     terms: "Estas son tarifas introductorias. Los cambios incluidos se aplican al material enviado; nuevas grabaciones o cambios importantes de arreglo requieren un nuevo alcance. Tus derechos legales siguen vigentes.",
     policiesKicker: "POLÍTICAS DE PEDIDO", policiesTitle: "Expectativas claras<br /><em>para ambas partes.</em>",
     refundTitle: "Cancelaciones y reintegros", refundText: "Si cancelas antes de que comience el trabajo, o si no podemos aceptar tus archivos dentro del alcance de la oferta, reintegramos el pago completo. Una vez iniciado el trabajo, escríbenos para resolver el problema; cualquier reintegro se evalúa según la ley aplicable y el trabajo ya entregado. Tus derechos legales siguen vigentes.",
-    privacyTitle: "Privacidad y tu música", privacyText: "Este sitio guarda tu elección de idioma en el navegador y carga fuentes de Google. PayPal procesa los pagos; Instagram lleva los mensajes del proyecto; el servicio de archivos que elijas aloja las subidas. Usamos el correo de pago, el brief y el audio que envías para trabajar en tu proyecto. No publicamos tu música sin permiso. Puedes pedir que borremos los archivos del proyecto después de la entrega por el mismo canal de contacto.",
+    privacyTitle: "Privacidad y tu música", privacyText: "Este sitio guarda tu elección de idioma en el navegador y carga fuentes de Google. Si pagas con PayPal, PayPal procesa el pago; Instagram lleva los mensajes del proyecto; el servicio de archivos que elijas aloja las subidas. Usamos el correo de contacto o de pago, el brief y el audio que envías para trabajar en tu proyecto. No publicamos tu música sin permiso. Puedes pedir que borremos los archivos del proyecto después de la entrega por el mismo canal de contacto.",
     footer: "MEZCLA / MASTERIZACIÓN / PRODUCCIÓN MUSICAL", policiesLink: "POLÍTICAS ↑", contact: "CONTACTO ↗",
+  };
+  const checkoutFlow = {
+    en: {
+      lede: "Choose a launch offer and review what is included. Pay online, then send us your files and direction so we can confirm the job.",
+      payButton: "Continue to PayPal", faqKicker: "BEFORE YOU PAY",
+      step1Title: "Pay for the selected offer", step1Text: "Complete the PayPal payment using the button. Keep its transaction ID for your brief.",
+      step2Title: "Send us your brief and files", step2Text: "Message Murlek on Instagram with your track title, PayPal transaction ID, a private download link, and references.",
+      step3Title: "We confirm the project", step3Text: "We check the payment and files, then confirm the scope and first-preview date. The turnaround starts when everything needed is received.",
+      faq3Text: "Payment is immediate; the project is confirmed by a person after we check your files and availability. If we cannot accept it within the stated scope, we will offer an adjusted quote or a full refund before work begins.",
+    },
+    es: {
+      lede: "Elige una oferta de lanzamiento y revisa lo que incluye. Paga en línea y luego envíanos tus archivos y tu dirección artística para confirmar el trabajo.",
+      payButton: "Continuar a PayPal", faqKicker: "ANTES DE PAGAR",
+      step1Title: "Paga la oferta elegida", step1Text: "Completa el pago en PayPal. Conserva el ID de transacción para incluirlo en tu brief.",
+      step2Title: "Envíanos el brief y los archivos", step2Text: "Escríbele a Murlek por Instagram con el título, el ID de transacción, un enlace privado de descarga y referencias.",
+      step3Title: "Confirmamos el proyecto", step3Text: "Comprobamos el pago y los archivos y confirmamos el alcance y la fecha de la primera versión. El plazo comienza cuando recibimos todo lo necesario.",
+      faq3Text: "El pago es inmediato; confirmamos el proyecto personalmente después de revisar los archivos y la disponibilidad. Si no podemos aceptarlo dentro del alcance anunciado, ofreceremos una cotización nueva o el reintegro completo antes de empezar.",
+    },
   };
 
   const select = document.getElementById("service-select");
@@ -79,13 +99,27 @@
   const initialKey = new URLSearchParams(location.search).get("service");
   let selected = Object.hasOwn(offers, initialKey) ? initialKey : "stereo";
   let language = "en";
+  let lastGeneratedBrief = "";
   try { language = localStorage.getItem("tonart-language") === "es" ? "es" : "en"; } catch {}
+  let briefLanguage = language;
+
+  function checkoutUrlFor(key) {
+    const raw = PAYMENT_LINKS[key];
+    if (!raw) return "";
+    try {
+      const url = new URL(raw);
+      return url.protocol === "https:" && ["paypal.com", "www.paypal.com"].includes(url.hostname) && url.pathname.startsWith("/ncp/payment/") ? url.href : "";
+    } catch { return ""; }
+  }
 
   function briefText() {
     const name = offers[selected][language].name;
+    const contactLine = checkoutUrlFor(selected)
+      ? (language === "es" ? "Correo usado en PayPal: \nID de transacción PayPal: \n" : "PayPal payment email: \nPayPal transaction ID: \n")
+      : (language === "es" ? "Correo de contacto: \n" : "Contact email: \n");
     return language === "es"
-      ? `Hola Murlek, quiero reservar un proyecto con Tonart.\n\nServicio: ${name}\nCorreo usado en PayPal: \nTítulo del tema / EP: \nEnlace privado de descarga: \nReferencias y dirección sonora: \nOtros detalles: `
-      : `Hi Murlek, I'd like to book a project with Tonart.\n\nService: ${name}\nPayPal payment email: \nTrack / EP title: \nPrivate download link: \nReferences and sonic direction: \nAnything else: `;
+      ? `Hola Murlek, quiero reservar un proyecto con Tonart.\n\nServicio: ${name}\n${contactLine}Título del tema / EP: \nEnlace privado de descarga: \nReferencias y dirección sonora: \nOtros detalles: `
+      : `Hi Murlek, I'd like to book a project with Tonart.\n\nService: ${name}\n${contactLine}Track / EP title: \nPrivate download link: \nReferences and sonic direction: \nAnything else: `;
   }
 
   function renderOffer() {
@@ -98,20 +132,38 @@
     document.getElementById("service-timeline").textContent = copy.timeline;
     document.getElementById("service-revisions").textContent = copy.revisions;
     document.getElementById("service-caveat").textContent = copy.caveat;
-    brief.value = briefText();
-    copyStatus.textContent = "";
-    if (PAYMENTS_ENABLED) {
-      payButton.href = `https://www.paypal.me/${PAYPAL_HANDLE}/${offer.price}USD`;
-      payButton.removeAttribute("aria-disabled");
-      payButton.classList.remove("is-disabled");
+    const generatedBrief = briefText();
+    if (!brief.value || brief.value === lastGeneratedBrief) {
+      brief.value = generatedBrief;
+      briefLanguage = language;
     } else {
-      payButton.removeAttribute("href");
-      payButton.setAttribute("aria-disabled", "true");
-      payButton.classList.add("is-disabled");
-      payButton.querySelector("span").textContent = language === "es" ? translations.payPending : "PayPal checkout pending setup";
+      // Keep an edited brief in its original language while updating the offer.
+      const serviceLine = `${briefLanguage === "es" ? "Servicio" : "Service"}: ${offers[selected][briefLanguage].name}`;
+      brief.value = /^(Service|Servicio):.*$/m.test(brief.value)
+        ? brief.value.replace(/^(Service|Servicio):.*$/m, serviceLine)
+        : `${serviceLine}\n${brief.value}`;
     }
-    document.getElementById("pay-note").hidden = !PAYMENTS_ENABLED;
-    document.getElementById("pay-pending").hidden = PAYMENTS_ENABLED;
+    lastGeneratedBrief = generatedBrief;
+    copyStatus.textContent = "";
+    const checkoutUrl = checkoutUrlFor(selected);
+    const flowKeys = Object.keys(checkoutFlow.en);
+    for (const key of flowKeys) {
+      const node = document.querySelector(`[data-book-i18n="${key}"]`);
+      if (node) node.textContent = checkoutUrl
+        ? checkoutFlow[language][key]
+        : language === "es" ? translations[key] : originals.get(node);
+    }
+    if (checkoutUrl) {
+      payButton.href = checkoutUrl;
+      payButton.target = "_blank";
+      payButton.rel = "noopener noreferrer";
+    } else {
+      payButton.href = "#brief-template";
+      payButton.removeAttribute("target");
+      payButton.removeAttribute("rel");
+    }
+    document.getElementById("pay-note").hidden = !checkoutUrl;
+    document.getElementById("pay-pending").hidden = Boolean(checkoutUrl);
   }
 
   function renderLanguage() {
