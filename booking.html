@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#111514" />
+    <meta name="description" content="Choose a Tonart mixing or mastering service, review the scope and send your project brief." />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="booking.css" />
+    <script src="booking.js" defer></script>
+    <title>Book a project — Tonart</title>
+  </head>
+  <body class="booking-page">
+    <a class="skip-link" href="#booking-main" data-book-i18n="skip">Skip to content</a>
+    <header class="booking-header">
+      <div class="shell booking-header-inner">
+        <a class="wordmark" href="index.html">TONART<span class="wordmark-dot">.</span></a>
+        <div class="booking-header-actions">
+          <a class="booking-back" href="index.html#pricing"><span aria-hidden="true">←</span> <span data-book-i18n="back">Back to prices</span></a>
+          <button class="language-toggle" id="booking-language" type="button" aria-label="Cambiar a español">ES</button>
+        </div>
+      </div>
+    </header>
+
+    <main id="booking-main">
+      <section class="booking-intro shell">
+        <div class="eyebrow booking-eyebrow"><span class="pulse-dot"></span><span data-book-i18n="eyebrow">TONART / PROJECT BOOKING</span></div>
+        <h1 data-book-i18n-html="title">Good sound starts<br /><em>with a good brief.</em></h1>
+        <p data-book-i18n="lede">Choose a launch offer and review what is included. After paying, send us your files and direction so we can confirm the job.</p>
+      </section>
+
+      <section class="booking-content shell" aria-labelledby="booking-offer-title">
+        <div class="booking-card offer-card">
+          <div class="booking-card-kicker"><span>01 /</span> <span data-book-i18n="choose">CHOOSE YOUR SERVICE</span></div>
+          <h2 id="booking-offer-title" data-book-i18n="offerTitle">Your offer</h2>
+          <label class="field-label" for="service-select" data-book-i18n="serviceLabel">SERVICE</label>
+          <select id="service-select" name="service"></select>
+          <div class="offer-price"><span id="service-price">$39</span><span>USD</span></div>
+          <p class="offer-summary" id="service-summary"></p>
+          <dl class="offer-details">
+            <div><dt data-book-i18n="timelineLabel">FIRST PREVIEW</dt><dd id="service-timeline"></dd></div>
+            <div><dt data-book-i18n="revisionLabel">FEEDBACK ROUNDS</dt><dd id="service-revisions"></dd></div>
+          </dl>
+          <p class="offer-caveat" id="service-caveat"></p>
+          <a class="button button-bright booking-pay" id="pay-button" href="#" target="_blank" rel="noopener noreferrer"><span data-book-i18n="payButton">Continue to PayPal</span><span aria-hidden="true">↗</span></a>
+          <p class="pay-note" id="pay-note" data-book-i18n="payNote">PayPal opens in a new tab. Select “goods and services” if asked. The payee name may appear as Enrique Folte while Tonart's dedicated checkout is being set up.</p>
+          <p class="pay-note" id="pay-pending" data-book-i18n="payPendingNote">Checkout will open after we finish payment setup. You can message us about a project in the meantime.</p>
+        </div>
+
+        <div class="booking-card steps-card">
+          <div class="booking-card-kicker"><span>02 /</span> <span data-book-i18n="next">WHAT HAPPENS NEXT</span></div>
+          <h2 data-book-i18n="stepsTitle">Send the music.</h2>
+          <ol class="booking-steps">
+            <li><span>01</span><div><h3 data-book-i18n="step1Title">Pay for the selected offer</h3><p data-book-i18n="step1Text">Complete the PayPal payment using the button. Keep the payment email for your brief.</p></div></li>
+            <li><span>02</span><div><h3 data-book-i18n="step2Title">Send us your brief and files</h3><p data-book-i18n="step2Text">Message Murlek on Instagram with your track title, PayPal payment email, a private download link, and any references.</p></div></li>
+            <li><span>03</span><div><h3 data-book-i18n="step3Title">We confirm the project</h3><p data-book-i18n="step3Text">We check the payment and files, then confirm the scope and delivery estimate. The turnaround starts when everything needed is received.</p></div></li>
+          </ol>
+          <label class="field-label brief-label" for="brief-template" data-book-i18n="briefLabel">COPY A PROJECT BRIEF</label>
+          <textarea id="brief-template" rows="7" spellcheck="false"></textarea>
+          <div class="brief-actions">
+            <button class="copy-button" id="copy-brief" type="button" data-book-i18n="copy">Copy brief</button>
+            <a class="text-link dark" href="https://www.instagram.com/murlek.mrlk/" target="_blank" rel="noopener noreferrer"><span data-book-i18n="openInstagram">Open Murlek's Instagram</span><span aria-hidden="true">↗</span></a>
+          </div>
+          <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section class="booking-faq shell" aria-labelledby="booking-faq-title">
+        <div class="section-kicker"><span class="kicker-number">03 /</span> <span data-book-i18n="faqKicker">BEFORE YOU PAY</span></div>
+        <h2 id="booking-faq-title" class="section-heading" data-book-i18n-html="faqTitle">A few useful<br /><em>details.</em></h2>
+        <div class="faq-list">
+          <div><h3 data-book-i18n="faq1Title">When does the turnaround start?</h3><p data-book-i18n="faq1Text">After payment, your brief, and usable final files are received and we confirm the scope. Business days exclude weekends and public holidays. Times shown are for a first preview, not the entire revision process.</p></div>
+          <div><h3 data-book-i18n="faq2Title">What if my project is outside the package scope?</h3><p data-book-i18n="faq2Text">Please message us before paying if the track is longer than 10 minutes, has more tracks or stems than the offer allows, or needs editing, tuning, production or alternate versions.</p></div>
+          <div><h3 data-book-i18n="faq3Title">Is the booking instant?</h3><p data-book-i18n="faq3Text">Payment is immediate; the project is confirmed by a person after we check your files and availability. If we cannot accept it within the stated scope, we will offer an adjusted quote or a full refund before work begins.</p></div>
+        </div>
+        <p class="booking-terms" data-book-i18n="terms">These are introductory launch rates. Included revisions cover feedback on the supplied material; new recordings or major arrangement changes are a new scope. Your statutory rights are unaffected.</p>
+      </section>
+
+      <section class="booking-policies shell" id="policies" aria-labelledby="policies-title">
+        <div class="section-kicker"><span class="kicker-number">04 /</span> <span data-book-i18n="policiesKicker">ORDER POLICIES</span></div>
+        <h2 id="policies-title" class="section-heading" data-book-i18n-html="policiesTitle">Clear expectations<br /><em>for both sides.</em></h2>
+        <div class="policy-grid">
+          <div><h3 data-book-i18n="refundTitle">Cancellations & refunds</h3><p data-book-i18n="refundText">If you cancel before work begins, or if we cannot accept your files within the package scope, we will refund the payment in full. Once work has started, contact us to resolve the issue; any refund is assessed under applicable law and the work already delivered. Your statutory rights remain intact.</p></div>
+          <div><h3 data-book-i18n="privacyTitle">Privacy & your music</h3><p data-book-i18n="privacyText">This website stores your language choice in your browser and loads fonts from Google. PayPal processes payments; Instagram carries project messages; your chosen file-sharing service hosts uploads. We use the payment email, brief and audio you send to work on your project. We do not publish your music without permission. You can request deletion of project files after delivery through the same contact channel.</p></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="booking-footer"><div class="shell"><a class="footer-wordmark" href="index.html">TONART<span>.</span></a><span data-book-i18n="footer">MIXING / MASTERING / MUSIC PRODUCTION</span><a href="#policies" data-book-i18n="policiesLink">POLICIES ↑</a><a href="index.html#contact" data-book-i18n="contact">CONTACT ↗</a></div></footer>
+  </body>
+</html>
