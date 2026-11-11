@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="home-page">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -20,8 +20,9 @@
   </head>
   <body>
     <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+    <div id="top" aria-hidden="true"></div>
 
-    <header class="site-header" id="top">
+    <header class="site-header">
       <div class="header-inner shell">
         <a class="wordmark" href="#top" aria-label="Tonart home">TONART<span class="wordmark-dot">.</span></a>
         <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
@@ -30,6 +31,8 @@
           <a href="#approach" data-i18n="navApproach">Approach</a>
           <a href="#studio" data-i18n="navStudio">Studio</a>
           <a href="#about" data-i18n="navAbout">About</a>
+          <a href="#contact" data-i18n="navContact">Contact</a>
+          <a class="mobile-book-link" href="#pricing"><span data-i18n="navBookMobile">Pricing &amp; book</span><span aria-hidden="true">↗</span></a>
         </nav>
         <div class="header-actions">
           <select class="language-select" id="language-select" aria-label="Language">
@@ -37,7 +40,7 @@
             <option value="es">ES</option>
             <option value="de">DE</option>
           </select>
-          <a class="header-contact" href="#contact" data-i18n="navContact">Let's talk <span aria-hidden="true">↗</span></a>
+          <a class="header-contact" href="#pricing"><span data-i18n="navBook">Book now</span><span aria-hidden="true">↗</span></a>
           <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
             <span></span><span></span>
           </button>
