@@ -61,6 +61,7 @@
 .faq-list h3 { max-width: 390px; margin: 0; font-size: clamp(23px, 2.4vw, 34px); line-height: 1.15; font-weight: 700; letter-spacing: -.045em; }
 .faq-list p { max-width: 650px; margin: 0; color: #505850; font-size: 16px; line-height: 1.6; }
 .booking-terms { max-width: 780px; margin: 28px 0 0; color: #626a61; font-family: var(--mono); font-size: 11px; line-height: 1.6; }
+.booking-terms a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
 .booking-policies { padding-bottom: clamp(90px, 10vw, 155px); }
 .booking-policies .section-kicker { margin-bottom: 30px; }
 .booking-policies .section-heading { margin-bottom: 45px; }

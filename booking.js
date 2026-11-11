@@ -1,7 +1,6 @@
 (() => {
-  // Keep public checkout off until the operator notice, consumer information,
-  // cancellation flow, and merchant setup are ready for taking orders.
-  const CHECKOUT_ENABLED = false;
+  // Public checkout can be paused here if Tonart needs to stop taking orders.
+  const CHECKOUT_ENABLED = true;
   // Public, fixed-price USD PayPal Business Payment Links. Payment and project
   // confirmation remain separate: the studio checks each completed payment.
   const PAYMENT_LINKS = {
