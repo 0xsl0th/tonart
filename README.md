@@ -10,6 +10,8 @@ The draft adds launch rates of US$39 stereo mastering, US$69 stem mastering, US$
 
 Online checkout is currently **unconfigured**. The supplied German Personal PayPal.Me link is not used: PayPal Germany requires a Business account when an account is used primarily for selling, and the link's commercial classification is unconfirmed. Create one fixed-price PayPal Business Payment Link per offer, then add the seven public URLs to `PAYMENT_LINKS` in `booking.js`. The page accepts only `https://paypal.com/ncp/payment/…` links. Review package scope, delivery promises, contact process and policies before publishing live checkout. Never put a PayPal password or API secret in this static repository.
 
+The exact offer names, prices and verification steps are in [PAYMENT_SETUP.md](PAYMENT_SETUP.md).
+
 ## Preview locally
 
 Run `python3 -m http.server 8000` in this directory, then open `http://localhost:8000`.
