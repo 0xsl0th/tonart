@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#111514" />
+    <meta name="description" content="Send Tonart your project details and a private download link after paying for mixing or mastering." />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="handover.css" />
+    <script src="handover.js" defer></script>
+    <title>Send your project — Tonart</title>
+  </head>
+  <body class="handover-page">
+    <a class="skip-link" href="#handover-main" data-handover-i18n="skip">Skip to content</a>
+    <header class="handover-header">
+      <div class="shell handover-header-inner">
+        <a class="wordmark" href="index.html" aria-label="Tonart home">TONART<span class="wordmark-dot">.</span></a>
+        <div class="handover-header-actions">
+          <a class="handover-back" id="booking-back" href="booking.html"><span aria-hidden="true">←</span> <span data-handover-i18n="back">Back to booking</span></a>
+          <label class="visually-hidden" for="language-select">Language / Idioma / Sprache</label>
+          <select class="language-select" id="language-select" aria-label="Language / Idioma / Sprache">
+            <option value="en">EN</option>
+            <option value="es">ES</option>
+            <option value="de">DE</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    <main id="handover-main">
+      <section class="handover-intro shell" aria-labelledby="handover-title">
+        <div class="eyebrow handover-eyebrow"><span class="pulse-dot"></span><span data-handover-i18n="eyebrow">TONART / PROJECT HANDOVER</span></div>
+        <h1 id="handover-title" data-handover-i18n-html="title">Paid? Send us<br /><em>the music.</em></h1>
+        <p class="handover-lede" data-handover-i18n="lede">Your PayPal payment does not transfer your audio files. Complete this handover, then send the email draft that opens in your mail app.</p>
+      </section>
+
+      <section class="handover-process shell" aria-label="Handover process">
+        <ol class="process-list">
+          <li><span class="process-number">01</span><div><h2 data-handover-i18n="step1Title">Pay on PayPal</h2><p data-handover-i18n="step1Text">Complete the payment for your selected offer and keep the payer email or transaction ID.</p></div></li>
+          <li><span class="process-number">02</span><div><h2 data-handover-i18n="step2Title">Send your project</h2><p data-handover-i18n="step2Text">Fill in this page, open the email draft, and press Send in your email app.</p></div></li>
+          <li><span class="process-number">03</span><div><h2 data-handover-i18n="step3Title">We confirm the date</h2><p data-handover-i18n="step3Text">We manually match the completed payment, service and amount, check the files, then confirm your first-preview date.</p></div></li>
+        </ol>
+      </section>
+
+      <section class="handover-content shell" aria-labelledby="form-title">
+        <div class="handover-form-card">
+          <div class="card-kicker"><span>02 /</span> <span data-handover-i18n="formKicker">SEND YOUR PROJECT</span></div>
+          <h2 id="form-title" data-handover-i18n="formTitle">Project handover</h2>
+          <p class="form-intro" data-handover-i18n="formIntro">Use the email entered at checkout or shown on your payment receipt. We use it to find your transaction; the transaction ID helps if you have one.</p>
+
+          <form id="handover-form" novalidate>
+            <div class="field-group service-field">
+              <label for="service-select"><span data-handover-i18n="serviceLabel">Service you paid for</span> <span aria-hidden="true">*</span></label>
+              <select id="service-select" name="service" required></select>
+              <p class="field-help" id="service-help" data-handover-i18n="serviceHelp">Choose the exact offer on your PayPal receipt. Changing this selection does not change a payment.</p>
+              <p class="selected-price" id="service-price" aria-live="polite"></p>
+            </div>
+
+            <div class="form-divider"><span data-handover-i18n="paymentDetails">PAYMENT DETAILS</span></div>
+            <div class="form-grid">
+              <div class="field-group">
+                <label for="payer-email"><span data-handover-i18n="payerEmailLabel">Payment / receipt email</span> <span aria-hidden="true">*</span></label>
+                <input id="payer-email" name="payerEmail" type="email" autocomplete="email" inputmode="email" required maxlength="254" />
+              </div>
+              <div class="field-group">
+                <label for="transaction-id"><span data-handover-i18n="transactionLabel">PayPal transaction ID</span> <span class="optional" data-handover-i18n="optional">optional</span></label>
+                <input id="transaction-id" name="transactionId" type="text" autocomplete="off" maxlength="80" />
+              </div>
+            </div>
+
+            <div class="form-divider"><span data-handover-i18n="projectDetails">PROJECT DETAILS</span></div>
+            <div class="form-grid">
+              <div class="field-group">
+                <label for="contact-name"><span data-handover-i18n="contactNameLabel">Your name</span> <span aria-hidden="true">*</span></label>
+                <input id="contact-name" name="contactName" type="text" autocomplete="name" required maxlength="120" />
+              </div>
+              <div class="field-group">
+                <label for="contact-email"><span data-handover-i18n="contactEmailLabel">Contact email</span> <span aria-hidden="true">*</span></label>
+                <input id="contact-email" name="contactEmail" type="email" autocomplete="email" inputmode="email" required maxlength="254" />
+              </div>
+            </div>
+            <div class="field-group">
+              <label for="project-title"><span data-handover-i18n="projectTitleLabel">Track or EP title</span> <span aria-hidden="true">*</span></label>
+              <input id="project-title" name="projectTitle" type="text" required maxlength="160" />
+            </div>
+            <div class="field-group">
+              <label for="download-url"><span data-handover-i18n="downloadLabel">Private download link for your files</span> <span aria-hidden="true">*</span></label>
+              <input id="download-url" name="downloadUrl" type="url" inputmode="url" autocomplete="url" placeholder="https://" required maxlength="1800" aria-describedby="download-help" />
+              <p class="field-help" id="download-help" data-handover-i18n="downloadHelp">Upload your WAVs or stems to Google Drive, Dropbox, WeTransfer or a similar service. Share a private HTTPS download link that works without a permission request. Keep it active until delivery. This page does not upload files.</p>
+            </div>
+            <div class="field-group">
+              <label for="access-instructions"><span data-handover-i18n="accessLabel">Access instructions</span> <span class="optional" data-handover-i18n="optional">optional</span></label>
+              <textarea id="access-instructions" name="accessInstructions" rows="2" maxlength="400" aria-describedby="access-help"></textarea>
+              <p class="field-help" id="access-help" data-handover-i18n="accessHelp">If the link needs a password or access approval, tell us how to get in. Do not include account login credentials.</p>
+            </div>
+            <div class="field-group">
+              <label for="references"><span data-handover-i18n="referencesLabel">Sound references</span> <span class="optional" data-handover-i18n="optional">optional</span></label>
+              <textarea id="references" name="references" rows="2" maxlength="400"></textarea>
+            </div>
+            <div class="field-group">
+              <label for="notes"><span data-handover-i18n="notesLabel">Direction and notes</span> <span class="optional" data-handover-i18n="optional">optional</span></label>
+              <textarea id="notes" name="notes" rows="4" maxlength="700"></textarea>
+            </div>
+
+            <div class="handover-actions">
+              <button class="button handover-send" type="submit"><span data-handover-i18n="openDraft">Open email draft</span><span aria-hidden="true">↗</span></button>
+              <button class="handover-copy" id="copy-details" type="button" data-handover-i18n="copyDetails">Copy handover details</button>
+            </div>
+            <p class="send-note" data-handover-i18n="sendNote">This page opens a draft only. Press Send in your email app to deliver your details to Tonart. You can edit the draft before sending.</p>
+            <p class="handover-status" id="handover-status" role="status" aria-live="polite"></p>
+            <div class="manual-copy" id="manual-copy" hidden>
+              <label for="manual-copy-text" data-handover-i18n="manualCopyLabel">Copy this text into an email to tonart.space@gmail.com</label>
+              <textarea id="manual-copy-text" rows="12" readonly></textarea>
+            </div>
+          </form>
+        </div>
+
+        <aside class="handover-guide" aria-labelledby="guide-title">
+          <div class="card-kicker"><span>03 /</span> <span data-handover-i18n="guideKicker">FILE CHECKLIST</span></div>
+          <h2 id="guide-title" data-handover-i18n-html="guideTitle">Make your files<br /><em>ready to work.</em></h2>
+          <p class="guide-service-label" data-handover-i18n="forService">FOR YOUR SELECTED SERVICE</p>
+          <p class="guide-service" id="file-hint" aria-live="polite"></p>
+          <ul class="guide-list">
+            <li data-handover-i18n="guide1">Name each file clearly with the artist and track title.</li>
+            <li data-handover-i18n="guide2">Export audio at the original session sample rate and bit depth. WAV is preferred.</li>
+            <li data-handover-i18n="guide3">Check that the download works without asking us to log into your account.</li>
+          </ul>
+          <div class="guide-note">
+            <span data-handover-i18n="needHelpKicker">NEED HELP BEFORE SENDING?</span>
+            <p data-handover-i18n="needHelpText">If the files do not fit the package or you need production work, email us before you send the handover.</p>
+            <a href="mailto:tonart.space@gmail.com?subject=Tonart%20project%20question">tonart.space@gmail.com <span aria-hidden="true">↗</span></a>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <footer class="handover-footer">
+      <div class="shell">
+        <a class="footer-wordmark" href="index.html">TONART<span>.</span></a>
+        <span data-handover-i18n="footer">MIXING / MASTERING / MUSIC PRODUCTION</span>
+        <a href="impressum.html" data-handover-i18n="legal">LEGAL NOTICE ↗</a>
+      </div>
+    </footer>
+  </body>
+</html>

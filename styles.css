@@ -364,6 +364,13 @@ h1, h2, h3, p { margin-top: 0; }
 .pricing-footnotes p { margin: 0; }
 .pricing-footnotes p:first-child { max-width: 740px; }
 .pricing-footnotes p:last-child { max-width: 280px; text-align: right; }
+.pricing-handover { display: flex; align-items: center; justify-content: space-between; gap: 28px; margin-top: 32px; padding: 26px 30px; border: 1px solid var(--ink); background: var(--paper-deep); }
+.pricing-handover > div { max-width: 730px; }
+.pricing-handover > div > span { display: block; margin-bottom: 8px; color: #a9432b; font-family: var(--mono); font-size: 10px; font-weight: 700; letter-spacing: .09em; }
+.pricing-handover p { margin: 0; font-size: 17px; font-weight: 600; line-height: 1.45; }
+.pricing-handover a { display: inline-flex; min-height: 48px; flex: 0 0 auto; align-items: center; justify-content: space-between; gap: 24px; padding: 0 16px; background: var(--ink); color: var(--paper); font-size: 11px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; transition: background .2s ease; }
+.pricing-handover a:hover { background: #a9432b; }
+.pricing-handover a [aria-hidden="true"] { font-size: 19px; font-weight: 400; }
 
 @media (max-width: 1180px) {
   .price-card { padding-inline: 18px; }
@@ -397,4 +404,7 @@ h1, h2, h3, p { margin-top: 0; }
   .bundle-options a { min-height: 76px; }
   .pricing-footnotes { display: block; }
   .pricing-footnotes p:last-child { max-width: none; margin-top: 12px; text-align: left; }
+  .pricing-handover { align-items: stretch; flex-direction: column; gap: 18px; padding: 24px 22px; }
+  .pricing-handover p { font-size: 15px; }
+  .pricing-handover a { width: 100%; }
 }

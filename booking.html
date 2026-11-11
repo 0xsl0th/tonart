@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#111514" />
-    <meta name="description" content="Choose a Tonart mixing or mastering service, review the scope and send your project brief." />
+    <meta name="description" content="Choose a Tonart mixing or mastering service, pay online, and send your project details and files." />
     <meta name="robots" content="noindex" />
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
     <link rel="stylesheet" href="styles.css" />
@@ -33,7 +33,7 @@
       <section class="booking-intro shell">
         <div class="eyebrow booking-eyebrow"><span class="pulse-dot"></span><span data-book-i18n="eyebrow">TONART / PROJECT BOOKING</span></div>
         <h1 data-book-i18n-html="title">Good sound starts<br /><em>with a good brief.</em></h1>
-        <p data-book-i18n="lede">Choose a launch offer and review what is included. Send us your project brief to request a booking.</p>
+        <p data-book-i18n="lede">Choose a launch offer, pay securely through PayPal, then send us your music and project details.</p>
       </section>
 
       <section class="booking-content shell" aria-labelledby="booking-offer-title">
@@ -49,27 +49,25 @@
             <div><dt data-book-i18n="revisionLabel">FEEDBACK ROUNDS</dt><dd id="service-revisions"></dd></div>
           </dl>
           <p class="offer-caveat" id="service-caveat"></p>
-          <a class="button button-bright booking-pay" id="pay-button" href="#brief-template"><span data-book-i18n="payButton">Prepare booking request</span><span aria-hidden="true">↗</span></a>
+          <a class="button button-bright booking-pay" id="pay-button" href="https://www.paypal.com/ncp/payment/EQD4VQUARW5SG" target="_blank" rel="noopener noreferrer"><span data-book-i18n="payButton">Continue to PayPal</span><span aria-hidden="true">↗</span></a>
           <p class="pay-note" id="pay-note" data-book-i18n="payNote" hidden>PayPal opens in a new tab. Review the merchant and total before paying. Checkout may appear in a different language based on your PayPal or browser settings.</p>
-          <p class="pay-note" id="pay-pending" data-book-i18n="payPendingNote">Online checkout is being set up. Send your brief so we can confirm the scope and payment details.</p>
+          <p class="pay-note" id="pay-pending" data-book-i18n="payPendingNote" hidden>Online checkout is temporarily unavailable. Please contact Tonart before paying.</p>
+          <div class="offer-handover">
+            <p data-book-i18n="handoverPrompt">Already paid? PayPal does not send us your music.</p>
+            <a class="text-link offer-handover-link" data-handover-link href="handover.html?service=stereo"><span data-book-i18n="handoverButton">Send project details</span><span aria-hidden="true">↗</span></a>
+          </div>
         </div>
 
         <div class="booking-card steps-card">
           <div class="booking-card-kicker"><span>02 /</span> <span data-book-i18n="next">WHAT HAPPENS NEXT</span></div>
-          <h2 data-book-i18n="stepsTitle">Send the music.</h2>
+          <h2 data-book-i18n="stepsTitle">Pay. Send. Confirm.</h2>
           <ol class="booking-steps">
-            <li><span>01</span><div><h3 data-book-i18n="step1Title">Send your brief and files</h3><p data-book-i18n="step1Text">Copy the brief below and message Murlek on Instagram or email Tonart with a private download link.</p></div></li>
-            <li><span>02</span><div><h3 data-book-i18n="step2Title">We confirm scope and timing</h3><p data-book-i18n="step2Text">We check your files and availability, then confirm that the selected offer fits.</p></div></li>
-            <li><span>03</span><div><h3 data-book-i18n="step3Title">We send payment details</h3><p data-book-i18n="step3Text">Once the offer is confirmed, we send payment details. The turnaround begins after payment and usable files are received.</p></div></li>
+            <li><span>01</span><div><h3 data-book-i18n="step1Title">Pay for your service</h3><p data-book-i18n="step1Text">Complete the PayPal checkout for the selected offer. Keep the payment email and transaction ID if available.</p></div></li>
+            <li><span>02</span><div><h3 data-book-i18n="step2Title">Send your project details</h3><p data-book-i18n="step2Text">Use the handover page to send your track details, payment email, and a private downloadable link to the final files.</p></div></li>
+            <li><span>03</span><div><h3 data-book-i18n="step3Title">We check and confirm</h3><p data-book-i18n="step3Text">We match your payment, review the files and scope, then confirm your first-preview date. The turnaround starts when payment and usable files are received.</p></div></li>
           </ol>
-          <label class="field-label brief-label" for="brief-template" data-book-i18n="briefLabel">COPY A PROJECT BRIEF</label>
-          <textarea id="brief-template" rows="7" spellcheck="false"></textarea>
-          <div class="brief-actions">
-            <button class="copy-button" id="copy-brief" type="button" data-book-i18n="copy">Copy brief</button>
-            <a class="text-link dark" href="https://www.instagram.com/murlek.mrlk/" target="_blank" rel="noopener noreferrer"><span data-book-i18n="openInstagram">Open Murlek's Instagram</span><span aria-hidden="true">↗</span></a>
-            <a class="text-link dark" id="booking-email" href="mailto:tonart.space@gmail.com?subject=Tonart%20project%20brief"><span data-book-i18n="openEmail">Email Tonart</span><span aria-hidden="true">↗</span></a>
-          </div>
-          <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
+          <a class="button booking-handover" data-handover-link href="handover.html?service=stereo"><span data-book-i18n="handoverButton">Send project details</span><span aria-hidden="true">↗</span></a>
+          <p class="handover-note" data-book-i18n="handoverNote">Already paid? Use this link now. You can return to the handover page later without paying again.</p>
         </div>
       </section>
 
@@ -79,7 +77,8 @@
         <div class="faq-list">
           <div><h3 data-book-i18n="faq1Title">When does the turnaround start?</h3><p data-book-i18n="faq1Text">After payment, your brief, and usable final files are received and we confirm the scope. Business days exclude weekends and public holidays. Times shown are for a first preview, not the entire revision process.</p></div>
           <div><h3 data-book-i18n="faq2Title">What if my project is outside the package scope?</h3><p data-book-i18n="faq2Text">Please message us before paying if the track is longer than 10 minutes, has more tracks or stems than the offer allows, or needs editing, tuning, production or alternate versions.</p></div>
-          <div><h3 data-book-i18n="faq3Title">Is the booking instant?</h3><p data-book-i18n="faq3Text">We confirm every project personally after checking the files and availability. If the offer does not fit, we will discuss a different scope before taking payment.</p></div>
+          <div><h3 data-book-i18n="faq3Title">Is the booking instant?</h3><p data-book-i18n="faq3Text">Payment is immediate. We confirm the project after checking the payment, files and availability. If the package does not fit, we will offer a revised quote or a full refund before work begins.</p></div>
+          <div><h3 data-book-i18n="faq4Title">How do you match my payment to my music?</h3><p data-book-i18n="faq4Text">After paying, use the project handover page. Enter the email used for PayPal, your buyer transaction ID if available, and a private downloadable link to your files. We check these details against the payment before confirming your project.</p></div>
         </div>
         <p class="booking-terms" data-book-i18n="terms">These are introductory launch rates. Included revisions cover feedback on the supplied material; new recordings or major arrangement changes are a new scope. Your statutory rights are unaffected.</p>
       </section>
@@ -89,7 +88,7 @@
         <h2 id="policies-title" class="section-heading" data-book-i18n-html="policiesTitle">Clear expectations<br /><em>for both sides.</em></h2>
         <div class="policy-grid">
           <div><h3 data-book-i18n="refundTitle">Cancellations & refunds</h3><p data-book-i18n="refundText">If you cancel before work begins, or if we cannot accept your files within the package scope, we will refund the payment in full. Once work has started, contact us to resolve the issue; any refund is assessed under applicable law and the work already delivered. Your statutory rights remain intact.</p></div>
-          <div><h3 data-book-i18n="privacyTitle">Privacy & your music</h3><p data-book-i18n="privacyText">This website stores your language choice in your browser and loads fonts from Google. If you pay through PayPal, PayPal processes the payment; your email provider or Instagram carries project messages; your chosen file-sharing service hosts uploads. We use the contact or payment email, brief and audio you send to work on your project. We do not publish your music without permission. You can request deletion of project files after delivery through the same contact channel.</p></div>
+          <div><h3 data-book-i18n="privacyTitle">Privacy & your music</h3><p data-book-i18n="privacyText">This website stores your language choice in your browser and loads fonts from Google. PayPal processes payments; your email provider carries project details; your chosen file-sharing service hosts the audio. We use your contact and payment details, project brief and audio to work on your project. We do not publish your music without permission. You can request deletion of project files after delivery by email.</p></div>
         </div>
         <p class="booking-terms"><span data-book-i18n="cancelRequest">Cancellation or withdrawal requests</span>: <a id="cancellation-email" href="mailto:tonart.space@gmail.com?subject=Tonart%20cancellation%20request">tonart.space@gmail.com</a></p>
       </section>
