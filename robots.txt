@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://0xsl0th.github.io/tonart/sitemap.xml
