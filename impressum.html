@@ -4,38 +4,47 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#111514" />
-    <meta name="description" content="Impressum und Kontaktangaben für Tonart. Legal notice and contact details for Tonart." />
+    <meta name="description" content="Impressum und Kontaktangaben für Tonart." />
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="impressum.css" />
-    <title>Impressum / Legal notice — Tonart</title>
+    <script src="impressum.js" defer></script>
+    <title>Impressum — Tonart</title>
   </head>
   <body>
-    <a class="skip-link" href="#impressum-main">Zum Inhalt / Skip to content</a>
+    <a class="skip-link" href="#impressum-main" data-legal-i18n="skip">Zum Inhalt springen</a>
 
     <header class="impressum-header">
       <div class="shell impressum-header-inner">
-        <a class="wordmark" href="index.html" aria-label="Tonart home">TONART<span class="wordmark-dot">.</span></a>
-        <a class="impressum-back" href="index.html"><span aria-hidden="true">←</span> Zur Website / Back to site</a>
+        <a class="wordmark" href="index.html" aria-label="Tonart Startseite">TONART<span class="wordmark-dot">.</span></a>
+        <div class="impressum-header-actions">
+          <a class="impressum-back" href="index.html"><span aria-hidden="true">←</span> <span data-legal-i18n="back">Zurück</span></a>
+          <label class="visually-hidden" id="legal-language-label" for="language-select">Sprache</label>
+          <select class="language-select" id="language-select" aria-labelledby="legal-language-label" hidden>
+            <option value="en">EN</option>
+            <option value="es">ES</option>
+            <option value="de" selected>DE</option>
+          </select>
+        </div>
       </div>
     </header>
 
     <main class="impressum-main shell" id="impressum-main">
-      <div class="section-kicker"><span class="kicker-number">TONART /</span> KONTAKT &amp; ANBIETER</div>
-      <h1>Impressum <em>/ Legal notice</em></h1>
+      <div class="section-kicker"><span class="kicker-number">TONART /</span> <span data-legal-i18n="kicker">KONTAKT &amp; ANBIETER</span></div>
+      <h1><span data-legal-i18n="title">Impressum</span> <em data-legal-i18n="subtitle">/ Kontakt</em></h1>
 
       <div class="impressum-grid">
         <section aria-labelledby="provider-title">
-          <h2 id="provider-title">Anbieter / Provider</h2>
-          <p>Tonart wird von Enrique Folte als natürliche Person betrieben.<br />Tonart is operated by Enrique Folte as an individual.</p>
+          <h2 id="provider-title" data-legal-i18n="providerTitle">Anbieter</h2>
+          <p data-legal-i18n="providerText">Tonart wird von Enrique Folte als natürliche Person betrieben.</p>
         </section>
         <section aria-labelledby="contact-title">
-          <h2 id="contact-title">Anschrift &amp; Kontakt / Address &amp; contact</h2>
+          <h2 id="contact-title" data-legal-i18n="contactTitle">Anschrift &amp; Kontakt</h2>
           <address>
             Enrique Folte<br />
             Zossener Str. 33<br />
             10961 Berlin<br />
-            Deutschland / Germany
+            <span data-legal-i18n="country">Deutschland</span>
           </address>
           <p><a href="mailto:tonart.space@gmail.com">tonart.space@gmail.com</a></p>
           <p><a href="tel:+5491124842498">+54 9 11 2484 2498</a></p>
@@ -46,7 +55,7 @@
     <footer class="impressum-footer">
       <div class="shell">
         <a class="footer-wordmark" href="index.html">TONART<span>.</span></a>
-        <a href="index.html#contact">Kontakt / Contact ↗</a>
+        <a href="index.html#contact" data-legal-i18n="contactLink">Kontakt ↗</a>
       </div>
     </footer>
   </body>

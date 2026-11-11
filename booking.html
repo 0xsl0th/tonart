@@ -19,7 +19,12 @@
         <a class="wordmark" href="index.html">TONART<span class="wordmark-dot">.</span></a>
         <div class="booking-header-actions">
           <a class="booking-back" href="index.html#pricing"><span aria-hidden="true">←</span> <span data-book-i18n="back">Back to prices</span></a>
-          <button class="language-toggle" id="booking-language" type="button" aria-label="Cambiar a español">ES</button>
+          <label class="visually-hidden" for="language-select">Language / Idioma / Sprache</label>
+          <select class="language-select" id="language-select" aria-label="Language / Idioma / Sprache">
+            <option value="en">EN</option>
+            <option value="es">ES</option>
+            <option value="de">DE</option>
+          </select>
         </div>
       </div>
     </header>
@@ -45,7 +50,7 @@
           </dl>
           <p class="offer-caveat" id="service-caveat"></p>
           <a class="button button-bright booking-pay" id="pay-button" href="#brief-template"><span data-book-i18n="payButton">Prepare booking request</span><span aria-hidden="true">↗</span></a>
-          <p class="pay-note" id="pay-note" data-book-i18n="payNote" hidden>PayPal opens in a new tab. Review the merchant and total before paying.</p>
+          <p class="pay-note" id="pay-note" data-book-i18n="payNote" hidden>PayPal opens in a new tab. Review the merchant and total before paying. Checkout may appear in a different language based on your PayPal or browser settings.</p>
           <p class="pay-note" id="pay-pending" data-book-i18n="payPendingNote">Online checkout is being set up. Send your brief so we can confirm the scope and payment details.</p>
         </div>
 
@@ -62,7 +67,7 @@
           <div class="brief-actions">
             <button class="copy-button" id="copy-brief" type="button" data-book-i18n="copy">Copy brief</button>
             <a class="text-link dark" href="https://www.instagram.com/murlek.mrlk/" target="_blank" rel="noopener noreferrer"><span data-book-i18n="openInstagram">Open Murlek's Instagram</span><span aria-hidden="true">↗</span></a>
-            <a class="text-link dark" href="mailto:tonart.space@gmail.com?subject=Tonart%20project%20brief"><span data-book-i18n="openEmail">Email Tonart</span><span aria-hidden="true">↗</span></a>
+            <a class="text-link dark" id="booking-email" href="mailto:tonart.space@gmail.com?subject=Tonart%20project%20brief"><span data-book-i18n="openEmail">Email Tonart</span><span aria-hidden="true">↗</span></a>
           </div>
           <p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
         </div>
@@ -86,10 +91,10 @@
           <div><h3 data-book-i18n="refundTitle">Cancellations & refunds</h3><p data-book-i18n="refundText">If you cancel before work begins, or if we cannot accept your files within the package scope, we will refund the payment in full. Once work has started, contact us to resolve the issue; any refund is assessed under applicable law and the work already delivered. Your statutory rights remain intact.</p></div>
           <div><h3 data-book-i18n="privacyTitle">Privacy & your music</h3><p data-book-i18n="privacyText">This website stores your language choice in your browser and loads fonts from Google. If you pay through PayPal, PayPal processes the payment; your email provider or Instagram carries project messages; your chosen file-sharing service hosts uploads. We use the contact or payment email, brief and audio you send to work on your project. We do not publish your music without permission. You can request deletion of project files after delivery through the same contact channel.</p></div>
         </div>
-        <p class="booking-terms">Cancellation or withdrawal requests / Cancelaciones o desistimientos: <a href="mailto:tonart.space@gmail.com?subject=Tonart%20cancellation%20request">tonart.space@gmail.com</a></p>
+        <p class="booking-terms"><span data-book-i18n="cancelRequest">Cancellation or withdrawal requests</span>: <a id="cancellation-email" href="mailto:tonart.space@gmail.com?subject=Tonart%20cancellation%20request">tonart.space@gmail.com</a></p>
       </section>
     </main>
 
-    <footer class="booking-footer"><div class="shell"><a class="footer-wordmark" href="index.html">TONART<span>.</span></a><span data-book-i18n="footer">MIXING / MASTERING / MUSIC PRODUCTION</span><a href="#policies" data-book-i18n="policiesLink">POLICIES ↑</a><a href="impressum.html">IMPRESSUM / LEGAL NOTICE ↗</a><a href="index.html#contact" data-book-i18n="contact">CONTACT ↗</a></div></footer>
+    <footer class="booking-footer"><div class="shell"><a class="footer-wordmark" href="index.html">TONART<span>.</span></a><span data-book-i18n="footer">MIXING / MASTERING / MUSIC PRODUCTION</span><a href="#policies" data-book-i18n="policiesLink">POLICIES ↑</a><a href="impressum.html" data-book-i18n="legalLink">LEGAL NOTICE ↗</a><a href="index.html#contact" data-book-i18n="contact">CONTACT ↗</a></div></footer>
   </body>
 </html>

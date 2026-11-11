@@ -6,6 +6,7 @@
     <meta name="theme-color" content="#111514" />
     <meta name="description" content="Tonart is an online studio for mixing, mastering and music production. Artist-led listening, a carefully chosen analog signal chain, and room for every genre." />
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:title" content="Tonart — Mixing, Mastering & Music Production" />
     <meta property="og:description" content="An online studio for music in every form. Mixing, mastering and production with a producer's ear and real analog tools." />
     <meta property="og:image" content="https://0xsl0th.github.io/tonart/assets/tonart-social.png" />
@@ -31,7 +32,11 @@
           <a href="#about" data-i18n="navAbout">About</a>
         </nav>
         <div class="header-actions">
-          <button class="language-toggle" id="language-toggle" type="button" aria-label="Cambiar a español">ES</button>
+          <select class="language-select" id="language-select" aria-label="Language">
+            <option value="en">EN</option>
+            <option value="es">ES</option>
+            <option value="de">DE</option>
+          </select>
           <a class="header-contact" href="#contact" data-i18n="navContact">Let's talk <span aria-hidden="true">↗</span></a>
           <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
             <span></span><span></span>
@@ -55,22 +60,22 @@
             </div>
           </div>
           <div class="hero-art" aria-hidden="true">
-            <div class="art-meta art-meta-top">TNR—001<br />STEREO / DEPTH / DETAIL</div>
+            <div class="art-meta art-meta-top" data-i18n-html="artMetaTop">TNR—001<br />STEREO / DEPTH / DETAIL</div>
             <div class="orbit orbit-outer"></div>
             <div class="orbit orbit-mid"></div>
             <div class="orbit orbit-inner"></div>
-            <div class="art-center"><span class="art-monogram">T</span><span class="art-center-label">SOUND<br />IN MOTION</span></div>
+            <div class="art-center"><span class="art-monogram">T</span><span class="art-center-label" data-i18n-html="artCenterLabel">SOUND<br />IN MOTION</span></div>
             <svg class="wave-line" viewBox="0 0 600 190" preserveAspectRatio="none" role="presentation">
               <path d="M0 95 C32 95 32 73 64 73 S96 114 128 114 S160 50 192 50 S224 139 256 139 S288 82 320 82 S352 108 384 108 S416 67 448 67 S480 119 512 119 S544 95 600 95" />
             </svg>
-            <div class="art-meta art-meta-bottom">LISTEN CLOSELY <span>↗</span></div>
+            <div class="art-meta art-meta-bottom" data-i18n-html="artMetaBottom">LISTEN CLOSELY <span>↗</span></div>
           </div>
         </div>
-        <div class="hero-bottom shell"><span data-i18n="heroBottomLeft">Made for artists. Open to every genre.</span><span>SCROLL TO EXPLORE <span aria-hidden="true">↓</span></span></div>
+        <div class="hero-bottom shell"><span data-i18n="heroBottomLeft">Made for artists. Open to every genre.</span><span><span data-i18n="heroScroll">SCROLL TO EXPLORE</span> <span aria-hidden="true">↓</span></span></div>
       </section>
 
       <div class="service-ribbon" aria-label="Mixing, mastering and music production">
-        <div class="ribbon-track" aria-hidden="true">MIXING <span>✳</span> MASTERING <span>✳</span> PRODUCTION <span>✳</span> EVERY GENRE <span>✳</span> MIXING <span>✳</span> MASTERING <span>✳</span> PRODUCTION <span>✳</span> EVERY GENRE <span>✳</span></div>
+        <div class="ribbon-track" aria-hidden="true" data-i18n-html="serviceRibbon">MIXING <span>✳</span> MASTERING <span>✳</span> PRODUCTION <span>✳</span> EVERY GENRE <span>✳</span> MIXING <span>✳</span> MASTERING <span>✳</span> PRODUCTION <span>✳</span> EVERY GENRE <span>✳</span></div>
       </div>
 
       <section class="intro section-pad" id="approach" aria-labelledby="intro-title">
@@ -170,15 +175,15 @@
       <section class="studio section-pad" id="studio" aria-labelledby="studio-title">
         <div class="shell studio-grid">
           <div class="studio-visual" aria-hidden="true">
-            <div class="visual-top"><span>TONART / SIGNAL PATH</span><span>ANALOG + DIGITAL</span></div>
+            <div class="visual-top"><span data-i18n="visualSignalPath">TONART / SIGNAL PATH</span><span data-i18n="visualHybrid">ANALOG + DIGITAL</span></div>
             <div class="signal-display">
               <div class="signal-display-lines"></div>
               <div class="signal-wave signal-wave-a"></div>
               <div class="signal-wave signal-wave-b"></div>
               <div class="signal-crosshair"></div>
             </div>
-            <div class="module-stack"><div><span>INPUT</span><i></i><i></i><i></i><b>01</b></div><div><span>PROCESS</span><i></i><i></i><i></i><b>02</b></div><div><span>OUTPUT</span><i></i><i></i><i></i><b>03</b></div></div>
-            <div class="visual-bottom"><span>BUILT TO LISTEN</span><span>48K / 96K / ∞</span></div>
+            <div class="module-stack"><div><span data-i18n="visualInput">INPUT</span><i></i><i></i><i></i><b>01</b></div><div><span data-i18n="visualProcess">PROCESS</span><i></i><i></i><i></i><b>02</b></div><div><span data-i18n="visualOutput">OUTPUT</span><i></i><i></i><i></i><b>03</b></div></div>
+            <div class="visual-bottom"><span data-i18n="visualListening">BUILT TO LISTEN</span><span>48K / 96K / ∞</span></div>
           </div>
           <div class="studio-copy">
             <div class="section-kicker"><span class="kicker-number">04 /</span> <span data-i18n="studioKicker">THE STUDIO</span></div>
@@ -211,10 +216,10 @@
 
       <section class="contact section-pad" id="contact" aria-labelledby="contact-title">
         <div class="contact-rings" aria-hidden="true"></div>
-        <div class="shell contact-content"><div class="section-kicker"><span class="kicker-number">07 /</span> <span data-i18n="contactKicker">YOUR NEXT TRACK</span></div><h2 id="contact-title" data-i18n-html="contactTitle">Let's make it<br /><em>sound like you.</em></h2><p data-i18n="contactText">Tell us about the music, where you are in the process, and what kind of help you're looking for. We'll take it from there.</p><a class="button button-light" href="mailto:tonart.space@gmail.com?subject=Tonart%20project%20enquiry"><span data-i18n="contactCta">Email Tonart</span><span aria-hidden="true">↗</span></a><span class="contact-note" data-i18n="contactNote">Project enquiries: tonart.space@gmail.com. Murlek is also on Instagram.</span></div>
+        <div class="shell contact-content"><div class="section-kicker"><span class="kicker-number">07 /</span> <span data-i18n="contactKicker">YOUR NEXT TRACK</span></div><h2 id="contact-title" data-i18n-html="contactTitle">Let's make it<br /><em>sound like you.</em></h2><p data-i18n="contactText">Tell us about the music, where you are in the process, and what kind of help you're looking for. We'll take it from there.</p><a class="button button-light" id="email-contact" href="mailto:tonart.space@gmail.com?subject=Tonart%20project%20enquiry"><span data-i18n="contactCta">Email Tonart</span><span aria-hidden="true">↗</span></a><span class="contact-note" data-i18n="contactNote">Project enquiries: tonart.space@gmail.com. Murlek is also on Instagram.</span></div>
       </section>
     </main>
 
-    <footer class="site-footer"><div class="shell footer-top"><a class="footer-wordmark" href="#top">TONART<span>.</span></a><div class="footer-right"><p data-i18n="footerTagline">MIXING / MASTERING / MUSIC PRODUCTION</p><a href="https://www.instagram.com/murlek.mrlk/" target="_blank" rel="noopener noreferrer">INSTAGRAM ↗</a><a href="https://www.murlek.com/" target="_blank" rel="noopener noreferrer">MURLEK.COM ↗</a><a href="impressum.html">IMPRESSUM / LEGAL NOTICE ↗</a></div></div><div class="shell footer-bottom"><span>© <span id="year">2026</span> TONART</span><span data-i18n="footerBottom">Independent sound, without borders.</span><a href="#top" data-i18n="backTop">BACK TO TOP ↑</a></div></footer>
+    <footer class="site-footer"><div class="shell footer-top"><a class="footer-wordmark" href="#top">TONART<span>.</span></a><div class="footer-right"><p data-i18n="footerTagline">MIXING / MASTERING / MUSIC PRODUCTION</p><a href="https://www.instagram.com/murlek.mrlk/" target="_blank" rel="noopener noreferrer">INSTAGRAM ↗</a><a href="https://www.murlek.com/" target="_blank" rel="noopener noreferrer">MURLEK.COM ↗</a><a href="impressum.html" data-i18n="footerLegal">IMPRESSUM / LEGAL NOTICE ↗</a></div></div><div class="shell footer-bottom"><span>© <span id="year">2026</span> TONART</span><span data-i18n="footerBottom">Independent sound, without borders.</span><a href="#top" data-i18n="backTop">BACK TO TOP ↑</a></div></footer>
   </body>
 </html>
