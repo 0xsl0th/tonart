@@ -40,7 +40,7 @@
 .offer-details dt { margin-bottom: 8px; color: #9da79e; font-family: var(--mono); font-size: 9px; letter-spacing: .08em; }
 .offer-details dd { margin: 0; font-size: 15px; line-height: 1.45; }
 .offer-caveat { min-height: 42px; margin: 0 0 28px; color: #aeb9af; font-size: 13px; line-height: 1.55; }
-.booking-pay { width: 100%; margin-top: auto; }
+.booking-pay { width: 100%; margin-top: auto; padding-block: 14px; line-height: 1.25; }
 .booking-pay[hidden] { display: none; }
 .booking-pay[aria-disabled="true"], .booking-pay.is-disabled { background: #66716a; color: #e2e6df; cursor: not-allowed; pointer-events: none; transform: none; }
 .pay-note { margin: 14px 0 0; color: #acb4aa; font-size: 11px; line-height: 1.55; }
