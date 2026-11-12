@@ -8,11 +8,15 @@
     stem: "https://www.paypal.com/ncp/payment/TJ4SBD24ZEJ3Y",
     mix: "https://www.paypal.com/ncp/payment/TRKHDBP4W8T3U",
     mixmaster: "https://www.paypal.com/ncp/payment/UBF6T8QSMLZQY",
-    // The existing EP links still describe a 3-track package in PayPal.
-    // Keep checkout closed until 4–6-track prices and descriptions match there.
-    "ep-stereo": "",
-    "ep-stem": "",
-    "ep-mixmaster": "",
+    "ep-stereo-4": "https://www.paypal.com/ncp/payment/39WWMDV7A299G",
+    "ep-stereo-5": "https://www.paypal.com/ncp/payment/7G3H75ERYRSGL",
+    "ep-stereo-6": "https://www.paypal.com/ncp/payment/XH6YSYGNYR768",
+    "ep-stem-4": "https://www.paypal.com/ncp/payment/4XBEQ5MKNHELU",
+    "ep-stem-5": "https://www.paypal.com/ncp/payment/L4KFNWCRGHWTN",
+    "ep-stem-6": "https://www.paypal.com/ncp/payment/CNYZ2B6CDSB6G",
+    "ep-mixmaster-4": "https://www.paypal.com/ncp/payment/RYG4775NV2VZY",
+    "ep-mixmaster-5": "https://www.paypal.com/ncp/payment/KBEQVJWXP5LNU",
+    "ep-mixmaster-6": "https://www.paypal.com/ncp/payment/UGBMYWJFMDPV6",
   };
   const offers = {
     stereo: {
@@ -62,17 +66,17 @@
   const translations = {
     skip: "Ir al contenido", back: "Volver a precios", eyebrow: "TONART / RESERVA DE PROYECTO",
     title: "Un buen sonido empieza<br /><em>con una buena idea.</em>",
-    lede: "Elige una oferta de lanzamiento. Paga en línea por un tema individual o contáctanos para reservar un EP.",
+    lede: "Elige una oferta de lanzamiento, paga en línea con tarjeta o PayPal y luego envíanos tu música y los datos del proyecto.",
     choose: "ELIGE TU SERVICIO", offerTitle: "Tu oferta", serviceLabel: "SERVICIO", epTrackCountLabel: "TEMAS DE TU EP",
     timelineLabel: "PRIMERA VERSIÓN", revisionLabel: "RONDAS DE CAMBIOS",
     payButton: "Pagar con tarjeta o PayPal",
     payNote: "El pago seguro se abre en PayPal en otra pestaña. Se aceptan tarjetas de débito y crédito; la opción de pagar sin cuenta de PayPal puede variar según el comprador y el país. Comprueba el vendedor y el importe antes de pagar. El idioma del pago puede ser distinto al de esta página.",
     payPendingNote: "El pago en línea no está disponible temporalmente. Contacta con Tonart antes de pagar.",
-    epPayPendingNote: "Estamos actualizando los enlaces de pago para EP. Escríbenos para reservar los temas seleccionados.",
-    epContactButton: "Escríbenos para reservar este EP",
+    epPayPendingNote: "El pago en línea para esta opción de EP no está disponible temporalmente. Escríbenos antes de pagar.",
+    epContactButton: "Escríbenos por este EP",
     handoverPrompt: "¿Ya pagaste? PayPal no nos envía tu música.", handoverButton: "Enviar datos del proyecto", handoverNote: "¿Ya pagaste? Usa este enlace ahora. Puedes volver a la página de entrega más tarde sin pagar otra vez.",
     next: "QUÉ SIGUE", stepsTitle: "Paga. Envía. Confirma.",
-    step1Title: "Organiza el pago", step1Text: "Paga en línea por un tema individual o contáctanos para organizar el pago de un EP. Conserva el correo del recibo y el ID de transacción, si está disponible.",
+    step1Title: "Paga tu servicio", step1Text: "Paga en línea con tarjeta o PayPal. Si el pago no está disponible, contáctanos. Conserva el correo del recibo y el ID de transacción, si está disponible.",
     step2Title: "Envía los datos del proyecto", step2Text: "Usa la página de entrega para enviar los datos del tema, el correo del pago y un enlace privado de descarga de los archivos finales.",
     step3Title: "Comprobamos y confirmamos", step3Text: "Vinculamos el pago con tu proyecto, revisamos los archivos y el alcance, y confirmamos la fecha de la primera versión. El plazo comienza al recibir el pago y archivos utilizables.",
     faqKicker: "ANTES DE PAGAR", faqTitle: "Algunos detalles<br /><em>útiles.</em>",
@@ -90,17 +94,17 @@
   const germanTranslations = {
     skip: "Zum Inhalt springen", back: "Zurück zu den Preisen", eyebrow: "TONART / PROJEKT BUCHEN",
     title: "Guter Sound beginnt<br /><em>mit einem guten Briefing.</em>",
-    lede: "Wähle ein Einführungsangebot. Bezahle einzelne Tracks online oder kontaktiere uns, um eine EP zu buchen.",
+    lede: "Wähle ein Einführungsangebot, bezahle online mit Karte oder PayPal und sende uns anschließend deine Musik und Projektdaten.",
     choose: "SERVICE WÄHLEN", offerTitle: "Dein Angebot", serviceLabel: "SERVICE", epTrackCountLabel: "TRACKS AUF DEINER EP",
     timelineLabel: "ERSTE VERSION", revisionLabel: "KORREKTURRUNDEN",
     payButton: "Mit Karte oder PayPal bezahlen",
     payNote: "Die sichere Zahlungsseite von PayPal öffnet sich in einem neuen Tab. Debit- und Kreditkarten werden akzeptiert; die Zahlung ohne PayPal-Konto wird nicht für alle Käufer oder Länder angeboten. Prüfe Anbieter und Gesamtbetrag vor der Zahlung. Die Zahlungsseite kann in einer anderen Sprache erscheinen.",
     payPendingNote: "Die Online-Zahlung ist vorübergehend nicht verfügbar. Kontaktiere Tonart bitte vor einer Zahlung.",
-    epPayPendingNote: "Wir aktualisieren die Zahlungslinks für EPs. Kontaktiere uns, um die gewählte Trackzahl zu buchen.",
-    epContactButton: "EP per E-Mail buchen",
+    epPayPendingNote: "Die Online-Zahlung für diese EP-Option ist vorübergehend nicht verfügbar. Kontaktiere uns vor der Zahlung.",
+    epContactButton: "EP per E-Mail anfragen",
     handoverPrompt: "Schon bezahlt? PayPal sendet uns deine Musik nicht.", handoverButton: "Projektdaten senden", handoverNote: "Schon bezahlt? Nutze jetzt diesen Link. Du kannst später zur Übergabeseite zurückkehren, ohne erneut zu bezahlen.",
     next: "SO GEHT ES WEITER", stepsTitle: "Bezahlen. Senden. Bestätigen.",
-    step1Title: "Zahlung vereinbaren", step1Text: "Bezahle einen einzelnen Track online oder kontaktiere uns, um die Zahlung für eine EP zu vereinbaren. Bewahre die Beleg-E-Mail und, falls vorhanden, die Transaktions-ID auf.",
+    step1Title: "Service bezahlen", step1Text: "Bezahle online mit Karte oder PayPal. Wenn die Online-Zahlung nicht verfügbar ist, kontaktiere uns. Bewahre die Beleg-E-Mail und, falls vorhanden, die Transaktions-ID auf.",
     step2Title: "Projektdaten senden", step2Text: "Sende über die Übergabeseite Trackdaten, die Zahlungs-E-Mail-Adresse und einen privaten Download-Link zu den finalen Dateien.",
     step3Title: "Wir prüfen und bestätigen", step3Text: "Wir ordnen deine Zahlung zu, prüfen Dateien und Leistungsumfang und bestätigen den Termin der ersten Version. Die Bearbeitungszeit beginnt, wenn Zahlung und verwendbare Dateien vorliegen.",
     faqKicker: "VOR DER ZAHLUNG", faqTitle: "Ein paar wichtige<br /><em>Details.</em>",
@@ -186,8 +190,8 @@
     for (const link of handoverLinks) link.href = handoverUrl;
     const subject = `Tonart EP booking | ${copy.name} | ${epTrackCount} tracks | USD $${price}`;
     epContactButton.href = `mailto:tonart.space@gmail.com?subject=${encodeURIComponent(subject)}`;
-    epContactButton.hidden = !ep;
-    const checkoutUrl = checkoutUrlFor(selected);
+    const checkoutUrl = checkoutUrlFor(handoverKey);
+    epContactButton.hidden = !ep || Boolean(checkoutUrl);
     if (checkoutUrl) {
       payButton.href = checkoutUrl;
       payButton.target = "_blank";
@@ -201,7 +205,7 @@
     document.getElementById("pay-note").hidden = !checkoutUrl;
     const pending = document.getElementById("pay-pending");
     pending.textContent = ep
-      ? localizedTranslations[language]?.epPayPendingNote ?? "We are updating EP payment links. Contact us to book the selected track count."
+      ? localizedTranslations[language]?.epPayPendingNote ?? "Online checkout for this EP option is temporarily unavailable. Contact us before paying."
       : localizedTranslations[language]?.payPendingNote ?? "Online checkout is temporarily unavailable. Please contact Tonart before paying.";
     pending.hidden = Boolean(checkoutUrl);
   }
