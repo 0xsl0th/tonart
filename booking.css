@@ -31,6 +31,8 @@
 .offer-card select { width: 100%; min-height: 54px; padding: 11px 42px 11px 16px; appearance: none; border: 1px solid #6f7b70; border-radius: 0; background: var(--ink-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='m3 6 5 5 5-5' fill='none' stroke='%23ed6546' stroke-width='1.8'/%3E%3C/svg%3E") no-repeat right 15px center / 16px; color: var(--paper); font-family: var(--sans); font-size: 16px; cursor: pointer; }
 .offer-card select:hover { border-color: var(--orange); }
 .offer-card select:focus-visible, .booking-handover:focus-visible, .offer-handover-link:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
+.ep-track-choice { margin-top: 22px; }
+.ep-track-choice[hidden] { display: none; }
 .offer-price { display: flex; align-items: baseline; gap: 14px; margin: 38px 0 9px; }
 .offer-price span:first-child { font-size: clamp(82px, 8vw, 125px); font-weight: 700; line-height: .9; letter-spacing: -.095em; }
 .offer-price span:last-child { color: var(--orange); font-family: var(--mono); font-size: 12px; letter-spacing: .08em; }

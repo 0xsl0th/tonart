@@ -7,17 +7,36 @@
     stem: { price: 69, en: "Stem mastering — 1 track", es: "Masterización por stems — 1 tema", de: "Stem-Mastering — 1 Track", type: "stem" },
     mix: { price: 129, en: "Mixing — 1 track", es: "Mezcla — 1 tema", de: "Mixing — 1 Track", type: "mix" },
     mixmaster: { price: 149, en: "Mixing + mastering — 1 track", es: "Mezcla + masterización — 1 tema", de: "Mixing + Mastering — 1 Track", type: "mix" },
-    "ep-stereo": { price: 99, en: "3-track EP — stereo mastering", es: "EP de 3 temas — masterización estéreo", de: "3-Track-EP — Stereo-Mastering", type: "epStereo" },
-    "ep-stem": { price: 179, en: "3-track EP — stem mastering", es: "EP de 3 temas — masterización por stems", de: "3-Track-EP — Stem-Mastering", type: "epStem" },
-    "ep-mixmaster": { price: 399, en: "3-track EP — mixing + mastering", es: "EP de 3 temas — mezcla + masterización", de: "3-Track-EP — Mixing + Mastering", type: "epMix" },
+    // Keep the original keys for customers returning from older PayPal links.
+    "ep-stereo": { price: 99, en: "3-track EP — stereo mastering", es: "EP de 3 temas — masterización estéreo", de: "3-Track-EP — Stereo-Mastering", type: "epStereo", count: 3 },
+    "ep-stem": { price: 179, en: "3-track EP — stem mastering", es: "EP de 3 temas — masterización por stems", de: "3-Track-EP — Stem-Mastering", type: "epStem", count: 3 },
+    "ep-mixmaster": { price: 399, en: "3-track EP — mixing + mastering", es: "EP de 3 temas — mezcla + masterización", de: "3-Track-EP — Mixing + Mastering", type: "epMix", count: 3 },
   };
+
+  const epServices = [
+    { key: "ep-stereo", basePrice: 99, type: "epStereo", en: "stereo mastering", es: "masterización estéreo", de: "Stereo-Mastering" },
+    { key: "ep-stem", basePrice: 179, type: "epStem", en: "stem mastering", es: "masterización por stems", de: "Stem-Mastering" },
+    { key: "ep-mixmaster", basePrice: 399, type: "epMix", en: "mixing + mastering", es: "mezcla + masterización", de: "Mixing + Mastering" },
+  ];
+  for (const service of epServices) {
+    for (const count of [4, 5, 6]) {
+      offers[`${service.key}-${count}`] = {
+        price: Math.round(service.basePrice * count / 3),
+        en: `${count}-track EP — ${service.en}`,
+        es: `EP de ${count} temas — ${service.es}`,
+        de: `${count}-Track-EP — ${service.de}`,
+        type: service.type,
+        count,
+      };
+    }
+  }
 
   const copy = {
     en: {
       pageTitle: "Send your project — Tonart", metaDescription: "Send Tonart your project details and a private download link after paying for mixing or mastering.",
       skip: "Skip to content", homeLabel: "Tonart home", back: "Back to booking", eyebrow: "TONART / PROJECT HANDOVER", title: "Paid? Send us<br /><em>the music.</em>",
       lede: "Your payment does not transfer your audio files. Complete this handover, then send the email draft that opens in your mail app.",
-      processLabel: "Handover process", step1Title: "Pay by card or PayPal", step1Text: "Complete payment for your selected offer. Keep the email used at checkout and any transaction ID.",
+      processLabel: "Handover process", step1Title: "Complete payment", step1Text: "Complete payment for your selected offer. Keep the email used at checkout and any transaction ID.",
       step2Title: "Send your project", step2Text: "Fill in this page, open the email draft, and press Send in your email app.",
       step3Title: "We confirm the date", step3Text: "We manually match the completed payment, service and amount, check the files, then confirm your first-preview date.",
       formKicker: "SEND YOUR PROJECT", formTitle: "Project handover", formIntro: "Use the email entered at checkout or shown on your payment receipt. We use it to find your transaction; the transaction ID helps if you have one.",
@@ -36,9 +55,9 @@
         stereo: "Send one final stereo WAV mix. Leave peak headroom and remove any loudness limiter you used only for previewing. Include a reference mix if helpful.",
         stem: "Send up to four grouped stereo WAV stems. Export each stem from the same start point so all files align and reproduce your mix together.",
         mix: "Send up to 24 individual WAV audio tracks, all exported from the same start point. Include a rough mix and any important effects or production notes.",
-        epStereo: "Send all three final stereo WAV mixes together, with clear track names and order. Each track can be up to 10 minutes.",
-        epStem: "Send all three tracks together. For each track, include up to four grouped stereo WAV stems aligned to the same start point.",
-        epMix: "Send all three tracks together. For each, include up to 24 aligned WAV audio tracks, a rough mix and the intended track order.",
+        epStereo: "Send all {count} final stereo WAV mixes together, with clear track names and order. Each track can be up to 10 minutes.",
+        epStem: "Send all {count} tracks together. For each track, include up to four grouped stereo WAV stems aligned to the same start point.",
+        epMix: "Send all {count} tracks together. For each, include up to 24 aligned WAV audio tracks, a rough mix and the intended track order.",
       },
       httpsError: "Enter a valid HTTPS download link beginning with https://.", invalid: "Please complete the required fields and check the download link.",
       draftStatus: "If your email app opens, review the draft and press Send there. Nothing has been sent by this page. If no app opens, use Copy handover details.",
@@ -50,7 +69,7 @@
       pageTitle: "Envía tu proyecto — Tonart", metaDescription: "Envía a Tonart los datos de tu proyecto y un enlace privado de descarga después de pagar la mezcla o masterización.",
       skip: "Ir al contenido", homeLabel: "Inicio de Tonart", back: "Volver a la reserva", eyebrow: "TONART / ENTREGA DEL PROYECTO", title: "¿Ya pagaste? Envíanos<br /><em>tu música.</em>",
       lede: "El pago no transfiere tus archivos de audio. Completa este formulario y luego envía el borrador que se abrirá en tu aplicación de correo.",
-      processLabel: "Proceso de entrega", step1Title: "Paga con tarjeta o PayPal", step1Text: "Completa el pago de la oferta elegida. Conserva el correo usado al pagar y cualquier ID de transacción.",
+      processLabel: "Proceso de entrega", step1Title: "Completa el pago", step1Text: "Completa el pago de la oferta elegida. Conserva el correo usado al pagar y cualquier ID de transacción.",
       step2Title: "Envía tu proyecto", step2Text: "Completa esta página, abre el borrador y pulsa Enviar en tu aplicación de correo.",
       step3Title: "Confirmamos la fecha", step3Text: "Comprobamos manualmente el pago completado, el servicio y el importe, revisamos los archivos y confirmamos la fecha de la primera versión.",
       formKicker: "ENVÍA TU PROYECTO", formTitle: "Entrega del proyecto", formIntro: "Usa el correo que ingresaste al pagar o que aparece en tu recibo. Nos permite encontrar tu transacción; el ID ayuda si lo tienes.",
@@ -69,9 +88,9 @@
         stereo: "Envía una mezcla estéreo final en WAV. Deja margen de pico y quita el limitador de volumen usado solo para previsualizar. Puedes incluir una mezcla de referencia.",
         stem: "Envía hasta cuatro stems estéreo WAV agrupados. Expórtalos todos desde el mismo punto de inicio para que queden alineados y reproduzcan tu mezcla juntos.",
         mix: "Envía hasta 24 pistas individuales de audio WAV, exportadas desde el mismo punto de inicio. Incluye una mezcla preliminar y notas sobre efectos o producción importantes.",
-        epStereo: "Envía juntas las tres mezclas estéreo finales en WAV, con nombres y orden claros. Cada tema puede durar hasta 10 minutos.",
-        epStem: "Envía los tres temas juntos. Para cada uno, incluye hasta cuatro stems estéreo WAV agrupados y alineados desde el mismo punto de inicio.",
-        epMix: "Envía los tres temas juntos. Para cada uno, incluye hasta 24 pistas WAV alineadas, una mezcla preliminar y el orden previsto.",
+        epStereo: "Envía juntas las {count} mezclas estéreo finales en WAV, con nombres y orden claros. Cada tema puede durar hasta 10 minutos.",
+        epStem: "Envía los {count} temas juntos. Para cada uno, incluye hasta cuatro stems estéreo WAV agrupados y alineados desde el mismo punto de inicio.",
+        epMix: "Envía los {count} temas juntos. Para cada uno, incluye hasta 24 pistas WAV alineadas, una mezcla preliminar y el orden previsto.",
       },
       httpsError: "Introduce un enlace de descarga HTTPS válido que empiece por https://.", invalid: "Completa los campos obligatorios y comprueba el enlace de descarga.",
       draftStatus: "Si se abre tu aplicación de correo, revisa el borrador y pulsa Enviar allí. Esta página no ha enviado nada. Si no se abre, usa Copiar datos de entrega.",
@@ -83,7 +102,7 @@
       pageTitle: "Projekt einsenden — Tonart", metaDescription: "Sende Tonart nach der Zahlung deine Projektdaten und einen privaten Download-Link für Mixing oder Mastering.",
       skip: "Zum Inhalt springen", homeLabel: "Tonart Startseite", back: "Zurück zur Buchung", eyebrow: "TONART / PROJEKTÜBERGABE", title: "Bezahlt? Schick uns<br /><em>deine Musik.</em>",
       lede: "Deine Zahlung überträgt keine Audiodateien. Fülle diese Übergabe aus und sende anschließend den Entwurf in deinem E-Mail-Programm ab.",
-      processLabel: "Ablauf der Projektübergabe", step1Title: "Mit Karte oder PayPal bezahlen", step1Text: "Bezahle das gewählte Angebot. Bewahre die beim Bezahlen verwendete E-Mail-Adresse und eine mögliche Transaktions-ID auf.",
+      processLabel: "Ablauf der Projektübergabe", step1Title: "Zahlung abschließen", step1Text: "Bezahle das gewählte Angebot. Bewahre die beim Bezahlen verwendete E-Mail-Adresse und eine mögliche Transaktions-ID auf.",
       step2Title: "Projekt einsenden", step2Text: "Fülle diese Seite aus, öffne den E-Mail-Entwurf und klicke in deinem E-Mail-Programm auf Senden.",
       step3Title: "Wir bestätigen den Termin", step3Text: "Wir gleichen die abgeschlossene Zahlung, Leistung und Summe persönlich ab, prüfen die Dateien und bestätigen dann den Termin der ersten Version.",
       formKicker: "PROJEKT EINSENDEN", formTitle: "Projektübergabe", formIntro: "Verwende die E-Mail-Adresse, die du beim Bezahlen angegeben hast oder die auf deinem Zahlungsbeleg steht. So finden wir deine Zahlung; die Transaktions-ID hilft, falls du sie hast.",
@@ -102,9 +121,9 @@
         stereo: "Sende einen finalen Stereo-WAV-Mix. Lass etwas Spitzenpegel-Reserve und entferne einen Limiter, den du nur zum Vorhören verwendet hast. Ein Referenzmix ist hilfreich.",
         stem: "Sende bis zu vier gruppierte Stereo-WAV-Stems. Exportiere alle ab demselben Startpunkt, damit sie synchron sind und zusammen deinen Mix ergeben.",
         mix: "Sende bis zu 24 einzelne WAV-Audiospuren, alle ab demselben Startpunkt exportiert. Lege einen Rohmix und Hinweise zu wichtigen Effekten oder Produktionsdetails bei.",
-        epStereo: "Sende alle drei finalen Stereo-WAV-Mixe zusammen, mit klaren Tracknamen und der Reihenfolge. Jeder Track darf bis zu 10 Minuten lang sein.",
-        epStem: "Sende alle drei Tracks zusammen. Pro Track bis zu vier gruppierte Stereo-WAV-Stems, die ab demselben Startpunkt exportiert wurden.",
-        epMix: "Sende alle drei Tracks zusammen. Pro Track bis zu 24 synchronisierte WAV-Spuren, einen Rohmix und die geplante Reihenfolge.",
+        epStereo: "Sende alle {count} finalen Stereo-WAV-Mixe zusammen, mit klaren Tracknamen und der Reihenfolge. Jeder Track darf bis zu 10 Minuten lang sein.",
+        epStem: "Sende alle {count} Tracks zusammen. Pro Track bis zu vier gruppierte Stereo-WAV-Stems, die ab demselben Startpunkt exportiert wurden.",
+        epMix: "Sende alle {count} Tracks zusammen. Pro Track bis zu 24 synchronisierte WAV-Spuren, einen Rohmix und die geplante Reihenfolge.",
       },
       httpsError: "Gib einen gültigen HTTPS-Download-Link ein, der mit https:// beginnt.", invalid: "Fülle die Pflichtfelder aus und prüfe den Download-Link.",
       draftStatus: "Wenn sich dein E-Mail-Programm öffnet, prüfe den Entwurf und klicke dort auf Senden. Diese Seite hat noch nichts verschickt. Falls sich nichts öffnet, kopiere die Übergabeangaben.",
@@ -146,8 +165,10 @@
     const offer = offers[serviceSelect.value];
     const t = copy[language];
     document.getElementById("service-price").textContent = offer ? `${t.price}${offer.price}` : "";
-    document.getElementById("file-hint").textContent = offer ? t.hints[offer.type] : t.chooseHint;
-    document.getElementById("booking-back").href = offer ? `booking.html?service=${encodeURIComponent(serviceSelect.value)}` : "booking.html";
+    document.getElementById("file-hint").textContent = offer ? t.hints[offer.type].replace("{count}", offer.count ?? "") : t.chooseHint;
+    const service = serviceSelect.value.replace(/-(4|5|6)$/, "");
+    const tracks = offer?.count > 3 ? `&tracks=${offer.count}` : "";
+    document.getElementById("booking-back").href = offer ? `booking.html?service=${encodeURIComponent(service)}${tracks}` : "booking.html";
   }
 
   function renderLanguage(nextLanguage) {
@@ -215,7 +236,7 @@
       `Direction and notes: ${value("notes") || "None"}`,
       "",
       `Customer site language: ${language}`,
-      "Tonart will check the completed PayPal payment, service, amount and usable files before confirming the first-preview date.",
+      "Tonart will check the payment, service, amount and usable files before confirming the first-preview date.",
     ].join("\n");
     return { subject, body };
   }

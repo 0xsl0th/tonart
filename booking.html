@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#111514" />
-    <meta name="description" content="Choose a Tonart mixing or mastering service, pay online, and send your project details and files." />
+    <meta name="description" content="Choose a Tonart mixing or mastering service, review prices, and arrange payment and project handover." />
     <meta name="robots" content="noindex" />
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
     <link rel="stylesheet" href="styles.css" />
@@ -33,7 +33,7 @@
       <section class="booking-intro shell">
         <div class="eyebrow booking-eyebrow"><span class="pulse-dot"></span><span data-book-i18n="eyebrow">TONART / PROJECT BOOKING</span></div>
         <h1 data-book-i18n-html="title">Good sound starts<br /><em>with a good brief.</em></h1>
-        <p data-book-i18n="lede">Choose a launch offer, pay securely by card or PayPal, then send us your music and project details.</p>
+        <p data-book-i18n="lede">Choose a launch offer. Pay online for individual tracks, or contact us to arrange an EP booking.</p>
       </section>
 
       <section class="booking-content shell" aria-labelledby="booking-offer-title">
@@ -42,6 +42,10 @@
           <h2 id="booking-offer-title" data-book-i18n="offerTitle">Your offer</h2>
           <label class="field-label" for="service-select" data-book-i18n="serviceLabel">SERVICE</label>
           <select id="service-select" name="service"></select>
+          <div class="ep-track-choice" id="ep-track-choice" hidden>
+            <label class="field-label" for="ep-track-count" data-book-i18n="epTrackCountLabel">TRACKS IN YOUR EP</label>
+            <select id="ep-track-count" name="tracks"><option value="4">4</option><option value="5">5</option><option value="6">6</option></select>
+          </div>
           <div class="offer-price"><span id="service-price">$39</span><span>USD</span></div>
           <p class="offer-summary" id="service-summary"></p>
           <dl class="offer-details">
@@ -50,8 +54,9 @@
           </dl>
           <p class="offer-caveat" id="service-caveat"></p>
           <a class="button button-bright booking-pay" id="pay-button" href="https://www.paypal.com/ncp/payment/EQD4VQUARW5SG" target="_blank" rel="noopener noreferrer"><span data-book-i18n="payButton">Pay by card or PayPal</span><span aria-hidden="true">↗</span></a>
+          <a class="button button-bright booking-pay" id="ep-contact" href="mailto:tonart.space@gmail.com" hidden><span data-book-i18n="epContactButton">Contact us to book this EP</span><span aria-hidden="true">↗</span></a>
           <p class="pay-note" id="pay-note" data-book-i18n="payNote" hidden>Secure checkout opens on PayPal in a new tab. Debit and credit cards are supported; checkout without a PayPal account may vary by buyer and country. Review the merchant and total before paying. Checkout language may differ from this page.</p>
-          <p class="pay-note" id="pay-pending" data-book-i18n="payPendingNote" hidden>Online checkout is temporarily unavailable. Please contact Tonart before paying.</p>
+          <p class="pay-note" id="pay-pending" hidden>Online checkout is temporarily unavailable. Please contact Tonart before paying.</p>
           <div class="offer-handover">
             <p data-book-i18n="handoverPrompt">Already paid? PayPal does not send us your music.</p>
             <a class="text-link offer-handover-link" data-handover-link href="handover.html?service=stereo"><span data-book-i18n="handoverButton">Send project details</span><span aria-hidden="true">↗</span></a>
@@ -62,7 +67,7 @@
           <div class="booking-card-kicker"><span>02 /</span> <span data-book-i18n="next">WHAT HAPPENS NEXT</span></div>
           <h2 data-book-i18n="stepsTitle">Pay. Send. Confirm.</h2>
           <ol class="booking-steps">
-            <li><span>01</span><div><h3 data-book-i18n="step1Title">Pay for your service</h3><p data-book-i18n="step1Text">Complete checkout by card or PayPal. Keep the email used for payment and the transaction ID if available.</p></div></li>
+            <li><span>01</span><div><h3 data-book-i18n="step1Title">Arrange payment</h3><p data-book-i18n="step1Text">Pay online for an individual track, or contact us to arrange payment for an EP. Keep the receipt email and transaction ID if available.</p></div></li>
             <li><span>02</span><div><h3 data-book-i18n="step2Title">Send your project details</h3><p data-book-i18n="step2Text">Use the handover page to send your track details, payment email, and a private downloadable link to the final files.</p></div></li>
             <li><span>03</span><div><h3 data-book-i18n="step3Title">We check and confirm</h3><p data-book-i18n="step3Text">We match your payment, review the files and scope, then confirm your first-preview date. The turnaround starts when payment and usable files are received.</p></div></li>
           </ol>
@@ -77,7 +82,7 @@
         <div class="faq-list">
           <div><h3 data-book-i18n="faq1Title">When does the turnaround start?</h3><p data-book-i18n="faq1Text">After payment, your brief, and usable final files are received and we confirm the scope. Business days exclude weekends and public holidays. Times shown are for a first preview, not the entire revision process.</p></div>
           <div><h3 data-book-i18n="faq2Title">What if my project is outside the package scope?</h3><p data-book-i18n="faq2Text">Please message us before paying if the track is longer than 10 minutes, has more tracks or stems than the offer allows, or needs editing, tuning, production or alternate versions.</p></div>
-          <div><h3 data-book-i18n="faq3Title">Is the booking instant?</h3><p data-book-i18n="faq3Text">Payment is immediate. We confirm the project after checking the payment, files and availability. If the package does not fit, we will offer a revised quote or a full refund before work begins.</p></div>
+          <div><h3 data-book-i18n="faq3Title">Is the booking instant?</h3><p data-book-i18n="faq3Text">Online payment is immediate. We confirm the project after checking the payment, files and availability. If the package does not fit, we will offer a revised quote or a full refund before work begins.</p></div>
           <div><h3 data-book-i18n="faq4Title">How do you match my payment to my music?</h3><p data-book-i18n="faq4Text">After paying, use the project handover page. Enter the email used at checkout or shown on your receipt, your buyer transaction ID if available, and a private downloadable link to your files. We check these details against the payment before confirming your project.</p></div>
         </div>
         <p class="booking-terms" data-book-i18n="terms">These are introductory launch rates. Included revisions cover feedback on the supplied material; new recordings or major arrangement changes are a new scope. Your statutory rights are unaffected.</p>
