@@ -183,7 +183,7 @@
     en: {
       locale: "en-US",
       activeIntro: "PayPal charges USD. Mercado Pago and transfers use the ARS amounts below, calculated from the DolarHoy selling rate. Enter or transfer the shown amount while it is current.",
-      rateMeta: (label, rate, checked) => `${label}: ARS ${rate} per USD. Source updated ${checked} (Buenos Aires time). Amounts are rounded to whole pesos and shown for 24 hours after that update.`,
+      rateMeta: (label, rate, checked) => `${label}: ARS ${rate} per USD. Source updated ${checked} (Buenos Aires time). Prices are rounded to the nearest ARS amount ending in 9,000 and shown for 24 hours after that update.`,
       mpNote: "Enter exactly the shown ARS amount at the variable-amount link. The merchant appears as Enrique Herranz; review the details before paying.",
       transferNote: "Transfer exactly the shown ARS amount to the alias below. Check the recipient in your bank or wallet.",
       confirm: "Ask us to confirm this amount",
@@ -191,7 +191,7 @@
     es: {
       locale: "es-AR",
       activeIntro: "PayPal cobra en USD. Mercado Pago y las transferencias usan los importes en ARS de abajo, calculados con la cotización de venta de DolarHoy. Ingresa o transfiere el importe indicado mientras esté vigente.",
-      rateMeta: (label, rate, checked) => `${label}: ARS ${rate} por USD. Fuente actualizada el ${checked} (hora de Buenos Aires). Los importes se redondean a pesos enteros y se muestran durante 24 horas desde esa actualización.`,
+      rateMeta: (label, rate, checked) => `${label}: ARS ${rate} por USD. Fuente actualizada el ${checked} (hora de Buenos Aires). Los precios se ajustan al importe más cercano terminado en 9.000 pesos y se muestran durante 24 horas desde esa actualización.`,
       mpNote: "Ingresa exactamente el importe indicado en ARS en el link de monto variable. El vendedor aparece como Enrique Herranz; comprueba los datos antes de pagar.",
       transferNote: "Transfiere exactamente el importe indicado en ARS al alias de abajo. Comprueba el destinatario en tu banco o billetera.",
       confirm: "Pedir confirmación de este importe",
@@ -199,7 +199,7 @@
     de: {
       locale: "de-DE",
       activeIntro: "PayPal rechnet in USD ab. Für Mercado Pago und Überweisungen gelten die unten angegebenen ARS-Beträge auf Basis des DolarHoy-Verkaufskurses. Gib den Betrag ein oder überweise ihn, solange er aktuell ist.",
-      rateMeta: (label, rate, checked) => `${label}: ARS ${rate} je USD. Quelle aktualisiert am ${checked} (Ortszeit Buenos Aires). Die Beträge werden auf ganze Pesos gerundet und 24 Stunden nach dieser Aktualisierung angezeigt.`,
+      rateMeta: (label, rate, checked) => `${label}: ARS ${rate} je USD. Quelle aktualisiert am ${checked} (Ortszeit Buenos Aires). Die Preise werden auf den nächstliegenden ARS-Betrag mit 9.000 am Ende gerundet und 24 Stunden nach dieser Aktualisierung angezeigt.`,
       mpNote: "Gib im Link mit frei wählbarem Betrag genau den angezeigten ARS-Betrag ein. Als Anbieter erscheint Enrique Herranz; prüfe die Angaben vor der Zahlung.",
       transferNote: "Überweise genau den angezeigten ARS-Betrag an den Alias unten. Prüfe den Empfänger in deiner Bank oder Wallet.",
       confirm: "Diesen Betrag bestätigen lassen",
@@ -276,6 +276,14 @@
     return `ARS ${new Intl.NumberFormat(rateCopy[language].locale, { maximumFractionDigits: 0 }).format(amount)}`;
   }
 
+  function customerArsPrice(usdPrice, rate) {
+    const converted = Math.round(usdPrice * rate);
+    if (!Number.isSafeInteger(converted) || converted <= 0) return 0;
+    // Choose the closest positive price ending in 9,000; exact midpoints round up.
+    const rounded = Math.round((converted + 1000) / 10000) * 10000 - 1000;
+    return Number.isSafeInteger(rounded) ? Math.max(9000, rounded) : 0;
+  }
+
   function quoteUrl(method, name, price, epCount, arsAmount) {
     const copy = quoteCopy[language];
     const methodName = method === "mercadopago" ? copy.mercadoPago : copy.transfer;
@@ -323,7 +331,7 @@
     mpHandoverLink.href = `handover.html?service=${encodeURIComponent(handoverKey)}&payment=mercadopago`;
     transferHandoverLink.href = `handover.html?service=${encodeURIComponent(handoverKey)}&payment=transfer`;
     const checkedRate = currentArsRate();
-    const arsAmount = checkedRate ? Math.round(price * checkedRate.rate) : 0;
+    const arsAmount = checkedRate ? customerArsPrice(price, checkedRate.rate) : 0;
     const hasArsAmounts = Boolean(checkedRate && Number.isSafeInteger(arsAmount) && arsAmount > 0);
     if (arsExpiryTimer) clearTimeout(arsExpiryTimer);
     arsExpiryTimer = hasArsAmounts
