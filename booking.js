@@ -82,7 +82,7 @@
     payButton: "Pagar con tarjeta o PayPal",
     payNote: "El pago seguro se abre en PayPal en otra pestaña. Se aceptan tarjetas de débito y crédito; la opción de pagar sin cuenta de PayPal puede variar según el comprador y el país. Comprueba el vendedor y el importe antes de pagar. El idioma del pago puede ser distinto al de esta página.",
     arsTitle: "¿Pagas desde Argentina?", arsIntro: "Mercado Pago y las transferencias a Mercado Pago se cobran en pesos argentinos. Pídenos el importe exacto en ARS para esta oferta antes de pagar.",
-    mpTitle: "Mercado Pago", mpAmountLabel: "Importe a ingresar (+10%)", mpQuoteButton: "Pedir cotización en ARS", mpQuoteNote: "Te enviaremos el importe exacto en ARS. Ingresa solo ese importe en el link; el vendedor aparecerá como Enrique Herranz. Comprueba los datos antes de pagar.", mpPayButton: "Pagar el importe indicado en ARS",
+    mpTitle: "Mercado Pago", mpAmountLabel: "Importe a ingresar", mpQuoteButton: "Pedir cotización en ARS", mpQuoteNote: "Te enviaremos el importe exacto en ARS. Ingresa solo ese importe en el link; el vendedor aparecerá como Enrique Herranz. Comprueba los datos antes de pagar.", mpPayButton: "Pagar el importe indicado en ARS",
     transferTitle: "Transferencia a Mercado Pago", transferAmountLabel: "Importe a transferir", transferQuoteButton: "Pedir importe en ARS", transferQuoteNote: "Espera nuestra confirmación del importe exacto en ARS antes de transferir al alias indicado. Comprueba el destinatario en tu banco o billetera.", transferAliasLabel: "Alias de destino", arsHandoverButton: "¿Ya pagaste? Envía los datos del proyecto",
     payPendingNote: "El pago en línea no está disponible temporalmente. Contacta con Tonart antes de pagar.",
     epPayPendingNote: "El pago en línea para esta opción de EP no está disponible temporalmente. Escríbenos antes de pagar.",
@@ -113,7 +113,7 @@
     payButton: "Mit Karte oder PayPal bezahlen",
     payNote: "Die sichere Zahlungsseite von PayPal öffnet sich in einem neuen Tab. Debit- und Kreditkarten werden akzeptiert; die Zahlung ohne PayPal-Konto wird nicht für alle Käufer oder Länder angeboten. Prüfe Anbieter und Gesamtbetrag vor der Zahlung. Die Zahlungsseite kann in einer anderen Sprache erscheinen.",
     arsTitle: "Zahlung aus Argentinien?", arsIntro: "Mercado Pago und Überweisungen an Mercado Pago erfolgen in argentinischen Pesos. Frage vor der Zahlung den genauen ARS-Betrag für dieses Angebot an.",
-    mpTitle: "Mercado Pago", mpAmountLabel: "Einzugebender Betrag (+10 %)", mpQuoteButton: "ARS-Angebot anfragen", mpQuoteNote: "Wir senden dir den genauen ARS-Betrag. Gib im Zahlungslink nur diesen Betrag ein; als Anbieter erscheint Enrique Herranz. Prüfe die Angaben vor der Zahlung.", mpPayButton: "Angezeigten ARS-Betrag bezahlen",
+    mpTitle: "Mercado Pago", mpAmountLabel: "Einzugebender Betrag", mpQuoteButton: "ARS-Angebot anfragen", mpQuoteNote: "Wir senden dir den genauen ARS-Betrag. Gib im Zahlungslink nur diesen Betrag ein; als Anbieter erscheint Enrique Herranz. Prüfe die Angaben vor der Zahlung.", mpPayButton: "Angezeigten ARS-Betrag bezahlen",
     transferTitle: "Überweisung an Mercado Pago", transferAmountLabel: "Zu überweisender Betrag", transferQuoteButton: "ARS-Betrag anfragen", transferQuoteNote: "Warte auf unsere Bestätigung des genauen ARS-Betrags, bevor du an den angegebenen Alias überweist. Prüfe den Empfänger in deiner Bank oder Wallet.", transferAliasLabel: "Empfänger-Alias", arsHandoverButton: "Schon bezahlt? Projektdaten senden",
     payPendingNote: "Die Online-Zahlung ist vorübergehend nicht verfügbar. Kontaktiere Tonart bitte vor einer Zahlung.",
     epPayPendingNote: "Die Online-Zahlung für diese EP-Option ist vorübergehend nicht verfügbar. Kontaktiere uns vor der Zahlung.",
@@ -182,24 +182,24 @@
       locale: "en-US",
       activeIntro: "These ARS amounts use the DolarHoy selling rate shown below. Enter or transfer exactly the amount shown while it is current; you can also ask us to confirm it.",
       rateMeta: (label, rate, checked) => `${label}: ARS ${rate} per USD. Source updated ${checked} (Buenos Aires time). Amounts are rounded to whole pesos and shown for 24 hours after that update.`,
-      mpNote: "Enter exactly the shown ARS amount at the variable-amount link. This includes a 10% adjustment. The merchant appears as Enrique Herranz; review the details before paying.",
-      transferNote: "Transfer exactly the shown ARS amount to the alias below. This uses the base conversion without the 10% adjustment. Check the recipient in your bank or wallet.",
+      mpNote: "Enter exactly the shown ARS amount at the variable-amount link. The merchant appears as Enrique Herranz; review the details before paying.",
+      transferNote: "Transfer exactly the shown ARS amount to the alias below. Check the recipient in your bank or wallet.",
       confirm: "Ask us to confirm this amount",
     },
     es: {
       locale: "es-AR",
       activeIntro: "Estos importes en ARS usan la cotización de venta de DolarHoy indicada abajo. Ingresa o transfiere exactamente el importe mostrado mientras esté vigente; también puedes pedirnos confirmación.",
       rateMeta: (label, rate, checked) => `${label}: ARS ${rate} por USD. Fuente actualizada el ${checked} (hora de Buenos Aires). Los importes se redondean a pesos enteros y se muestran durante 24 horas desde esa actualización.`,
-      mpNote: "Ingresa exactamente el importe indicado en ARS en el link de monto variable. Incluye un ajuste del 10 %. El vendedor aparece como Enrique Herranz; comprueba los datos antes de pagar.",
-      transferNote: "Transfiere exactamente el importe indicado en ARS al alias de abajo. Se usa la conversión base, sin el ajuste del 10 %. Comprueba el destinatario en tu banco o billetera.",
+      mpNote: "Ingresa exactamente el importe indicado en ARS en el link de monto variable. El vendedor aparece como Enrique Herranz; comprueba los datos antes de pagar.",
+      transferNote: "Transfiere exactamente el importe indicado en ARS al alias de abajo. Comprueba el destinatario en tu banco o billetera.",
       confirm: "Pedir confirmación de este importe",
     },
     de: {
       locale: "de-DE",
       activeIntro: "Diese ARS-Beträge beruhen auf dem unten angegebenen DolarHoy-Verkaufskurs. Gib den angezeigten Betrag ein oder überweise ihn, solange er aktuell ist; du kannst ihn auch von uns bestätigen lassen.",
       rateMeta: (label, rate, checked) => `${label}: ARS ${rate} je USD. Quelle aktualisiert am ${checked} (Ortszeit Buenos Aires). Die Beträge werden auf ganze Pesos gerundet und 24 Stunden nach dieser Aktualisierung angezeigt.`,
-      mpNote: "Gib im Link mit frei wählbarem Betrag genau den angezeigten ARS-Betrag ein. Darin ist ein Aufschlag von 10 % enthalten. Als Anbieter erscheint Enrique Herranz; prüfe die Angaben vor der Zahlung.",
-      transferNote: "Überweise genau den angezeigten ARS-Betrag an den Alias unten. Hier gilt die Grundumrechnung ohne 10-%-Aufschlag. Prüfe den Empfänger in deiner Bank oder Wallet.",
+      mpNote: "Gib im Link mit frei wählbarem Betrag genau den angezeigten ARS-Betrag ein. Als Anbieter erscheint Enrique Herranz; prüfe die Angaben vor der Zahlung.",
+      transferNote: "Überweise genau den angezeigten ARS-Betrag an den Alias unten. Prüfe den Empfänger in deiner Bank oder Wallet.",
       confirm: "Diesen Betrag bestätigen lassen",
     },
   };
@@ -319,9 +319,8 @@
     mpHandoverLink.href = `handover.html?service=${encodeURIComponent(handoverKey)}&payment=mercadopago`;
     transferHandoverLink.href = `handover.html?service=${encodeURIComponent(handoverKey)}&payment=transfer`;
     const checkedRate = currentArsRate();
-    const transferArs = checkedRate ? Math.round(price * checkedRate.rate) : 0;
-    const mpArs = checkedRate ? Math.round(price * checkedRate.rate * 1.1) : 0;
-    const hasArsAmounts = Boolean(checkedRate && Number.isSafeInteger(transferArs) && Number.isSafeInteger(mpArs) && transferArs > 0 && mpArs > 0);
+    const arsAmount = checkedRate ? Math.round(price * checkedRate.rate) : 0;
+    const hasArsAmounts = Boolean(checkedRate && Number.isSafeInteger(arsAmount) && arsAmount > 0);
     if (arsExpiryTimer) clearTimeout(arsExpiryTimer);
     arsExpiryTimer = hasArsAmounts
       ? setTimeout(() => { arsExpiryTimer = null; renderOffer(); }, Math.max(0, checkedRate.checkedAt.getTime() + 24 * 60 * 60 * 1000 - Date.now() + 50))
@@ -337,12 +336,12 @@
     const exchangeText = hasArsAmounts ? new Intl.NumberFormat(rateText.locale, { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(checkedRate.rate) : "";
     arsRateMeta.textContent = hasArsAmounts ? rateText.rateMeta(checkedRate.label, exchangeText, checkedText) : "";
     arsRateMeta.hidden = !hasArsAmounts;
-    mpAmountValue.textContent = hasArsAmounts ? formatArs(mpArs) : "";
-    transferAmountValue.textContent = hasArsAmounts ? formatArs(transferArs) : "";
+    mpAmountValue.textContent = hasArsAmounts ? formatArs(arsAmount) : "";
+    transferAmountValue.textContent = hasArsAmounts ? formatArs(arsAmount) : "";
     mpAmountRow.hidden = !hasArsAmounts;
     transferAmountRow.hidden = !hasArsAmounts;
-    mpQuoteButton.href = quoteUrl("mercadopago", copy.name, price, ep ? epTrackCount : null, hasArsAmounts ? mpArs : 0);
-    transferQuoteButton.href = quoteUrl("transfer", copy.name, price, ep ? epTrackCount : null, hasArsAmounts ? transferArs : 0);
+    mpQuoteButton.href = quoteUrl("mercadopago", copy.name, price, ep ? epTrackCount : null, hasArsAmounts ? arsAmount : 0);
+    transferQuoteButton.href = quoteUrl("transfer", copy.name, price, ep ? epTrackCount : null, hasArsAmounts ? arsAmount : 0);
     const mpLink = mercadoPagoUrl();
     if (mpLink) mpPayButton.href = mpLink;
     else mpPayButton.removeAttribute("href");
