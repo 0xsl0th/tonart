@@ -18,11 +18,10 @@
     "ep-mixmaster-5": "https://www.paypal.com/ncp/payment/KBEQVJWXP5LNU",
     "ep-mixmaster-6": "https://www.paypal.com/ncp/payment/UGBMYWJFMDPV6",
   };
-  // Set these only after verifying the merchant link and receiving details.
-  // Mercado Pago Argentina collects ARS; customers receive an exact ARS quote
+  // Mercado Pago Argentina collects ARS. Customers receive an exact ARS quote
   // before using either option. Never derive the amount from the USD list here.
   const MERCADO_PAGO_LINK = "";
-  const TRANSFER_ALIAS = "";
+  const TRANSFER_ALIAS = "enrique.berlin";
   const offers = {
     stereo: {
       price: 39,
@@ -78,7 +77,7 @@
     payNote: "El pago seguro se abre en PayPal en otra pestaña. Se aceptan tarjetas de débito y crédito; la opción de pagar sin cuenta de PayPal puede variar según el comprador y el país. Comprueba el vendedor y el importe antes de pagar. El idioma del pago puede ser distinto al de esta página.",
     arsTitle: "¿Pagas desde Argentina?", arsIntro: "Mercado Pago y las transferencias a Mercado Pago se cobran en pesos argentinos. Pídenos el importe exacto en ARS para esta oferta antes de pagar.",
     mpTitle: "Mercado Pago", mpQuoteButton: "Pedir cotización en ARS", mpQuoteNote: "Te enviaremos el importe exacto y las instrucciones de pago. Usa el link de pago solo después de recibir tu cotización.", mpPayButton: "Pagar el importe cotizado en ARS",
-    transferTitle: "Transferencia a Mercado Pago", transferQuoteButton: "Pedir datos para transferir", transferQuoteNote: "Confirmaremos el importe en ARS y el alias/CVU de destino antes de la transferencia.", transferAliasLabel: "Alias de destino", arsHandoverButton: "¿Ya pagaste? Envía los datos del proyecto",
+    transferTitle: "Transferencia a Mercado Pago", transferQuoteButton: "Pedir importe en ARS", transferQuoteNote: "Espera nuestra confirmación del importe exacto en ARS antes de transferir al alias indicado. Comprueba el destinatario en tu banco o billetera.", transferAliasLabel: "Alias de destino", arsHandoverButton: "¿Ya pagaste? Envía los datos del proyecto",
     payPendingNote: "El pago en línea no está disponible temporalmente. Contacta con Tonart antes de pagar.",
     epPayPendingNote: "El pago en línea para esta opción de EP no está disponible temporalmente. Escríbenos antes de pagar.",
     epContactButton: "Escríbenos por este EP",
@@ -109,7 +108,7 @@
     payNote: "Die sichere Zahlungsseite von PayPal öffnet sich in einem neuen Tab. Debit- und Kreditkarten werden akzeptiert; die Zahlung ohne PayPal-Konto wird nicht für alle Käufer oder Länder angeboten. Prüfe Anbieter und Gesamtbetrag vor der Zahlung. Die Zahlungsseite kann in einer anderen Sprache erscheinen.",
     arsTitle: "Zahlung aus Argentinien?", arsIntro: "Mercado Pago und Überweisungen an Mercado Pago erfolgen in argentinischen Pesos. Frage vor der Zahlung den genauen ARS-Betrag für dieses Angebot an.",
     mpTitle: "Mercado Pago", mpQuoteButton: "ARS-Angebot anfragen", mpQuoteNote: "Wir senden dir den genauen Betrag und die Zahlungsanleitung. Nutze den Zahlungslink erst nach Erhalt des Angebots.", mpPayButton: "Angebotenen ARS-Betrag bezahlen",
-    transferTitle: "Überweisung an Mercado Pago", transferQuoteButton: "Überweisungsdaten anfragen", transferQuoteNote: "Wir bestätigen den ARS-Betrag und den Empfänger-Alias bzw. CVU vor der Überweisung.", transferAliasLabel: "Empfänger-Alias", arsHandoverButton: "Schon bezahlt? Projektdaten senden",
+    transferTitle: "Überweisung an Mercado Pago", transferQuoteButton: "ARS-Betrag anfragen", transferQuoteNote: "Warte auf unsere Bestätigung des genauen ARS-Betrags, bevor du an den angegebenen Alias überweist. Prüfe den Empfänger in deiner Bank oder Wallet.", transferAliasLabel: "Empfänger-Alias", arsHandoverButton: "Schon bezahlt? Projektdaten senden",
     payPendingNote: "Die Online-Zahlung ist vorübergehend nicht verfügbar. Kontaktiere Tonart bitte vor einer Zahlung.",
     epPayPendingNote: "Die Online-Zahlung für diese EP-Option ist vorübergehend nicht verfügbar. Kontaktiere uns vor der Zahlung.",
     epContactButton: "EP per E-Mail anfragen",
