@@ -36,12 +36,18 @@
       pageTitle: "Send your project — Tonart", metaDescription: "Send Tonart your project details and a private download link after paying for mixing or mastering.",
       skip: "Skip to content", homeLabel: "Tonart home", back: "Back to booking", eyebrow: "TONART / PROJECT HANDOVER", title: "Paid? Send us<br /><em>the music.</em>",
       lede: "Your payment does not transfer your audio files. Complete this handover, then send the email draft that opens in your mail app.",
-      processLabel: "Handover process", step1Title: "Complete payment", step1Text: "Complete payment for your selected offer. Keep the email used at checkout and any transaction ID.",
+      processLabel: "Handover process", step1Title: "Complete payment", step1Text: "Complete payment for your selected offer. Keep your payment receipt or transfer details.",
       step2Title: "Send your project", step2Text: "Fill in this page, open the email draft, and press Send in your email app.",
       step3Title: "We confirm the date", step3Text: "We manually match the completed payment, service and amount, check the files, then confirm your first-preview date.",
-      formKicker: "SEND YOUR PROJECT", formTitle: "Project handover", formIntro: "Use the email entered at checkout or shown on your payment receipt. We use it to find your transaction; the transaction ID helps if you have one.",
+      formKicker: "SEND YOUR PROJECT", formTitle: "Project handover", formIntro: "Choose how you paid and give us the details shown on your receipt. We use them to match your payment before confirming the project.",
       serviceLabel: "Service you paid for", servicePlaceholder: "Select the service on your receipt", serviceHelp: "Choose the exact offer on your payment receipt. Changing this selection does not change a payment.",
-      price: "Offer price: USD $", paymentDetails: "PAYMENT DETAILS", payerEmailLabel: "Payment / receipt email", transactionLabel: "PayPal transaction ID", optional: "optional",
+      price: "Offer price: USD $", listedPrice: "Listed offer price: USD $", paymentDetails: "PAYMENT DETAILS", paymentMethodLabel: "Payment method", optional: "optional",
+      methodPayPal: "PayPal", methodMercadoPago: "Mercado Pago payment link", methodTransfer: "Transfer to Mercado Pago alias / CVU",
+      methodHelpPayPal: "Use the email on your PayPal receipt. We verify payment in our account before confirming your project.",
+      methodHelpMercadoPago: "Enter the amount in Argentine pesos shown on your Mercado Pago receipt. We verify the completed payment before confirming your project.",
+      methodHelpTransfer: "Enter the Argentine peso amount and the sender's account name from your transfer receipt. We confirm your project after the transfer is credited and verified.",
+      payerEmailLabel: "Payment / receipt email", transferEmailLabel: "Email on transfer receipt", transactionLabelPayPal: "PayPal transaction ID",
+      transactionLabelMercadoPago: "Mercado Pago operation ID", transactionLabelTransfer: "Transfer operation / reference ID", arsAmountLabel: "Amount paid (ARS)", transferSenderLabel: "Name on the sending account",
       projectDetails: "PROJECT DETAILS", contactNameLabel: "Your name", contactEmailLabel: "Contact email", projectTitleLabel: "Track or EP title",
       downloadLabel: "Private download link for your files", downloadHelp: "Upload your WAVs or stems to Google Drive, Dropbox, WeTransfer or a similar service. Share a private HTTPS download link that works without a permission request. Keep it active until delivery. This page does not upload files. Send a DAW project only if we request one.",
       accessLabel: "Access instructions", accessHelp: "If the link needs a password or access approval, tell us how to get in. Do not include account login credentials.",
@@ -69,12 +75,18 @@
       pageTitle: "Envía tu proyecto — Tonart", metaDescription: "Envía a Tonart los datos de tu proyecto y un enlace privado de descarga después de pagar la mezcla o masterización.",
       skip: "Ir al contenido", homeLabel: "Inicio de Tonart", back: "Volver a la reserva", eyebrow: "TONART / ENTREGA DEL PROYECTO", title: "¿Ya pagaste? Envíanos<br /><em>tu música.</em>",
       lede: "El pago no transfiere tus archivos de audio. Completa este formulario y luego envía el borrador que se abrirá en tu aplicación de correo.",
-      processLabel: "Proceso de entrega", step1Title: "Completa el pago", step1Text: "Completa el pago de la oferta elegida. Conserva el correo usado al pagar y cualquier ID de transacción.",
+      processLabel: "Proceso de entrega", step1Title: "Completa el pago", step1Text: "Completa el pago de la oferta elegida. Conserva el comprobante o los datos de la transferencia.",
       step2Title: "Envía tu proyecto", step2Text: "Completa esta página, abre el borrador y pulsa Enviar en tu aplicación de correo.",
       step3Title: "Confirmamos la fecha", step3Text: "Comprobamos manualmente el pago completado, el servicio y el importe, revisamos los archivos y confirmamos la fecha de la primera versión.",
-      formKicker: "ENVÍA TU PROYECTO", formTitle: "Entrega del proyecto", formIntro: "Usa el correo que ingresaste al pagar o que aparece en tu recibo. Nos permite encontrar tu transacción; el ID ayuda si lo tienes.",
+      formKicker: "ENVÍA TU PROYECTO", formTitle: "Entrega del proyecto", formIntro: "Indica cómo pagaste y los datos del comprobante. Los usamos para verificar el pago antes de confirmar el proyecto.",
       serviceLabel: "Servicio que pagaste", servicePlaceholder: "Selecciona el servicio de tu recibo", serviceHelp: "Elige exactamente la oferta de tu recibo de pago. Cambiar esta selección no modifica el pago.",
-      price: "Precio de la oferta: USD $", paymentDetails: "DATOS DEL PAGO", payerEmailLabel: "Correo del pago / recibo", transactionLabel: "ID de transacción de PayPal", optional: "opcional",
+      price: "Precio de la oferta: USD $", listedPrice: "Precio publicado de la oferta: USD $", paymentDetails: "DATOS DEL PAGO", paymentMethodLabel: "Medio de pago", optional: "opcional",
+      methodPayPal: "PayPal", methodMercadoPago: "Link de pago de Mercado Pago", methodTransfer: "Transferencia al alias / CVU de Mercado Pago",
+      methodHelpPayPal: "Usa el correo del comprobante de PayPal. Verificamos el pago en nuestra cuenta antes de confirmar tu proyecto.",
+      methodHelpMercadoPago: "Ingresa el importe en pesos argentinos que figura en el comprobante de Mercado Pago. Verificamos el pago completado antes de confirmar tu proyecto.",
+      methodHelpTransfer: "Ingresa el importe en pesos argentinos y el nombre del titular de la cuenta que envió la transferencia. Confirmamos el proyecto cuando se acredite y verifiquemos el pago.",
+      payerEmailLabel: "Correo del pago / comprobante", transferEmailLabel: "Correo del comprobante de transferencia", transactionLabelPayPal: "ID de transacción de PayPal",
+      transactionLabelMercadoPago: "ID de operación de Mercado Pago", transactionLabelTransfer: "ID de operación / referencia de transferencia", arsAmountLabel: "Importe pagado (ARS)", transferSenderLabel: "Nombre del titular de la cuenta de origen",
       projectDetails: "DATOS DEL PROYECTO", contactNameLabel: "Tu nombre", contactEmailLabel: "Correo de contacto", projectTitleLabel: "Título del tema o EP",
       downloadLabel: "Enlace privado de descarga de tus archivos", downloadHelp: "Sube tus WAV o stems a Google Drive, Dropbox, WeTransfer o un servicio similar. Comparte un enlace HTTPS privado que permita descargar sin solicitar acceso. Mantenlo activo hasta la entrega. Esta página no sube archivos. Envía un proyecto de DAW solo si te lo pedimos.",
       accessLabel: "Instrucciones de acceso", accessHelp: "Si el enlace requiere contraseña o autorización, indícanos cómo acceder. No incluyas credenciales de tu cuenta.",
@@ -102,12 +114,18 @@
       pageTitle: "Projekt einsenden — Tonart", metaDescription: "Sende Tonart nach der Zahlung deine Projektdaten und einen privaten Download-Link für Mixing oder Mastering.",
       skip: "Zum Inhalt springen", homeLabel: "Tonart Startseite", back: "Zurück zur Buchung", eyebrow: "TONART / PROJEKTÜBERGABE", title: "Bezahlt? Schick uns<br /><em>deine Musik.</em>",
       lede: "Deine Zahlung überträgt keine Audiodateien. Fülle diese Übergabe aus und sende anschließend den Entwurf in deinem E-Mail-Programm ab.",
-      processLabel: "Ablauf der Projektübergabe", step1Title: "Zahlung abschließen", step1Text: "Bezahle das gewählte Angebot. Bewahre die beim Bezahlen verwendete E-Mail-Adresse und eine mögliche Transaktions-ID auf.",
+      processLabel: "Ablauf der Projektübergabe", step1Title: "Zahlung abschließen", step1Text: "Bezahle das gewählte Angebot. Bewahre deinen Zahlungsbeleg oder die Überweisungsdaten auf.",
       step2Title: "Projekt einsenden", step2Text: "Fülle diese Seite aus, öffne den E-Mail-Entwurf und klicke in deinem E-Mail-Programm auf Senden.",
       step3Title: "Wir bestätigen den Termin", step3Text: "Wir gleichen die abgeschlossene Zahlung, Leistung und Summe persönlich ab, prüfen die Dateien und bestätigen dann den Termin der ersten Version.",
-      formKicker: "PROJEKT EINSENDEN", formTitle: "Projektübergabe", formIntro: "Verwende die E-Mail-Adresse, die du beim Bezahlen angegeben hast oder die auf deinem Zahlungsbeleg steht. So finden wir deine Zahlung; die Transaktions-ID hilft, falls du sie hast.",
+      formKicker: "PROJEKT EINSENDEN", formTitle: "Projektübergabe", formIntro: "Wähle deine Zahlungsart und gib die Angaben vom Beleg ein. Damit gleichen wir die Zahlung ab, bevor wir dein Projekt bestätigen.",
       serviceLabel: "Bezahlte Leistung", servicePlaceholder: "Leistung laut Zahlungsbeleg auswählen", serviceHelp: "Wähle genau das Angebot auf deinem Zahlungsbeleg. Die Auswahl ändert keine Zahlung.",
-      price: "Angebotspreis: USD $", paymentDetails: "ZAHLUNGSANGABEN", payerEmailLabel: "Zahlungs- / Beleg-E-Mail", transactionLabel: "PayPal-Transaktions-ID", optional: "optional",
+      price: "Angebotspreis: USD $", listedPrice: "Ausgewiesener Angebotspreis: USD $", paymentDetails: "ZAHLUNGSANGABEN", paymentMethodLabel: "Zahlungsart", optional: "optional",
+      methodPayPal: "PayPal", methodMercadoPago: "Mercado Pago Zahlungslink", methodTransfer: "Überweisung an Mercado Pago Alias / CVU",
+      methodHelpPayPal: "Verwende die E-Mail-Adresse auf deinem PayPal-Beleg. Wir prüfen die Zahlung in unserem Konto, bevor wir dein Projekt bestätigen.",
+      methodHelpMercadoPago: "Gib den Betrag in argentinischen Pesos von deinem Mercado Pago Beleg ein. Wir prüfen die abgeschlossene Zahlung, bevor wir dein Projekt bestätigen.",
+      methodHelpTransfer: "Gib den Betrag in argentinischen Pesos und den Namen des Absenderkontos laut Überweisungsbeleg ein. Wir bestätigen dein Projekt, sobald die Überweisung gutgeschrieben und geprüft wurde.",
+      payerEmailLabel: "Zahlungs- / Beleg-E-Mail", transferEmailLabel: "E-Mail auf dem Überweisungsbeleg", transactionLabelPayPal: "PayPal-Transaktions-ID",
+      transactionLabelMercadoPago: "Mercado Pago Vorgangs-ID", transactionLabelTransfer: "Überweisungs-ID / Referenz", arsAmountLabel: "Gezahlter Betrag (ARS)", transferSenderLabel: "Name des Absenderkontos",
       projectDetails: "PROJEKTDATEN", contactNameLabel: "Dein Name", contactEmailLabel: "Kontakt-E-Mail", projectTitleLabel: "Titel des Tracks oder der EP",
       downloadLabel: "Privater Download-Link zu deinen Dateien", downloadHelp: "Lade deine WAVs oder Stems zu Google Drive, Dropbox, WeTransfer oder einem ähnlichen Dienst hoch. Teile einen privaten HTTPS-Download-Link, der ohne Freigabeanfrage funktioniert. Halte ihn bis zur Lieferung aktiv. Diese Seite lädt keine Dateien hoch. Ein DAW-Projekt sende bitte nur auf Anfrage.",
       accessLabel: "Zugangshinweise", accessHelp: "Wenn der Link ein Passwort oder eine Freigabe benötigt, beschreibe den Zugang. Sende keine Zugangsdaten für dein Benutzerkonto.",
@@ -136,6 +154,10 @@
   const form = document.getElementById("handover-form");
   const languageSelect = document.getElementById("language-select");
   const serviceSelect = document.getElementById("service-select");
+  const paymentMethodSelect = document.getElementById("payment-method");
+  const payerEmailInput = document.getElementById("payer-email");
+  const paymentAmountInput = document.getElementById("payment-amount");
+  const transferSenderInput = document.getElementById("transfer-sender");
   const downloadInput = document.getElementById("download-url");
   const status = document.getElementById("handover-status");
   const manualCopy = document.getElementById("manual-copy");
@@ -164,11 +186,34 @@
   function renderServiceHint() {
     const offer = offers[serviceSelect.value];
     const t = copy[language];
-    document.getElementById("service-price").textContent = offer ? `${t.price}${offer.price}` : "";
+    const priceLabel = paymentMethodSelect.value === "paypal" ? t.price : t.listedPrice;
+    document.getElementById("service-price").textContent = offer ? `${priceLabel}${offer.price}` : "";
     document.getElementById("file-hint").textContent = offer ? t.hints[offer.type].replace("{count}", offer.count ?? "") : t.chooseHint;
     const service = serviceSelect.value.replace(/-(4|5|6)$/, "");
     const tracks = offer?.count > 3 ? `&tracks=${offer.count}` : "";
-    document.getElementById("booking-back").href = offer ? `booking.html?service=${encodeURIComponent(service)}${tracks}` : "booking.html";
+    const payment = paymentMethodSelect.value !== "paypal" ? `&payment=${encodeURIComponent(paymentMethodSelect.value)}` : "";
+    document.getElementById("booking-back").href = offer ? `booking.html?service=${encodeURIComponent(service)}${tracks}${payment}` : "booking.html";
+  }
+
+  function renderPaymentMethod() {
+    const t = copy[language];
+    const method = paymentMethodSelect.value;
+    paymentMethodSelect.querySelector('[value="paypal"]').textContent = t.methodPayPal;
+    paymentMethodSelect.querySelector('[value="mercadopago"]').textContent = t.methodMercadoPago;
+    paymentMethodSelect.querySelector('[value="transfer"]').textContent = t.methodTransfer;
+    document.getElementById("payment-method-help").textContent = method === "transfer" ? t.methodHelpTransfer : method === "mercadopago" ? t.methodHelpMercadoPago : t.methodHelpPayPal;
+    document.getElementById("payer-email-label").textContent = method === "transfer" ? t.transferEmailLabel : t.payerEmailLabel;
+    document.getElementById("payer-email-required").hidden = method === "transfer";
+    const optionalEmail = document.getElementById("payer-email-optional");
+    optionalEmail.hidden = method !== "transfer";
+    optionalEmail.textContent = t.optional;
+    payerEmailInput.required = method !== "transfer";
+    document.getElementById("transaction-label").textContent = method === "transfer" ? t.transactionLabelTransfer : method === "mercadopago" ? t.transactionLabelMercadoPago : t.transactionLabelPayPal;
+    document.getElementById("ars-payment-fields").hidden = method === "paypal";
+    paymentAmountInput.required = method !== "paypal";
+    document.getElementById("transfer-sender-field").hidden = method !== "transfer";
+    transferSenderInput.required = method === "transfer";
+    renderServiceHint();
   }
 
   function renderLanguage(nextLanguage) {
@@ -189,6 +234,7 @@
     downloadInput.setCustomValidity("");
     status.textContent = "";
     renderServices();
+    renderPaymentMethod();
   }
 
   function validateForm() {
@@ -216,6 +262,7 @@
 
   function emailContent() {
     const offer = offers[serviceSelect.value];
+    const method = paymentMethodSelect.value;
     const projectTitle = value("project-title");
     const subject = `Tonart handover | ${serviceSelect.value} | ${projectTitle.slice(0, 70)}`;
     const body = [
@@ -223,9 +270,12 @@
       "",
       `Service: ${offer.en}`,
       `Service key: ${serviceSelect.value}`,
-      `Offer price: USD $${offer.price}`,
-      `Checkout / receipt email: ${value("payer-email")}`,
-      `Buyer PayPal transaction ID: ${value("transaction-id") || "Not available"}`,
+      `Payment method: ${method === "transfer" ? "Transfer to Mercado Pago alias / CVU" : method === "mercadopago" ? "Mercado Pago payment link" : "PayPal"}`,
+      `${method === "paypal" ? "Offer price" : "Listed offer price"}: USD $${offer.price}`,
+      `Checkout / receipt email: ${value("payer-email") || "Not provided"}`,
+      `${method === "transfer" ? "Transfer operation / reference ID" : method === "mercadopago" ? "Mercado Pago operation ID" : "Buyer PayPal transaction ID"}: ${value("transaction-id") || "Not available"}`,
+      ...(method === "paypal" ? [] : [`Amount paid: ARS $${value("payment-amount")}`]),
+      ...(method === "transfer" ? [`Name on the sending account: ${value("transfer-sender")}`] : []),
       "",
       `Contact name: ${value("contact-name")}`,
       `Contact email: ${value("contact-email")}`,
@@ -253,6 +303,7 @@
     try { localStorage.setItem("tonart-language", language); } catch {}
   });
   serviceSelect.addEventListener("change", renderServiceHint);
+  paymentMethodSelect.addEventListener("change", renderPaymentMethod);
   downloadInput.addEventListener("input", () => downloadInput.setCustomValidity(""));
 
   form.addEventListener("submit", (event) => {
@@ -285,9 +336,15 @@
   });
 
   renderLanguage(language);
-  const serviceFromUrl = new URLSearchParams(window.location.search).get("service");
+  const urlParams = new URLSearchParams(window.location.search);
+  const serviceFromUrl = urlParams.get("service");
   if (serviceFromUrl && offers[serviceFromUrl]) {
     serviceSelect.value = serviceFromUrl;
     renderServiceHint();
+  }
+  const paymentFromUrl = urlParams.get("payment") || urlParams.get("method");
+  if (["paypal", "mercadopago", "transfer"].includes(paymentFromUrl)) {
+    paymentMethodSelect.value = paymentFromUrl;
+    renderPaymentMethod();
   }
 })();

@@ -18,6 +18,11 @@
     "ep-mixmaster-5": "https://www.paypal.com/ncp/payment/KBEQVJWXP5LNU",
     "ep-mixmaster-6": "https://www.paypal.com/ncp/payment/UGBMYWJFMDPV6",
   };
+  // Set these only after verifying the merchant link and receiving details.
+  // Mercado Pago Argentina collects ARS; customers receive an exact ARS quote
+  // before using either option. Never derive the amount from the USD list here.
+  const MERCADO_PAGO_LINK = "";
+  const TRANSFER_ALIAS = "";
   const offers = {
     stereo: {
       price: 39,
@@ -66,65 +71,113 @@
   const translations = {
     skip: "Ir al contenido", back: "Volver a precios", eyebrow: "TONART / RESERVA DE PROYECTO",
     title: "Un buen sonido empieza<br /><em>con una buena idea.</em>",
-    lede: "Elige una oferta de lanzamiento, paga en línea con tarjeta o PayPal y luego envíanos tu música y los datos del proyecto.",
+    lede: "Elige una oferta de lanzamiento. Paga en USD con PayPal o pide una cotización en ARS para pagar con Mercado Pago o transferencia. Luego envíanos tu música y los datos del proyecto.",
     choose: "ELIGE TU SERVICIO", offerTitle: "Tu oferta", serviceLabel: "SERVICIO", epTrackCountLabel: "TEMAS DE TU EP",
     timelineLabel: "PRIMERA VERSIÓN", revisionLabel: "RONDAS DE CAMBIOS",
     payButton: "Pagar con tarjeta o PayPal",
     payNote: "El pago seguro se abre en PayPal en otra pestaña. Se aceptan tarjetas de débito y crédito; la opción de pagar sin cuenta de PayPal puede variar según el comprador y el país. Comprueba el vendedor y el importe antes de pagar. El idioma del pago puede ser distinto al de esta página.",
+    arsTitle: "¿Pagas desde Argentina?", arsIntro: "Mercado Pago y las transferencias a Mercado Pago se cobran en pesos argentinos. Pídenos el importe exacto en ARS para esta oferta antes de pagar.",
+    mpTitle: "Mercado Pago", mpQuoteButton: "Pedir cotización en ARS", mpQuoteNote: "Te enviaremos el importe exacto y las instrucciones de pago. Usa el link de pago solo después de recibir tu cotización.", mpPayButton: "Pagar el importe cotizado en ARS",
+    transferTitle: "Transferencia a Mercado Pago", transferQuoteButton: "Pedir datos para transferir", transferQuoteNote: "Confirmaremos el importe en ARS y el alias/CVU de destino antes de la transferencia.", transferAliasLabel: "Alias de destino", arsHandoverButton: "¿Ya pagaste? Envía los datos del proyecto",
     payPendingNote: "El pago en línea no está disponible temporalmente. Contacta con Tonart antes de pagar.",
     epPayPendingNote: "El pago en línea para esta opción de EP no está disponible temporalmente. Escríbenos antes de pagar.",
     epContactButton: "Escríbenos por este EP",
-    handoverPrompt: "¿Ya pagaste? PayPal no nos envía tu música.", handoverButton: "Enviar datos del proyecto", handoverNote: "¿Ya pagaste? Usa este enlace ahora. Puedes volver a la página de entrega más tarde sin pagar otra vez.",
+    handoverPrompt: "¿Ya pagaste con PayPal? Envíanos tu música y los datos del proyecto.", handoverButton: "Enviar datos del proyecto", handoverNote: "¿Ya pagaste? Elige tu método de pago en la página de entrega. Puedes volver más tarde sin pagar otra vez.",
     next: "QUÉ SIGUE", stepsTitle: "Paga. Envía. Confirma.",
-    step1Title: "Paga tu servicio", step1Text: "Paga en línea con tarjeta o PayPal. Si el pago no está disponible, contáctanos. Conserva el correo del recibo y el ID de transacción, si está disponible.",
-    step2Title: "Envía los datos del proyecto", step2Text: "Usa la página de entrega para enviar los datos del tema, el correo del pago y un enlace privado de descarga de los archivos finales.",
+    step1Title: "Paga tu servicio", step1Text: "Paga el importe indicado en USD con PayPal o pide el importe exacto en ARS antes de usar Mercado Pago o transferencia. Conserva el comprobante o la referencia de la transferencia.",
+    step2Title: "Envía los datos del proyecto", step2Text: "Usa la página de entrega para enviar los datos del tema, el método y comprobante de pago y un enlace privado de descarga de los archivos finales.",
     step3Title: "Comprobamos y confirmamos", step3Text: "Vinculamos el pago con tu proyecto, revisamos los archivos y el alcance, y confirmamos la fecha de la primera versión. El plazo comienza al recibir el pago y archivos utilizables.",
     faqKicker: "ANTES DE PAGAR", faqTitle: "Algunos detalles<br /><em>útiles.</em>",
     faq1Title: "¿Cuándo empieza el plazo?", faq1Text: "Después de recibir el pago, tu brief y los archivos finales utilizables, y confirmar el alcance. Los días hábiles excluyen fines de semana y feriados. Los plazos indicados son para una primera versión, no para todo el proceso de cambios.",
     faq2Title: "¿Y si mi proyecto supera los límites de la oferta?", faq2Text: "Escríbenos antes de pagar si el tema dura más de 10 minutos, tiene más pistas o stems que los incluidos, o necesita edición, afinación, producción o versiones alternativas.",
-    faq3Title: "¿La reserva es instantánea?", faq3Text: "El pago en línea es inmediato. Confirmamos el proyecto después de verificar el pago, los archivos y la disponibilidad. Si la oferta no corresponde, te propondremos una nueva cotización o el reintegro completo antes de comenzar.",
-    faq4Title: "¿Cómo vinculan mi pago con mi música?", faq4Text: "Después de pagar, usa la página de entrega del proyecto. Indica el correo usado al pagar o que aparece en tu recibo, el ID de transacción del comprador si está disponible y un enlace privado de descarga de tus archivos. Comprobamos estos datos con el pago antes de confirmar el proyecto.",
+    faq3Title: "¿La reserva es instantánea?", faq3Text: "El pago o la transferencia no confirma el proyecto por sí solo. Lo confirmamos después de verificar el importe recibido, los archivos y la disponibilidad. Si la oferta no corresponde, te propondremos una nueva cotización o el reintegro completo antes de comenzar.",
+    faq4Title: "¿Cómo vinculan mi pago con mi música?", faq4Text: "Después de pagar, usa la página de entrega del proyecto. Indica el método de pago, el comprobante o referencia de la transferencia, los datos del pagador y un enlace privado de descarga. Verificamos el pago en la cuenta receptora antes de confirmar el proyecto.",
     terms: "Estas son tarifas introductorias. Los cambios incluidos se aplican al material enviado; nuevas grabaciones o cambios importantes de arreglo requieren un nuevo alcance. Tus derechos legales siguen vigentes.",
     policiesKicker: "POLÍTICAS DE PEDIDO", policiesTitle: "Expectativas claras<br /><em>para ambas partes.</em>",
     refundTitle: "Cancelaciones y reintegros", refundText: "Si cancelas antes de que comience el trabajo, o si no podemos aceptar tus archivos dentro del alcance de la oferta, reintegramos el pago completo. Una vez iniciado el trabajo, escríbenos para resolver el problema; cualquier reintegro se evalúa según la ley aplicable y el trabajo ya entregado. Tus derechos legales siguen vigentes.",
-    privacyTitle: "Privacidad y tu música", privacyText: "Este sitio guarda tu elección de idioma en el navegador y carga fuentes de Google. PayPal procesa los pagos; tu proveedor de correo transmite los datos del proyecto; el servicio de archivos que elijas aloja el audio. Usamos tus datos de contacto y pago, el brief y el audio para trabajar en tu proyecto. No publicamos tu música sin permiso. Puedes pedir por correo que borremos los archivos del proyecto después de la entrega.",
+    privacyTitle: "Privacidad y tu música", privacyText: "Este sitio guarda tu elección de idioma en el navegador y carga fuentes de Google. PayPal o Mercado Pago procesa los pagos en línea; tu banco o billetera procesa las transferencias; tu proveedor de correo transmite la cotización y los datos del proyecto; el servicio de archivos que elijas aloja el audio. Usamos tus datos de contacto y pago, el brief y el audio para trabajar en tu proyecto. No publicamos tu música sin permiso. Puedes pedir por correo que borremos los archivos del proyecto después de la entrega.",
     cancelRequest: "Solicitudes de cancelación o desistimiento",
     footer: "MEZCLA / MASTERIZACIÓN / PRODUCCIÓN MUSICAL", policiesLink: "POLÍTICAS ↑", legalLink: "AVISO LEGAL ↗", contact: "CONTACTO ↗",
   };
   const germanTranslations = {
     skip: "Zum Inhalt springen", back: "Zurück zu den Preisen", eyebrow: "TONART / PROJEKT BUCHEN",
     title: "Guter Sound beginnt<br /><em>mit einem guten Briefing.</em>",
-    lede: "Wähle ein Einführungsangebot, bezahle online mit Karte oder PayPal und sende uns anschließend deine Musik und Projektdaten.",
+    lede: "Wähle ein Einführungsangebot. Bezahle in USD mit PayPal oder frage für Mercado Pago oder eine Überweisung einen Betrag in ARS an. Sende uns danach deine Musik und Projektdaten.",
     choose: "SERVICE WÄHLEN", offerTitle: "Dein Angebot", serviceLabel: "SERVICE", epTrackCountLabel: "TRACKS AUF DEINER EP",
     timelineLabel: "ERSTE VERSION", revisionLabel: "KORREKTURRUNDEN",
     payButton: "Mit Karte oder PayPal bezahlen",
     payNote: "Die sichere Zahlungsseite von PayPal öffnet sich in einem neuen Tab. Debit- und Kreditkarten werden akzeptiert; die Zahlung ohne PayPal-Konto wird nicht für alle Käufer oder Länder angeboten. Prüfe Anbieter und Gesamtbetrag vor der Zahlung. Die Zahlungsseite kann in einer anderen Sprache erscheinen.",
+    arsTitle: "Zahlung aus Argentinien?", arsIntro: "Mercado Pago und Überweisungen an Mercado Pago erfolgen in argentinischen Pesos. Frage vor der Zahlung den genauen ARS-Betrag für dieses Angebot an.",
+    mpTitle: "Mercado Pago", mpQuoteButton: "ARS-Angebot anfragen", mpQuoteNote: "Wir senden dir den genauen Betrag und die Zahlungsanleitung. Nutze den Zahlungslink erst nach Erhalt des Angebots.", mpPayButton: "Angebotenen ARS-Betrag bezahlen",
+    transferTitle: "Überweisung an Mercado Pago", transferQuoteButton: "Überweisungsdaten anfragen", transferQuoteNote: "Wir bestätigen den ARS-Betrag und den Empfänger-Alias bzw. CVU vor der Überweisung.", transferAliasLabel: "Empfänger-Alias", arsHandoverButton: "Schon bezahlt? Projektdaten senden",
     payPendingNote: "Die Online-Zahlung ist vorübergehend nicht verfügbar. Kontaktiere Tonart bitte vor einer Zahlung.",
     epPayPendingNote: "Die Online-Zahlung für diese EP-Option ist vorübergehend nicht verfügbar. Kontaktiere uns vor der Zahlung.",
     epContactButton: "EP per E-Mail anfragen",
-    handoverPrompt: "Schon bezahlt? PayPal sendet uns deine Musik nicht.", handoverButton: "Projektdaten senden", handoverNote: "Schon bezahlt? Nutze jetzt diesen Link. Du kannst später zur Übergabeseite zurückkehren, ohne erneut zu bezahlen.",
+    handoverPrompt: "Schon mit PayPal bezahlt? Sende uns deine Musik und Projektdaten.", handoverButton: "Projektdaten senden", handoverNote: "Schon bezahlt? Wähle auf der Übergabeseite deine Zahlungsart. Du kannst später zurückkehren, ohne erneut zu bezahlen.",
     next: "SO GEHT ES WEITER", stepsTitle: "Bezahlen. Senden. Bestätigen.",
-    step1Title: "Service bezahlen", step1Text: "Bezahle online mit Karte oder PayPal. Wenn die Online-Zahlung nicht verfügbar ist, kontaktiere uns. Bewahre die Beleg-E-Mail und, falls vorhanden, die Transaktions-ID auf.",
-    step2Title: "Projektdaten senden", step2Text: "Sende über die Übergabeseite Trackdaten, die Zahlungs-E-Mail-Adresse und einen privaten Download-Link zu den finalen Dateien.",
+    step1Title: "Service bezahlen", step1Text: "Bezahle den angezeigten USD-Betrag mit PayPal oder frage vor einer Zahlung über Mercado Pago oder Überweisung den genauen ARS-Betrag an. Bewahre Beleg oder Überweisungsreferenz auf.",
+    step2Title: "Projektdaten senden", step2Text: "Sende über die Übergabeseite Trackdaten, Zahlungsart und Beleg sowie einen privaten Download-Link zu den finalen Dateien.",
     step3Title: "Wir prüfen und bestätigen", step3Text: "Wir ordnen deine Zahlung zu, prüfen Dateien und Leistungsumfang und bestätigen den Termin der ersten Version. Die Bearbeitungszeit beginnt, wenn Zahlung und verwendbare Dateien vorliegen.",
     faqKicker: "VOR DER ZAHLUNG", faqTitle: "Ein paar wichtige<br /><em>Details.</em>",
     faq1Title: "Wann beginnt die Bearbeitungszeit?", faq1Text: "Sobald Zahlung, Briefing und verwendbare finale Dateien eingegangen sind und wir den Leistungsumfang bestätigt haben. Wochenenden und Feiertage zählen nicht als Arbeitstage. Die angegebenen Zeiten gelten für die erste Version, nicht für den gesamten Korrekturprozess.",
     faq2Title: "Was, wenn mein Projekt über den Angebotsumfang hinausgeht?", faq2Text: "Schreibe uns vor der Zahlung, wenn der Track länger als 10 Minuten ist, mehr Spuren oder Stems enthält als im Angebot vorgesehen oder Editing, Tonhöhenkorrektur, Produktion oder alternative Versionen benötigt.",
-    faq3Title: "Ist die Buchung sofort bestätigt?", faq3Text: "Online-Zahlungen erfolgen sofort. Wir bestätigen dein Projekt nach Prüfung der Zahlung, der Dateien und unserer Verfügbarkeit. Falls das Angebot nicht passt, bieten wir vor Arbeitsbeginn ein angepasstes Angebot oder eine vollständige Erstattung an.",
-    faq4Title: "Wie ordnet ihr meine Zahlung meiner Musik zu?", faq4Text: "Nutze nach der Zahlung die Projekt-Übergabeseite. Gib die beim Bezahlen verwendete oder auf dem Beleg angegebene E-Mail-Adresse, falls vorhanden die Transaktions-ID des Käufers und einen privaten Download-Link zu deinen Dateien an. Wir gleichen diese Angaben mit der Zahlung ab, bevor wir dein Projekt bestätigen.",
+    faq3Title: "Ist die Buchung sofort bestätigt?", faq3Text: "Eine Zahlung oder Überweisung bestätigt das Projekt nicht automatisch. Wir bestätigen es nach Prüfung des eingegangenen Betrags, der Dateien und unserer Verfügbarkeit. Falls das Angebot nicht passt, bieten wir vor Arbeitsbeginn ein angepasstes Angebot oder eine vollständige Erstattung an.",
+    faq4Title: "Wie ordnet ihr meine Zahlung meiner Musik zu?", faq4Text: "Nutze nach der Zahlung die Projekt-Übergabeseite. Gib Zahlungsart, Beleg oder Überweisungsreferenz, Angaben zum Zahlenden und einen privaten Download-Link an. Wir prüfen den Zahlungseingang im Empfängerkonto, bevor wir dein Projekt bestätigen.",
     terms: "Dies sind Einführungspreise. Die enthaltenen Korrekturen beziehen sich auf das eingereichte Material. Neue Aufnahmen oder größere Änderungen am Arrangement erfordern eine neue Vereinbarung. Deine gesetzlichen Rechte bleiben unberührt.",
     policiesKicker: "BESTELLBEDINGUNGEN", policiesTitle: "Klare Absprachen<br /><em>für beide Seiten.</em>",
     refundTitle: "Stornierungen und Erstattungen", refundText: "Wenn du vor Arbeitsbeginn stornierst oder wir deine Dateien im Rahmen des Angebots nicht annehmen können, erstatten wir die Zahlung vollständig. Hat die Arbeit bereits begonnen, kontaktiere uns bitte, damit wir das Problem lösen können. Eine Erstattung richtet sich dann nach geltendem Recht und den bereits erbrachten Leistungen. Deine gesetzlichen Rechte bleiben unberührt.",
-    privacyTitle: "Datenschutz und deine Musik", privacyText: "Diese Website speichert deine Sprachauswahl im Browser und lädt Schriftarten von Google. PayPal verarbeitet Zahlungen; dein E-Mail-Anbieter übermittelt Projektdaten; der von dir gewählte Dateidienst speichert die Audiodateien. Wir verwenden deine Kontakt- und Zahlungsdaten, dein Briefing und die Audiodateien zur Bearbeitung deines Projekts. Wir veröffentlichen deine Musik nicht ohne Erlaubnis. Nach der Lieferung kannst du per E-Mail die Löschung der Projektdateien verlangen.",
+    privacyTitle: "Datenschutz und deine Musik", privacyText: "Diese Website speichert deine Sprachauswahl im Browser und lädt Schriftarten von Google. PayPal oder Mercado Pago verarbeitet Online-Zahlungen; deine Bank oder Wallet verarbeitet Überweisungen; dein E-Mail-Anbieter übermittelt Angebots- und Projektdaten; der von dir gewählte Dateidienst speichert die Audiodateien. Wir verwenden deine Kontakt- und Zahlungsdaten, dein Briefing und die Audiodateien zur Bearbeitung deines Projekts. Wir veröffentlichen deine Musik nicht ohne Erlaubnis. Nach der Lieferung kannst du per E-Mail die Löschung der Projektdateien verlangen.",
     cancelRequest: "Anfragen zu Stornierung oder Widerruf",
     footer: "MIXING / MASTERING / MUSIKPRODUKTION", policiesLink: "BEDINGUNGEN ↑", legalLink: "IMPRESSUM ↗", contact: "KONTAKT ↗",
   };
   const localizedTranslations = { es: translations, de: germanTranslations };
+  const quoteCopy = {
+    en: {
+      mercadoPago: "Mercado Pago",
+      transfer: "transfer to Mercado Pago",
+      subject: "Tonart ARS quote",
+      greeting: "Hello Tonart,",
+      request: "Please send me the exact ARS amount and payment instructions for this offer before I pay.",
+      method: "Payment method",
+      offer: "Offer",
+      tracks: "Tracks in EP",
+      usd: "Listed USD price",
+    },
+    es: {
+      mercadoPago: "Mercado Pago",
+      transfer: "transferencia a Mercado Pago",
+      subject: "Cotización Tonart en ARS",
+      greeting: "Hola, Tonart:",
+      request: "Por favor, envíenme el importe exacto en ARS y las instrucciones antes de pagar esta oferta.",
+      method: "Método de pago",
+      offer: "Oferta",
+      tracks: "Temas del EP",
+      usd: "Precio publicado en USD",
+    },
+    de: {
+      mercadoPago: "Mercado Pago",
+      transfer: "Überweisung an Mercado Pago",
+      subject: "Tonart-Angebot in ARS",
+      greeting: "Hallo Tonart,",
+      request: "Bitte sendet mir vor der Zahlung den genauen ARS-Betrag und die Zahlungsanleitung für dieses Angebot.",
+      method: "Zahlungsart",
+      offer: "Angebot",
+      tracks: "Tracks auf der EP",
+      usd: "Angezeigter USD-Preis",
+    },
+  };
   const select = document.getElementById("service-select");
   const epTrackChoice = document.getElementById("ep-track-choice");
   const epTrackCountSelect = document.getElementById("ep-track-count");
   const languageSelect = document.getElementById("language-select");
   const payButton = document.getElementById("pay-button");
+  const mpQuoteButton = document.getElementById("mp-quote");
+  const transferQuoteButton = document.getElementById("transfer-quote");
+  const mpPayButton = document.getElementById("mp-pay-link");
+  const transferAliasRow = document.getElementById("transfer-alias-row");
+  const transferAliasText = document.getElementById("transfer-alias");
+  const mpHandoverLink = document.getElementById("mp-handover");
+  const transferHandoverLink = document.getElementById("transfer-handover");
   const epContactButton = document.getElementById("ep-contact");
   const handoverLinks = [...document.querySelectorAll("[data-handover-link]")];
   const textNodes = [...document.querySelectorAll("[data-book-i18n]")];
@@ -151,6 +204,22 @@
       const url = new URL(raw);
       return url.protocol === "https:" && ["paypal.com", "www.paypal.com"].includes(url.hostname) && url.pathname.startsWith("/ncp/payment/") ? url.href : "";
     } catch { return ""; }
+  }
+
+  function mercadoPagoUrl() {
+    if (!MERCADO_PAGO_LINK) return "";
+    try {
+      const url = new URL(MERCADO_PAGO_LINK);
+      return url.protocol === "https:" && url.hostname === "link.mercadopago.com.ar" && /^\/[A-Za-z0-9._-]+\/?$/.test(url.pathname) ? url.href : "";
+    } catch { return ""; }
+  }
+
+  function quoteUrl(method, name, price, epCount) {
+    const copy = quoteCopy[language];
+    const methodName = method === "mercadopago" ? copy.mercadoPago : copy.transfer;
+    const subject = `${copy.subject} | ${methodName} | ${name}${epCount ? ` | ${epCount}` : ""}`;
+    const body = [copy.greeting, "", copy.request, "", `${copy.method}: ${methodName}`, `${copy.offer}: ${name}`, ...(epCount ? [`${copy.tracks}: ${epCount}`] : []), `${copy.usd}: $${price}`, ""].join("\n");
+    return `mailto:tonart.space@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   }
 
   function isEp(key) {
@@ -186,8 +255,19 @@
     document.getElementById("service-revisions").textContent = copy.revisions;
     document.getElementById("service-caveat").textContent = copy.caveat;
     const handoverKey = ep ? `${selected}-${epTrackCount}` : selected;
-    const handoverUrl = `handover.html?service=${encodeURIComponent(handoverKey)}`;
+    const handoverUrl = `handover.html?service=${encodeURIComponent(handoverKey)}&payment=paypal`;
     for (const link of handoverLinks) link.href = handoverUrl;
+    mpHandoverLink.href = `handover.html?service=${encodeURIComponent(handoverKey)}&payment=mercadopago`;
+    transferHandoverLink.href = `handover.html?service=${encodeURIComponent(handoverKey)}&payment=transfer`;
+    mpQuoteButton.href = quoteUrl("mercadopago", copy.name, price, ep ? epTrackCount : null);
+    transferQuoteButton.href = quoteUrl("transfer", copy.name, price, ep ? epTrackCount : null);
+    const mpLink = mercadoPagoUrl();
+    if (mpLink) mpPayButton.href = mpLink;
+    else mpPayButton.removeAttribute("href");
+    mpPayButton.hidden = !mpLink;
+    const alias = /^[a-z0-9._-]{3,40}$/i.test(TRANSFER_ALIAS) ? TRANSFER_ALIAS : "";
+    transferAliasText.textContent = alias;
+    transferAliasRow.hidden = !alias;
     const subject = `Tonart EP booking | ${copy.name} | ${epTrackCount} tracks | USD $${price}`;
     epContactButton.href = `mailto:tonart.space@gmail.com?subject=${encodeURIComponent(subject)}`;
     const checkoutUrl = checkoutUrlFor(handoverKey);

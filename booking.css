@@ -30,7 +30,7 @@
 .offer-card .field-label { color: #c3ccc1; }
 .offer-card select { width: 100%; min-height: 54px; padding: 11px 42px 11px 16px; appearance: none; border: 1px solid #6f7b70; border-radius: 0; background: var(--ink-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='m3 6 5 5 5-5' fill='none' stroke='%23ed6546' stroke-width='1.8'/%3E%3C/svg%3E") no-repeat right 15px center / 16px; color: var(--paper); font-family: var(--sans); font-size: 16px; cursor: pointer; }
 .offer-card select:hover { border-color: var(--orange); }
-.offer-card select:focus-visible, .booking-handover:focus-visible, .offer-handover-link:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
+.offer-card select:focus-visible, .booking-handover:focus-visible, .offer-handover-link:focus-visible, .ars-quote-link:focus-visible, .ars-handover-link:focus-visible, .ars-pay-link:focus-visible { outline: 2px solid var(--orange); outline-offset: 3px; }
 .ep-track-choice { margin-top: 22px; }
 .ep-track-choice[hidden] { display: none; }
 .offer-price { display: flex; align-items: baseline; gap: 14px; margin: 38px 0 9px; }
@@ -46,6 +46,20 @@
 .booking-pay[hidden] { display: none; }
 .booking-pay[aria-disabled="true"], .booking-pay.is-disabled { background: #66716a; color: #e2e6df; cursor: not-allowed; pointer-events: none; transform: none; }
 .pay-note { margin: 14px 0 0; color: #acb4aa; font-size: 11px; line-height: 1.55; }
+.ars-payments { margin-top: 28px; padding-top: 23px; border-top: 1px solid var(--line-light); }
+.ars-payments h3 { margin: 0 0 9px; color: var(--paper); font-size: 23px; line-height: 1.15; letter-spacing: -.04em; }
+.ars-intro { margin: 0 0 17px; color: #c3ccc2; font-size: 13px; line-height: 1.55; }
+.ars-payment-option { padding: 17px 0; border-top: 1px solid var(--line-light); }
+.ars-payment-option h4 { margin: 0 0 8px; color: var(--paper); font-size: 16px; line-height: 1.25; }
+.ars-quote-link, .ars-handover-link { display: inline-flex; align-items: center; gap: 8px; color: var(--paper); font-size: 12px; line-height: 1.4; text-underline-offset: 3px; }
+.ars-quote-link:hover, .ars-handover-link:hover { color: var(--orange); }
+.ars-payment-note { margin: 8px 0 10px; color: #acb4aa; font-size: 11px; line-height: 1.55; }
+.ars-pay-link { display: flex; align-items: center; justify-content: space-between; margin: 12px 0; background: var(--paper); color: var(--ink); font-size: 12px; }
+.ars-pay-link[hidden], .ars-transfer-alias[hidden] { display: none; }
+.ars-handover-link { display: flex; width: fit-content; margin-top: 11px; }
+.ars-transfer-alias { margin: 12px 0; color: #c3ccc2; font-size: 12px; line-height: 1.5; }
+.ars-transfer-alias strong { display: block; color: var(--paper); font-family: var(--mono); font-size: 15px; font-weight: 500; overflow-wrap: anywhere; }
+.ars-payment-option:last-child { padding-bottom: 0; }
 .offer-handover { margin-top: 25px; padding-top: 20px; border-top: 1px solid var(--line-light); }
 .offer-handover p { margin: 0 0 11px; color: #c3ccc2; font-size: 13px; line-height: 1.5; }
 .offer-handover-link { color: var(--paper); font-size: 12px; text-transform: uppercase; }

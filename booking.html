@@ -33,7 +33,7 @@
       <section class="booking-intro shell">
         <div class="eyebrow booking-eyebrow"><span class="pulse-dot"></span><span data-book-i18n="eyebrow">TONART / PROJECT BOOKING</span></div>
         <h1 data-book-i18n-html="title">Good sound starts<br /><em>with a good brief.</em></h1>
-        <p data-book-i18n="lede">Choose a launch offer, pay online by card or PayPal, then send us your music and project details.</p>
+        <p data-book-i18n="lede">Choose a launch offer. Pay in USD with PayPal or ask for an ARS quote to pay through Mercado Pago or by transfer, then send us your music and project details.</p>
       </section>
 
       <section class="booking-content shell" aria-labelledby="booking-offer-title">
@@ -57,8 +57,26 @@
           <a class="button button-bright booking-pay" id="ep-contact" href="mailto:tonart.space@gmail.com" hidden><span data-book-i18n="epContactButton">Contact us about this EP</span><span aria-hidden="true">↗</span></a>
           <p class="pay-note" id="pay-note" data-book-i18n="payNote" hidden>Secure checkout opens on PayPal in a new tab. Debit and credit cards are supported; checkout without a PayPal account may vary by buyer and country. Review the merchant and total before paying. Checkout language may differ from this page.</p>
           <p class="pay-note" id="pay-pending" hidden>Online checkout is temporarily unavailable. Please contact Tonart before paying.</p>
+          <div class="ars-payments" aria-labelledby="ars-payments-title">
+            <h3 id="ars-payments-title" data-book-i18n="arsTitle">Paying in Argentina?</h3>
+            <p class="ars-intro" data-book-i18n="arsIntro">Mercado Pago and transfers to Mercado Pago are charged in Argentine pesos. Ask us for the exact ARS amount for this offer before paying.</p>
+            <div class="ars-payment-option">
+              <h4 data-book-i18n="mpTitle">Mercado Pago</h4>
+              <a class="text-link ars-quote-link" id="mp-quote" href="mailto:tonart.space@gmail.com"><span data-book-i18n="mpQuoteButton">Request an ARS quote</span><span aria-hidden="true">↗</span></a>
+              <p class="ars-payment-note" data-book-i18n="mpQuoteNote">We will send the exact amount and payment instructions. Use the payment link only after receiving your quote.</p>
+              <a class="button ars-pay-link" id="mp-pay-link" hidden target="_blank" rel="noopener noreferrer"><span data-book-i18n="mpPayButton">Pay the quoted ARS amount</span><span aria-hidden="true">↗</span></a>
+              <a class="text-link ars-handover-link" id="mp-handover" href="handover.html?service=stereo&payment=mercadopago"><span data-book-i18n="arsHandoverButton">Already paid? Send project details</span><span aria-hidden="true">↗</span></a>
+            </div>
+            <div class="ars-payment-option">
+              <h4 data-book-i18n="transferTitle">Transfer to Mercado Pago</h4>
+              <a class="text-link ars-quote-link" id="transfer-quote" href="mailto:tonart.space@gmail.com"><span data-book-i18n="transferQuoteButton">Request transfer details</span><span aria-hidden="true">↗</span></a>
+              <p class="ars-payment-note" data-book-i18n="transferQuoteNote">We will confirm the ARS amount and receiving alias/CVU before you transfer.</p>
+              <p class="ars-transfer-alias" id="transfer-alias-row" hidden><span data-book-i18n="transferAliasLabel">Receiving alias</span><strong id="transfer-alias"></strong></p>
+              <a class="text-link ars-handover-link" id="transfer-handover" href="handover.html?service=stereo&payment=transfer"><span data-book-i18n="arsHandoverButton">Already paid? Send project details</span><span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
           <div class="offer-handover">
-            <p data-book-i18n="handoverPrompt">Already paid? PayPal does not send us your music.</p>
+            <p data-book-i18n="handoverPrompt">Already paid with PayPal? Send us your music and project details.</p>
             <a class="text-link offer-handover-link" data-handover-link href="handover.html?service=stereo"><span data-book-i18n="handoverButton">Send project details</span><span aria-hidden="true">↗</span></a>
           </div>
         </div>
@@ -67,12 +85,12 @@
           <div class="booking-card-kicker"><span>02 /</span> <span data-book-i18n="next">WHAT HAPPENS NEXT</span></div>
           <h2 data-book-i18n="stepsTitle">Pay. Send. Confirm.</h2>
           <ol class="booking-steps">
-            <li><span>01</span><div><h3 data-book-i18n="step1Title">Pay for your service</h3><p data-book-i18n="step1Text">Pay online by card or PayPal. If checkout is unavailable, contact us. Keep the receipt email and transaction ID if available.</p></div></li>
-            <li><span>02</span><div><h3 data-book-i18n="step2Title">Send your project details</h3><p data-book-i18n="step2Text">Use the handover page to send your track details, payment email, and a private downloadable link to the final files.</p></div></li>
+            <li><span>01</span><div><h3 data-book-i18n="step1Title">Pay for your service</h3><p data-book-i18n="step1Text">Pay the shown USD amount through PayPal, or request the exact ARS amount before using Mercado Pago or a transfer. Keep your payment receipt or transfer reference.</p></div></li>
+            <li><span>02</span><div><h3 data-book-i18n="step2Title">Send your project details</h3><p data-book-i18n="step2Text">Use the handover page to send your track details, payment method and reference, and a private download link to the final files.</p></div></li>
             <li><span>03</span><div><h3 data-book-i18n="step3Title">We check and confirm</h3><p data-book-i18n="step3Text">We match your payment, review the files and scope, then confirm your first-preview date. The turnaround starts when payment and usable files are received.</p></div></li>
           </ol>
           <a class="button booking-handover" data-handover-link href="handover.html?service=stereo"><span data-book-i18n="handoverButton">Send project details</span><span aria-hidden="true">↗</span></a>
-          <p class="handover-note" data-book-i18n="handoverNote">Already paid? Use this link now. You can return to the handover page later without paying again.</p>
+          <p class="handover-note" data-book-i18n="handoverNote">Already paid? Choose your payment method on the handover page. You can return later without paying again.</p>
         </div>
       </section>
 
@@ -82,8 +100,8 @@
         <div class="faq-list">
           <div><h3 data-book-i18n="faq1Title">When does the turnaround start?</h3><p data-book-i18n="faq1Text">After payment, your brief, and usable final files are received and we confirm the scope. Business days exclude weekends and public holidays. Times shown are for a first preview, not the entire revision process.</p></div>
           <div><h3 data-book-i18n="faq2Title">What if my project is outside the package scope?</h3><p data-book-i18n="faq2Text">Please message us before paying if the track is longer than 10 minutes, has more tracks or stems than the offer allows, or needs editing, tuning, production or alternate versions.</p></div>
-          <div><h3 data-book-i18n="faq3Title">Is the booking instant?</h3><p data-book-i18n="faq3Text">Online payment is immediate. We confirm the project after checking the payment, files and availability. If the package does not fit, we will offer a revised quote or a full refund before work begins.</p></div>
-          <div><h3 data-book-i18n="faq4Title">How do you match my payment to my music?</h3><p data-book-i18n="faq4Text">After paying, use the project handover page. Enter the email used at checkout or shown on your receipt, your buyer transaction ID if available, and a private downloadable link to your files. We check these details against the payment before confirming your project.</p></div>
+          <div><h3 data-book-i18n="faq3Title">Is the booking instant?</h3><p data-book-i18n="faq3Text">A payment or transfer does not confirm the project by itself. We confirm after checking the amount received, files and availability. If the package does not fit, we will offer a revised quote or a full refund before work begins.</p></div>
+          <div><h3 data-book-i18n="faq4Title">How do you match my payment to my music?</h3><p data-book-i18n="faq4Text">After paying, use the project handover page. Include your payment method, receipt or transfer reference, payer details, and a private download link. We check the payment in the receiving account before confirming your project.</p></div>
         </div>
         <p class="booking-terms" data-book-i18n="terms">These are introductory launch rates. Included revisions cover feedback on the supplied material; new recordings or major arrangement changes are a new scope. Your statutory rights are unaffected.</p>
       </section>
@@ -93,7 +111,7 @@
         <h2 id="policies-title" class="section-heading" data-book-i18n-html="policiesTitle">Clear expectations<br /><em>for both sides.</em></h2>
         <div class="policy-grid">
           <div><h3 data-book-i18n="refundTitle">Cancellations & refunds</h3><p data-book-i18n="refundText">If you cancel before work begins, or if we cannot accept your files within the package scope, we will refund the payment in full. Once work has started, contact us to resolve the issue; any refund is assessed under applicable law and the work already delivered. Your statutory rights remain intact.</p></div>
-          <div><h3 data-book-i18n="privacyTitle">Privacy & your music</h3><p data-book-i18n="privacyText">This website stores your language choice in your browser and loads fonts from Google. PayPal processes payments; your email provider carries project details; your chosen file-sharing service hosts the audio. We use your contact and payment details, project brief and audio to work on your project. We do not publish your music without permission. You can request deletion of project files after delivery by email.</p></div>
+          <div><h3 data-book-i18n="privacyTitle">Privacy & your music</h3><p data-book-i18n="privacyText">This website stores your language choice in your browser and loads fonts from Google. PayPal or Mercado Pago processes online payments; your bank or wallet processes transfers; your email provider carries quote and project details; your chosen file-sharing service hosts the audio. We use your contact and payment details, project brief and audio to work on your project. We do not publish your music without permission. You can request deletion of project files after delivery by email.</p></div>
         </div>
         <p class="booking-terms"><span data-book-i18n="cancelRequest">Cancellation or withdrawal requests</span>: <a id="cancellation-email" href="mailto:tonart.space@gmail.com?subject=Tonart%20cancellation%20request">tonart.space@gmail.com</a></p>
       </section>
