@@ -2,8 +2,8 @@ name: Refresh ARS rate
 
 on:
   schedule:
-    # 11:00 and 22:00 Buenos Aires (UTC-3). GitHub may delay scheduled runs.
-    - cron: "0 1,14 * * *"
+    # 11:17 and 22:17 Buenos Aires (UTC-3). Avoid the top-of-hour load.
+    - cron: "17 1,14 * * *"
   workflow_dispatch:
     inputs:
       allow_large_change:
