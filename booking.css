@@ -61,7 +61,6 @@
 .payment-method-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; align-items: stretch; }
 .payment-method-card { display: flex; min-width: 0; flex-direction: column; padding: 16px; border: 1px solid var(--line-light); }
 .payment-method-card.ars-payment-option { padding: 16px; border: 1px solid var(--line-light); }
-.payment-method-card h4 { margin-bottom: 12px; }
 .payment-method-card .ars-amount { min-height: 77px; }
 .paypal-amount strong { font-size: 27px; }
 .payment-method-card .booking-pay, .payment-method-card .ars-pay-link { min-height: 52px; margin: 0 0 12px; }
@@ -69,6 +68,7 @@
 .payment-method-card .ars-handover-link { margin-top: auto; padding-top: 12px; }
 .ars-payment-option { padding: 17px 0; border-top: 1px solid var(--line-light); }
 .ars-payment-option h4 { margin: 0 0 8px; color: var(--paper); font-size: 16px; line-height: 1.25; }
+.payment-method-card h4 { margin: 0 0 12px; color: var(--paper); font-size: 16px; line-height: 1.25; }
 .ars-amount { margin: 0 0 12px; padding: 11px 13px; border: 1px solid var(--line-light); }
 .ars-amount[hidden] { display: none; }
 .ars-amount span { display: block; margin-bottom: 5px; color: #acb4aa; font-family: var(--mono); font-size: 10px; line-height: 1.4; }
@@ -119,6 +119,10 @@
 .booking-footer .shell > span, .booking-footer .shell > a:not(.footer-wordmark) { font-family: var(--mono); font-size: 10px; letter-spacing: .07em; }
 .booking-footer .shell > a:not(.footer-wordmark) { transition: color .2s ease; }
 .booking-footer .shell > a:not(.footer-wordmark):hover { color: var(--orange); }
+
+@media (min-width: 981px) and (max-width: 1300px) {
+  .payment-method-grid { grid-template-columns: 1fr; }
+}
 
 @media (max-width: 980px) {
   .booking-content { grid-template-columns: 1fr; }
