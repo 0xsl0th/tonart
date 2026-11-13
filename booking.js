@@ -77,12 +77,13 @@
     skip: "Ir al contenido", back: "Volver a precios", eyebrow: "TONART / RESERVA DE PROYECTO",
     title: "Un buen sonido empieza<br /><em>con una buena idea.</em>",
     lede: "Elige una oferta de lanzamiento. Paga en USD con PayPal o consulta el importe actual en ARS para Mercado Pago o transferencia. Luego envíanos tu música y los datos del proyecto.",
-    choose: "ELIGE TU SERVICIO", offerTitle: "Tu oferta", serviceLabel: "SERVICIO", epTrackCountLabel: "TEMAS DE TU EP",
+    choose: "ELIGE TU SERVICIO", offerTitle: "Tu oferta", paymentJumpLabel: "MÉTODOS DE PAGO", paymentJumpTransfer: "Transferencia", serviceLabel: "SERVICIO", epTrackCountLabel: "TEMAS DE TU EP",
     timelineLabel: "PRIMERA VERSIÓN", revisionLabel: "RONDAS DE CAMBIOS",
     payButton: "Pagar con tarjeta o PayPal",
     payNote: "El pago seguro se abre en PayPal en otra pestaña. Se aceptan tarjetas de débito y crédito; la opción de pagar sin cuenta de PayPal puede variar según el comprador y el país. Comprueba el vendedor y el importe antes de pagar. El idioma del pago puede ser distinto al de esta página.",
-    arsTitle: "¿Pagas desde Argentina?", arsIntro: "Mercado Pago y las transferencias a Mercado Pago se cobran en pesos argentinos. Pídenos el importe exacto en ARS para esta oferta antes de pagar.",
-    mpTitle: "Mercado Pago", mpAmountLabel: "Importe a ingresar", mpQuoteButton: "Pedir cotización en ARS", mpQuoteNote: "Te enviaremos el importe exacto en ARS. Ingresa solo ese importe en el link; el vendedor aparecerá como Enrique Herranz. Comprueba los datos antes de pagar.", mpPayButton: "Pagar el importe indicado en ARS",
+    arsTitle: "Elige cómo pagar", arsIntro: "PayPal cobra en USD. Mercado Pago y las transferencias a Mercado Pago se cobran en pesos argentinos; pídenos el importe exacto en ARS antes de pagar.",
+    paypalTitle: "Tarjeta o PayPal", paypalAmountLabel: "Importe en USD",
+    mpTitle: "Mercado Pago", mpAmountLabel: "Importe a ingresar", mpQuoteButton: "Pedir cotización en ARS", mpQuoteNote: "Te enviaremos el importe exacto en ARS. Ingresa solo ese importe en el link; el vendedor aparecerá como Enrique Herranz. Comprueba los datos antes de pagar.", mpPayButton: "Pagar con Mercado Pago",
     transferTitle: "Transferencia a Mercado Pago", transferAmountLabel: "Importe a transferir", transferQuoteButton: "Pedir importe en ARS", transferQuoteNote: "Espera nuestra confirmación del importe exacto en ARS antes de transferir al alias indicado. Comprueba el destinatario en tu banco o billetera.", transferAliasLabel: "Alias de destino", arsHandoverButton: "¿Ya pagaste? Envía los datos del proyecto",
     payPendingNote: "El pago en línea no está disponible temporalmente. Contacta con Tonart antes de pagar.",
     epPayPendingNote: "El pago en línea para esta opción de EP no está disponible temporalmente. Escríbenos antes de pagar.",
@@ -108,12 +109,13 @@
     skip: "Zum Inhalt springen", back: "Zurück zu den Preisen", eyebrow: "TONART / PROJEKT BUCHEN",
     title: "Guter Sound beginnt<br /><em>mit einem guten Briefing.</em>",
     lede: "Wähle ein Einführungsangebot. Bezahle in USD mit PayPal oder prüfe den aktuellen ARS-Betrag für Mercado Pago oder eine Überweisung. Sende uns danach deine Musik und Projektdaten.",
-    choose: "SERVICE WÄHLEN", offerTitle: "Dein Angebot", serviceLabel: "SERVICE", epTrackCountLabel: "TRACKS AUF DEINER EP",
+    choose: "SERVICE WÄHLEN", offerTitle: "Dein Angebot", paymentJumpLabel: "ZAHLUNGSARTEN", paymentJumpTransfer: "Überweisung", serviceLabel: "SERVICE", epTrackCountLabel: "TRACKS AUF DEINER EP",
     timelineLabel: "ERSTE VERSION", revisionLabel: "KORREKTURRUNDEN",
     payButton: "Mit Karte oder PayPal bezahlen",
     payNote: "Die sichere Zahlungsseite von PayPal öffnet sich in einem neuen Tab. Debit- und Kreditkarten werden akzeptiert; die Zahlung ohne PayPal-Konto wird nicht für alle Käufer oder Länder angeboten. Prüfe Anbieter und Gesamtbetrag vor der Zahlung. Die Zahlungsseite kann in einer anderen Sprache erscheinen.",
-    arsTitle: "Zahlung aus Argentinien?", arsIntro: "Mercado Pago und Überweisungen an Mercado Pago erfolgen in argentinischen Pesos. Frage vor der Zahlung den genauen ARS-Betrag für dieses Angebot an.",
-    mpTitle: "Mercado Pago", mpAmountLabel: "Einzugebender Betrag", mpQuoteButton: "ARS-Angebot anfragen", mpQuoteNote: "Wir senden dir den genauen ARS-Betrag. Gib im Zahlungslink nur diesen Betrag ein; als Anbieter erscheint Enrique Herranz. Prüfe die Angaben vor der Zahlung.", mpPayButton: "Angezeigten ARS-Betrag bezahlen",
+    arsTitle: "Zahlungsart wählen", arsIntro: "PayPal rechnet in USD ab. Mercado Pago und Überweisungen an Mercado Pago erfolgen in argentinischen Pesos; frage vor der Zahlung den genauen ARS-Betrag an.",
+    paypalTitle: "Karte oder PayPal", paypalAmountLabel: "Betrag in USD",
+    mpTitle: "Mercado Pago", mpAmountLabel: "Einzugebender Betrag", mpQuoteButton: "ARS-Angebot anfragen", mpQuoteNote: "Wir senden dir den genauen ARS-Betrag. Gib im Zahlungslink nur diesen Betrag ein; als Anbieter erscheint Enrique Herranz. Prüfe die Angaben vor der Zahlung.", mpPayButton: "Mit Mercado Pago bezahlen",
     transferTitle: "Überweisung an Mercado Pago", transferAmountLabel: "Zu überweisender Betrag", transferQuoteButton: "ARS-Betrag anfragen", transferQuoteNote: "Warte auf unsere Bestätigung des genauen ARS-Betrags, bevor du an den angegebenen Alias überweist. Prüfe den Empfänger in deiner Bank oder Wallet.", transferAliasLabel: "Empfänger-Alias", arsHandoverButton: "Schon bezahlt? Projektdaten senden",
     payPendingNote: "Die Online-Zahlung ist vorübergehend nicht verfügbar. Kontaktiere Tonart bitte vor einer Zahlung.",
     epPayPendingNote: "Die Online-Zahlung für diese EP-Option ist vorübergehend nicht verfügbar. Kontaktiere uns vor der Zahlung.",
@@ -180,7 +182,7 @@
   const rateCopy = {
     en: {
       locale: "en-US",
-      activeIntro: "These ARS amounts use the DolarHoy selling rate shown below. Enter or transfer exactly the amount shown while it is current; you can also ask us to confirm it.",
+      activeIntro: "PayPal charges USD. Mercado Pago and transfers use the ARS amounts below, calculated from the DolarHoy selling rate. Enter or transfer the shown amount while it is current.",
       rateMeta: (label, rate, checked) => `${label}: ARS ${rate} per USD. Source updated ${checked} (Buenos Aires time). Amounts are rounded to whole pesos and shown for 24 hours after that update.`,
       mpNote: "Enter exactly the shown ARS amount at the variable-amount link. The merchant appears as Enrique Herranz; review the details before paying.",
       transferNote: "Transfer exactly the shown ARS amount to the alias below. Check the recipient in your bank or wallet.",
@@ -188,7 +190,7 @@
     },
     es: {
       locale: "es-AR",
-      activeIntro: "Estos importes en ARS usan la cotización de venta de DolarHoy indicada abajo. Ingresa o transfiere exactamente el importe mostrado mientras esté vigente; también puedes pedirnos confirmación.",
+      activeIntro: "PayPal cobra en USD. Mercado Pago y las transferencias usan los importes en ARS de abajo, calculados con la cotización de venta de DolarHoy. Ingresa o transfiere el importe indicado mientras esté vigente.",
       rateMeta: (label, rate, checked) => `${label}: ARS ${rate} por USD. Fuente actualizada el ${checked} (hora de Buenos Aires). Los importes se redondean a pesos enteros y se muestran durante 24 horas desde esa actualización.`,
       mpNote: "Ingresa exactamente el importe indicado en ARS en el link de monto variable. El vendedor aparece como Enrique Herranz; comprueba los datos antes de pagar.",
       transferNote: "Transfiere exactamente el importe indicado en ARS al alias de abajo. Comprueba el destinatario en tu banco o billetera.",
@@ -196,7 +198,7 @@
     },
     de: {
       locale: "de-DE",
-      activeIntro: "Diese ARS-Beträge beruhen auf dem unten angegebenen DolarHoy-Verkaufskurs. Gib den angezeigten Betrag ein oder überweise ihn, solange er aktuell ist; du kannst ihn auch von uns bestätigen lassen.",
+      activeIntro: "PayPal rechnet in USD ab. Für Mercado Pago und Überweisungen gelten die unten angegebenen ARS-Beträge auf Basis des DolarHoy-Verkaufskurses. Gib den Betrag ein oder überweise ihn, solange er aktuell ist.",
       rateMeta: (label, rate, checked) => `${label}: ARS ${rate} je USD. Quelle aktualisiert am ${checked} (Ortszeit Buenos Aires). Die Beträge werden auf ganze Pesos gerundet und 24 Stunden nach dieser Aktualisierung angezeigt.`,
       mpNote: "Gib im Link mit frei wählbarem Betrag genau den angezeigten ARS-Betrag ein. Als Anbieter erscheint Enrique Herranz; prüfe die Angaben vor der Zahlung.",
       transferNote: "Überweise genau den angezeigten ARS-Betrag an den Alias unten. Prüfe den Empfänger in deiner Bank oder Wallet.",
@@ -208,6 +210,7 @@
   const epTrackCountSelect = document.getElementById("ep-track-count");
   const languageSelect = document.getElementById("language-select");
   const payButton = document.getElementById("pay-button");
+  const paypalUsdValue = document.getElementById("paypal-usd-value");
   const arsIntro = document.querySelector(".ars-intro");
   const arsRateMeta = document.getElementById("ars-rate-meta");
   const mpAmountRow = document.getElementById("mp-ars-amount");
@@ -309,6 +312,7 @@
     epTrackCountSelect.value = String(epTrackCount);
     const price = priceFor(selected);
     document.getElementById("service-price").textContent = `$${price}`;
+    paypalUsdValue.textContent = `$${price}`;
     document.getElementById("service-summary").textContent = copy.summary;
     document.getElementById("service-timeline").textContent = copy.timeline;
     document.getElementById("service-revisions").textContent = copy.revisions;

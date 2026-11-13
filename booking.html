@@ -8,8 +8,8 @@
     <meta name="robots" content="noindex" />
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="booking.css" />
-    <script src="booking.js?v=equal-ars-20261112" defer></script>
+    <link rel="stylesheet" href="booking.css?v=payment-choices-20261112" />
+    <script src="booking.js?v=payment-choices-20261112" defer></script>
     <title>Book a project — Tonart</title>
   </head>
   <body class="booking-page">
@@ -40,6 +40,14 @@
         <div class="booking-card offer-card">
           <div class="booking-card-kicker"><span>01 /</span> <span data-book-i18n="choose">CHOOSE YOUR SERVICE</span></div>
           <h2 id="booking-offer-title" data-book-i18n="offerTitle">Your offer</h2>
+          <nav class="payment-jump" aria-labelledby="payment-jump-label">
+            <span id="payment-jump-label" data-book-i18n="paymentJumpLabel">PAYMENT METHODS</span>
+            <div>
+              <a href="#paypal-payment-option" data-book-i18n="paypalTitle">Card or PayPal</a>
+              <a href="#mp-payment-option">Mercado Pago</a>
+              <a href="#transfer-payment-option" data-book-i18n="paymentJumpTransfer">Transfer</a>
+            </div>
+          </nav>
           <label class="field-label" for="service-select" data-book-i18n="serviceLabel">SERVICE</label>
           <select id="service-select" name="service"></select>
           <div class="ep-track-choice" id="ep-track-choice" hidden>
@@ -53,23 +61,29 @@
             <div><dt data-book-i18n="revisionLabel">FEEDBACK ROUNDS</dt><dd id="service-revisions"></dd></div>
           </dl>
           <p class="offer-caveat" id="service-caveat"></p>
-          <a class="button button-bright booking-pay" id="pay-button" href="https://www.paypal.com/ncp/payment/EQD4VQUARW5SG" target="_blank" rel="noopener noreferrer"><span data-book-i18n="payButton">Pay by card or PayPal</span><span aria-hidden="true">↗</span></a>
-          <a class="button button-bright booking-pay" id="ep-contact" href="mailto:tonart.space@gmail.com" hidden><span data-book-i18n="epContactButton">Contact us about this EP</span><span aria-hidden="true">↗</span></a>
-          <p class="pay-note" id="pay-note" data-book-i18n="payNote" hidden>Secure checkout opens on PayPal in a new tab. Debit and credit cards are supported; checkout without a PayPal account may vary by buyer and country. Review the merchant and total before paying. Checkout language may differ from this page.</p>
-          <p class="pay-note" id="pay-pending" hidden>Online checkout is temporarily unavailable. Please contact Tonart before paying.</p>
           <div class="ars-payments" aria-labelledby="ars-payments-title">
-            <h3 id="ars-payments-title" data-book-i18n="arsTitle">Paying in Argentina?</h3>
-            <p class="ars-intro" data-book-i18n="arsIntro">Mercado Pago and transfers to Mercado Pago are charged in Argentine pesos. Ask us for the exact ARS amount for this offer before paying.</p>
+            <h3 id="ars-payments-title" data-book-i18n="arsTitle">Choose how to pay</h3>
+            <p class="ars-intro" data-book-i18n="arsIntro">PayPal charges USD. Mercado Pago and transfers to Mercado Pago are charged in Argentine pesos; ask us for the exact ARS amount before paying.</p>
             <p class="ars-rate-meta" id="ars-rate-meta" hidden></p>
-            <div class="ars-payment-option">
-              <h4 data-book-i18n="mpTitle">Mercado Pago</h4>
-              <p class="ars-amount" id="mp-ars-amount" aria-live="polite" hidden><span data-book-i18n="mpAmountLabel">Amount to enter</span><strong id="mp-ars-value"></strong></p>
-              <a class="text-link ars-quote-link" id="mp-quote" href="mailto:tonart.space@gmail.com"><span data-book-i18n="mpQuoteButton">Request an ARS quote</span><span aria-hidden="true">↗</span></a>
-              <p class="ars-payment-note" data-book-i18n="mpQuoteNote">We will send the exact ARS amount. Enter only that amount at the link; the merchant will appear as Enrique Herranz. Review the details before paying.</p>
-              <a class="button ars-pay-link" id="mp-pay-link" hidden target="_blank" rel="noopener noreferrer"><span data-book-i18n="mpPayButton">Pay the shown ARS amount</span><span aria-hidden="true">↗</span></a>
-              <a class="text-link ars-handover-link" id="mp-handover" href="handover.html?service=stereo&payment=mercadopago"><span data-book-i18n="arsHandoverButton">Already paid? Send project details</span><span aria-hidden="true">↗</span></a>
+            <div class="payment-method-grid">
+              <div class="payment-method-card paypal-payment-option" id="paypal-payment-option">
+                <h4 data-book-i18n="paypalTitle">Card or PayPal</h4>
+                <p class="ars-amount paypal-amount"><span data-book-i18n="paypalAmountLabel">Amount in USD</span><strong id="paypal-usd-value">$39</strong></p>
+                <a class="button button-bright booking-pay" id="pay-button" href="https://www.paypal.com/ncp/payment/EQD4VQUARW5SG" target="_blank" rel="noopener noreferrer"><span data-book-i18n="payButton">Pay by card or PayPal</span><span aria-hidden="true">↗</span></a>
+                <a class="button button-bright booking-pay" id="ep-contact" href="mailto:tonart.space@gmail.com" hidden><span data-book-i18n="epContactButton">Contact us about this EP</span><span aria-hidden="true">↗</span></a>
+                <p class="pay-note" id="pay-note" data-book-i18n="payNote" hidden>Secure checkout opens on PayPal in a new tab. Debit and credit cards are supported; checkout without a PayPal account may vary by buyer and country. Review the merchant and total before paying. Checkout language may differ from this page.</p>
+                <p class="pay-note" id="pay-pending" hidden>Online checkout is temporarily unavailable. Please contact Tonart before paying.</p>
+              </div>
+              <div class="payment-method-card ars-payment-option mp-payment-option" id="mp-payment-option">
+                <h4 data-book-i18n="mpTitle">Mercado Pago</h4>
+                <p class="ars-amount" id="mp-ars-amount" aria-live="polite" hidden><span data-book-i18n="mpAmountLabel">Amount to enter</span><strong id="mp-ars-value"></strong></p>
+                <a class="button ars-pay-link" id="mp-pay-link" hidden target="_blank" rel="noopener noreferrer"><span data-book-i18n="mpPayButton">Pay with Mercado Pago</span><span aria-hidden="true">↗</span></a>
+                <a class="text-link ars-quote-link" id="mp-quote" href="mailto:tonart.space@gmail.com"><span data-book-i18n="mpQuoteButton">Request an ARS quote</span><span aria-hidden="true">↗</span></a>
+                <p class="ars-payment-note" data-book-i18n="mpQuoteNote">We will send the exact ARS amount. Enter only that amount at the link; the merchant will appear as Enrique Herranz. Review the details before paying.</p>
+                <a class="text-link ars-handover-link" id="mp-handover" href="handover.html?service=stereo&payment=mercadopago"><span data-book-i18n="arsHandoverButton">Already paid? Send project details</span><span aria-hidden="true">↗</span></a>
+              </div>
             </div>
-            <div class="ars-payment-option">
+            <div class="ars-payment-option transfer-payment-option" id="transfer-payment-option">
               <h4 data-book-i18n="transferTitle">Transfer to Mercado Pago</h4>
               <p class="ars-amount" id="transfer-ars-amount" aria-live="polite" hidden><span data-book-i18n="transferAmountLabel">Amount to transfer</span><strong id="transfer-ars-value"></strong></p>
               <a class="text-link ars-quote-link" id="transfer-quote" href="mailto:tonart.space@gmail.com"><span data-book-i18n="transferQuoteButton">Request the ARS amount</span><span aria-hidden="true">↗</span></a>
