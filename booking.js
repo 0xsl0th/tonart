@@ -25,7 +25,7 @@
   // value is unset, customers can request an exact ARS quote by email.
   const USD_ARS_SELL_RATE = 1565;
   const USD_ARS_RATE_LABEL = "DolarHoy dólar blue venta";
-  const USD_ARS_RATE_CHECKED_AT = "2026-11-12T21:17:00-03:00";
+  const USD_ARS_RATE_CHECKED_AT = "2026-11-12T22:42:00-03:00";
   const MERCADO_PAGO_LINK = "https://link.mercadopago.com.ar/tonart";
   const TRANSFER_ALIAS = "enrique.berlin";
   const offers = {
