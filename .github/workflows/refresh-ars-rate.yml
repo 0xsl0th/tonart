@@ -1,0 +1,63 @@
+name: Refresh ARS rate
+
+on:
+  schedule:
+    # 11:00 and 22:00 Buenos Aires (UTC-3). GitHub may delay scheduled runs.
+    - cron: "0 1,14 * * *"
+  workflow_dispatch:
+    inputs:
+      allow_large_change:
+        description: "Allow a DolarHoy blue rate change greater than 10% after manual review"
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: refresh-ars-rate
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Check rate parser
+        run: node --test scripts/refresh-ars-rate.test.mjs
+      - name: Read DolarHoy blue selling quote
+        env:
+          ALLOW_LARGE_CHANGE: ${{ inputs.allow_large_change }}
+        run: |
+          curl --fail --silent --show-error --max-time 15 --max-filesize 2000000 --proto '=https' \
+            --output "$RUNNER_TEMP/dolarhoy-blue.html" https://dolarhoy.com/cotizaciondolarblue
+          node scripts/refresh-ars-rate.mjs --html-file "$RUNNER_TEMP/dolarhoy-blue.html"
+      - name: Check whether the quote changed
+        id: changed
+        run: |
+          if git diff --quiet -- booking.js; then
+            echo 'changed=false' >> "$GITHUB_OUTPUT"
+          else
+            echo 'changed=true' >> "$GITHUB_OUTPUT"
+          fi
+      - name: Commit refreshed quote
+        if: steps.changed.outputs.changed == 'true'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- booking.js
+          git commit -m 'Refresh DolarHoy ARS quote'
+          git push origin HEAD:main
+      # A GITHUB_TOKEN push does not trigger branch-based GitHub Pages builds.
+      # Request the build explicitly from the new main-branch revision.
+      - name: Rebuild GitHub Pages
+        if: steps.changed.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api --method POST "repos/${GITHUB_REPOSITORY}/pages/builds" --silent

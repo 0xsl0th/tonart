@@ -18,9 +18,15 @@
     "ep-mixmaster-5": "https://www.paypal.com/ncp/payment/KBEQVJWXP5LNU",
     "ep-mixmaster-6": "https://www.paypal.com/ncp/payment/UGBMYWJFMDPV6",
   };
-  // Mercado Pago Argentina collects ARS. Customers receive an exact ARS quote
-  // before using either option. Never derive the amount from the USD list here.
-  const MERCADO_PAGO_LINK = "";
+  // Mercado Pago Argentina collects ARS. Refresh these three values together
+  // from the chosen DolarHoy USD/ARS selling quote. Use the source's last-update
+  // time. An ISO timestamp must include a timezone offset; amounts disappear
+  // 24 hours after the source update. If any
+  // value is unset, customers can request an exact ARS quote by email.
+  const USD_ARS_SELL_RATE = 1565;
+  const USD_ARS_RATE_LABEL = "DolarHoy dólar blue venta";
+  const USD_ARS_RATE_CHECKED_AT = "2026-11-12T21:12:00-03:00";
+  const MERCADO_PAGO_LINK = "https://link.mercadopago.com.ar/tonart";
   const TRANSFER_ALIAS = "enrique.berlin";
   const offers = {
     stereo: {
@@ -70,20 +76,20 @@
   const translations = {
     skip: "Ir al contenido", back: "Volver a precios", eyebrow: "TONART / RESERVA DE PROYECTO",
     title: "Un buen sonido empieza<br /><em>con una buena idea.</em>",
-    lede: "Elige una oferta de lanzamiento. Paga en USD con PayPal o pide una cotización en ARS para pagar con Mercado Pago o transferencia. Luego envíanos tu música y los datos del proyecto.",
+    lede: "Elige una oferta de lanzamiento. Paga en USD con PayPal o consulta el importe actual en ARS para Mercado Pago o transferencia. Luego envíanos tu música y los datos del proyecto.",
     choose: "ELIGE TU SERVICIO", offerTitle: "Tu oferta", serviceLabel: "SERVICIO", epTrackCountLabel: "TEMAS DE TU EP",
     timelineLabel: "PRIMERA VERSIÓN", revisionLabel: "RONDAS DE CAMBIOS",
     payButton: "Pagar con tarjeta o PayPal",
     payNote: "El pago seguro se abre en PayPal en otra pestaña. Se aceptan tarjetas de débito y crédito; la opción de pagar sin cuenta de PayPal puede variar según el comprador y el país. Comprueba el vendedor y el importe antes de pagar. El idioma del pago puede ser distinto al de esta página.",
     arsTitle: "¿Pagas desde Argentina?", arsIntro: "Mercado Pago y las transferencias a Mercado Pago se cobran en pesos argentinos. Pídenos el importe exacto en ARS para esta oferta antes de pagar.",
-    mpTitle: "Mercado Pago", mpQuoteButton: "Pedir cotización en ARS", mpQuoteNote: "Te enviaremos el importe exacto y las instrucciones de pago. Usa el link de pago solo después de recibir tu cotización.", mpPayButton: "Pagar el importe cotizado en ARS",
-    transferTitle: "Transferencia a Mercado Pago", transferQuoteButton: "Pedir importe en ARS", transferQuoteNote: "Espera nuestra confirmación del importe exacto en ARS antes de transferir al alias indicado. Comprueba el destinatario en tu banco o billetera.", transferAliasLabel: "Alias de destino", arsHandoverButton: "¿Ya pagaste? Envía los datos del proyecto",
+    mpTitle: "Mercado Pago", mpAmountLabel: "Importe a ingresar (+10%)", mpQuoteButton: "Pedir cotización en ARS", mpQuoteNote: "Te enviaremos el importe exacto en ARS. Ingresa solo ese importe en el link; el vendedor aparecerá como Enrique Herranz. Comprueba los datos antes de pagar.", mpPayButton: "Pagar el importe indicado en ARS",
+    transferTitle: "Transferencia a Mercado Pago", transferAmountLabel: "Importe a transferir", transferQuoteButton: "Pedir importe en ARS", transferQuoteNote: "Espera nuestra confirmación del importe exacto en ARS antes de transferir al alias indicado. Comprueba el destinatario en tu banco o billetera.", transferAliasLabel: "Alias de destino", arsHandoverButton: "¿Ya pagaste? Envía los datos del proyecto",
     payPendingNote: "El pago en línea no está disponible temporalmente. Contacta con Tonart antes de pagar.",
     epPayPendingNote: "El pago en línea para esta opción de EP no está disponible temporalmente. Escríbenos antes de pagar.",
     epContactButton: "Escríbenos por este EP",
     handoverPrompt: "¿Ya pagaste con PayPal? Envíanos tu música y los datos del proyecto.", handoverButton: "Enviar datos del proyecto", handoverNote: "¿Ya pagaste? Elige tu método de pago en la página de entrega. Puedes volver más tarde sin pagar otra vez.",
     next: "QUÉ SIGUE", stepsTitle: "Paga. Envía. Confirma.",
-    step1Title: "Paga tu servicio", step1Text: "Paga el importe indicado en USD con PayPal o pide el importe exacto en ARS antes de usar Mercado Pago o transferencia. Conserva el comprobante o la referencia de la transferencia.",
+    step1Title: "Paga tu servicio", step1Text: "Paga el importe indicado en USD con PayPal. Para Mercado Pago o transferencia, usa el importe actual en ARS de abajo o pide una cotización actualizada. Conserva el comprobante o la referencia de la transferencia.",
     step2Title: "Envía los datos del proyecto", step2Text: "Usa la página de entrega para enviar los datos del tema, el método y comprobante de pago y un enlace privado de descarga de los archivos finales.",
     step3Title: "Comprobamos y confirmamos", step3Text: "Vinculamos el pago con tu proyecto, revisamos los archivos y el alcance, y confirmamos la fecha de la primera versión. El plazo comienza al recibir el pago y archivos utilizables.",
     faqKicker: "ANTES DE PAGAR", faqTitle: "Algunos detalles<br /><em>útiles.</em>",
@@ -101,20 +107,20 @@
   const germanTranslations = {
     skip: "Zum Inhalt springen", back: "Zurück zu den Preisen", eyebrow: "TONART / PROJEKT BUCHEN",
     title: "Guter Sound beginnt<br /><em>mit einem guten Briefing.</em>",
-    lede: "Wähle ein Einführungsangebot. Bezahle in USD mit PayPal oder frage für Mercado Pago oder eine Überweisung einen Betrag in ARS an. Sende uns danach deine Musik und Projektdaten.",
+    lede: "Wähle ein Einführungsangebot. Bezahle in USD mit PayPal oder prüfe den aktuellen ARS-Betrag für Mercado Pago oder eine Überweisung. Sende uns danach deine Musik und Projektdaten.",
     choose: "SERVICE WÄHLEN", offerTitle: "Dein Angebot", serviceLabel: "SERVICE", epTrackCountLabel: "TRACKS AUF DEINER EP",
     timelineLabel: "ERSTE VERSION", revisionLabel: "KORREKTURRUNDEN",
     payButton: "Mit Karte oder PayPal bezahlen",
     payNote: "Die sichere Zahlungsseite von PayPal öffnet sich in einem neuen Tab. Debit- und Kreditkarten werden akzeptiert; die Zahlung ohne PayPal-Konto wird nicht für alle Käufer oder Länder angeboten. Prüfe Anbieter und Gesamtbetrag vor der Zahlung. Die Zahlungsseite kann in einer anderen Sprache erscheinen.",
     arsTitle: "Zahlung aus Argentinien?", arsIntro: "Mercado Pago und Überweisungen an Mercado Pago erfolgen in argentinischen Pesos. Frage vor der Zahlung den genauen ARS-Betrag für dieses Angebot an.",
-    mpTitle: "Mercado Pago", mpQuoteButton: "ARS-Angebot anfragen", mpQuoteNote: "Wir senden dir den genauen Betrag und die Zahlungsanleitung. Nutze den Zahlungslink erst nach Erhalt des Angebots.", mpPayButton: "Angebotenen ARS-Betrag bezahlen",
-    transferTitle: "Überweisung an Mercado Pago", transferQuoteButton: "ARS-Betrag anfragen", transferQuoteNote: "Warte auf unsere Bestätigung des genauen ARS-Betrags, bevor du an den angegebenen Alias überweist. Prüfe den Empfänger in deiner Bank oder Wallet.", transferAliasLabel: "Empfänger-Alias", arsHandoverButton: "Schon bezahlt? Projektdaten senden",
+    mpTitle: "Mercado Pago", mpAmountLabel: "Einzugebender Betrag (+10 %)", mpQuoteButton: "ARS-Angebot anfragen", mpQuoteNote: "Wir senden dir den genauen ARS-Betrag. Gib im Zahlungslink nur diesen Betrag ein; als Anbieter erscheint Enrique Herranz. Prüfe die Angaben vor der Zahlung.", mpPayButton: "Angezeigten ARS-Betrag bezahlen",
+    transferTitle: "Überweisung an Mercado Pago", transferAmountLabel: "Zu überweisender Betrag", transferQuoteButton: "ARS-Betrag anfragen", transferQuoteNote: "Warte auf unsere Bestätigung des genauen ARS-Betrags, bevor du an den angegebenen Alias überweist. Prüfe den Empfänger in deiner Bank oder Wallet.", transferAliasLabel: "Empfänger-Alias", arsHandoverButton: "Schon bezahlt? Projektdaten senden",
     payPendingNote: "Die Online-Zahlung ist vorübergehend nicht verfügbar. Kontaktiere Tonart bitte vor einer Zahlung.",
     epPayPendingNote: "Die Online-Zahlung für diese EP-Option ist vorübergehend nicht verfügbar. Kontaktiere uns vor der Zahlung.",
     epContactButton: "EP per E-Mail anfragen",
     handoverPrompt: "Schon mit PayPal bezahlt? Sende uns deine Musik und Projektdaten.", handoverButton: "Projektdaten senden", handoverNote: "Schon bezahlt? Wähle auf der Übergabeseite deine Zahlungsart. Du kannst später zurückkehren, ohne erneut zu bezahlen.",
     next: "SO GEHT ES WEITER", stepsTitle: "Bezahlen. Senden. Bestätigen.",
-    step1Title: "Service bezahlen", step1Text: "Bezahle den angezeigten USD-Betrag mit PayPal oder frage vor einer Zahlung über Mercado Pago oder Überweisung den genauen ARS-Betrag an. Bewahre Beleg oder Überweisungsreferenz auf.",
+    step1Title: "Service bezahlen", step1Text: "Bezahle den angezeigten USD-Betrag mit PayPal. Für Mercado Pago oder eine Überweisung nutze den aktuellen ARS-Betrag unten oder frage ein neues Angebot an. Bewahre Beleg oder Überweisungsreferenz auf.",
     step2Title: "Projektdaten senden", step2Text: "Sende über die Übergabeseite Trackdaten, Zahlungsart und Beleg sowie einen privaten Download-Link zu den finalen Dateien.",
     step3Title: "Wir prüfen und bestätigen", step3Text: "Wir ordnen deine Zahlung zu, prüfen Dateien und Leistungsumfang und bestätigen den Termin der ersten Version. Die Bearbeitungszeit beginnt, wenn Zahlung und verwendbare Dateien vorliegen.",
     faqKicker: "VOR DER ZAHLUNG", faqTitle: "Ein paar wichtige<br /><em>Details.</em>",
@@ -137,10 +143,12 @@
       subject: "Tonart ARS quote",
       greeting: "Hello Tonart,",
       request: "Please send me the exact ARS amount and payment instructions for this offer before I pay.",
+      confirmRequest: "Please confirm the displayed ARS amount for this offer before I pay.",
       method: "Payment method",
       offer: "Offer",
       tracks: "Tracks in EP",
       usd: "Listed USD price",
+      ars: "Displayed ARS amount",
     },
     es: {
       mercadoPago: "Mercado Pago",
@@ -148,10 +156,12 @@
       subject: "Cotización Tonart en ARS",
       greeting: "Hola, Tonart:",
       request: "Por favor, envíenme el importe exacto en ARS y las instrucciones antes de pagar esta oferta.",
+      confirmRequest: "Por favor, confirmen el importe en ARS indicado para esta oferta antes de pagar.",
       method: "Método de pago",
       offer: "Oferta",
       tracks: "Temas del EP",
       usd: "Precio publicado en USD",
+      ars: "Importe indicado en ARS",
     },
     de: {
       mercadoPago: "Mercado Pago",
@@ -159,10 +169,38 @@
       subject: "Tonart-Angebot in ARS",
       greeting: "Hallo Tonart,",
       request: "Bitte sendet mir vor der Zahlung den genauen ARS-Betrag und die Zahlungsanleitung für dieses Angebot.",
+      confirmRequest: "Bitte bestätigt mir vor der Zahlung den angezeigten ARS-Betrag für dieses Angebot.",
       method: "Zahlungsart",
       offer: "Angebot",
       tracks: "Tracks auf der EP",
       usd: "Angezeigter USD-Preis",
+      ars: "Angezeigter ARS-Betrag",
+    },
+  };
+  const rateCopy = {
+    en: {
+      locale: "en-US",
+      activeIntro: "These ARS amounts use the DolarHoy selling rate shown below. Enter or transfer exactly the amount shown while it is current; you can also ask us to confirm it.",
+      rateMeta: (label, rate, checked) => `${label}: ARS ${rate} per USD. Source updated ${checked} (Buenos Aires time). Amounts are rounded to whole pesos and shown for 24 hours after that update.`,
+      mpNote: "Enter exactly the shown ARS amount at the variable-amount link. This includes a 10% adjustment. The merchant appears as Enrique Herranz; review the details before paying.",
+      transferNote: "Transfer exactly the shown ARS amount to the alias below. This uses the base conversion without the 10% adjustment. Check the recipient in your bank or wallet.",
+      confirm: "Ask us to confirm this amount",
+    },
+    es: {
+      locale: "es-AR",
+      activeIntro: "Estos importes en ARS usan la cotización de venta de DolarHoy indicada abajo. Ingresa o transfiere exactamente el importe mostrado mientras esté vigente; también puedes pedirnos confirmación.",
+      rateMeta: (label, rate, checked) => `${label}: ARS ${rate} por USD. Fuente actualizada el ${checked} (hora de Buenos Aires). Los importes se redondean a pesos enteros y se muestran durante 24 horas desde esa actualización.`,
+      mpNote: "Ingresa exactamente el importe indicado en ARS en el link de monto variable. Incluye un ajuste del 10 %. El vendedor aparece como Enrique Herranz; comprueba los datos antes de pagar.",
+      transferNote: "Transfiere exactamente el importe indicado en ARS al alias de abajo. Se usa la conversión base, sin el ajuste del 10 %. Comprueba el destinatario en tu banco o billetera.",
+      confirm: "Pedir confirmación de este importe",
+    },
+    de: {
+      locale: "de-DE",
+      activeIntro: "Diese ARS-Beträge beruhen auf dem unten angegebenen DolarHoy-Verkaufskurs. Gib den angezeigten Betrag ein oder überweise ihn, solange er aktuell ist; du kannst ihn auch von uns bestätigen lassen.",
+      rateMeta: (label, rate, checked) => `${label}: ARS ${rate} je USD. Quelle aktualisiert am ${checked} (Ortszeit Buenos Aires). Die Beträge werden auf ganze Pesos gerundet und 24 Stunden nach dieser Aktualisierung angezeigt.`,
+      mpNote: "Gib im Link mit frei wählbarem Betrag genau den angezeigten ARS-Betrag ein. Darin ist ein Aufschlag von 10 % enthalten. Als Anbieter erscheint Enrique Herranz; prüfe die Angaben vor der Zahlung.",
+      transferNote: "Überweise genau den angezeigten ARS-Betrag an den Alias unten. Hier gilt die Grundumrechnung ohne 10-%-Aufschlag. Prüfe den Empfänger in deiner Bank oder Wallet.",
+      confirm: "Diesen Betrag bestätigen lassen",
     },
   };
   const select = document.getElementById("service-select");
@@ -170,6 +208,14 @@
   const epTrackCountSelect = document.getElementById("ep-track-count");
   const languageSelect = document.getElementById("language-select");
   const payButton = document.getElementById("pay-button");
+  const arsIntro = document.querySelector(".ars-intro");
+  const arsRateMeta = document.getElementById("ars-rate-meta");
+  const mpAmountRow = document.getElementById("mp-ars-amount");
+  const mpAmountValue = document.getElementById("mp-ars-value");
+  const transferAmountRow = document.getElementById("transfer-ars-amount");
+  const transferAmountValue = document.getElementById("transfer-ars-value");
+  const mpQuoteNote = document.querySelector("#mp-quote + .ars-payment-note");
+  const transferQuoteNote = document.querySelector("#transfer-quote + .ars-payment-note");
   const mpQuoteButton = document.getElementById("mp-quote");
   const transferQuoteButton = document.getElementById("transfer-quote");
   const mpPayButton = document.getElementById("mp-pay-link");
@@ -194,6 +240,7 @@
     const savedLanguage = localStorage.getItem("tonart-language");
     if (["en", "es", "de"].includes(savedLanguage)) language = savedLanguage;
   } catch {}
+  let arsExpiryTimer = null;
 
   function checkoutUrlFor(key) {
     if (!CHECKOUT_ENABLED) return "";
@@ -213,11 +260,24 @@
     } catch { return ""; }
   }
 
-  function quoteUrl(method, name, price, epCount) {
+  function currentArsRate() {
+    if (typeof USD_ARS_SELL_RATE !== "number" || !Number.isFinite(USD_ARS_SELL_RATE) || USD_ARS_SELL_RATE <= 0 || !USD_ARS_RATE_LABEL.trim()) return null;
+    if (!/T\d{2}:\d{2}(?::\d{2})?(?:Z|[+-]\d{2}:\d{2})$/.test(USD_ARS_RATE_CHECKED_AT)) return null;
+    const checkedAt = new Date(USD_ARS_RATE_CHECKED_AT);
+    const age = Date.now() - checkedAt.getTime();
+    if (!Number.isFinite(age) || age < -5 * 60 * 1000 || age >= 24 * 60 * 60 * 1000) return null;
+    return { rate: USD_ARS_SELL_RATE, label: USD_ARS_RATE_LABEL.trim(), checkedAt };
+  }
+
+  function formatArs(amount) {
+    return `ARS ${new Intl.NumberFormat(rateCopy[language].locale, { maximumFractionDigits: 0 }).format(amount)}`;
+  }
+
+  function quoteUrl(method, name, price, epCount, arsAmount) {
     const copy = quoteCopy[language];
     const methodName = method === "mercadopago" ? copy.mercadoPago : copy.transfer;
     const subject = `${copy.subject} | ${methodName} | ${name}${epCount ? ` | ${epCount}` : ""}`;
-    const body = [copy.greeting, "", copy.request, "", `${copy.method}: ${methodName}`, `${copy.offer}: ${name}`, ...(epCount ? [`${copy.tracks}: ${epCount}`] : []), `${copy.usd}: $${price}`, ""].join("\n");
+    const body = [copy.greeting, "", arsAmount ? copy.confirmRequest : copy.request, "", `${copy.method}: ${methodName}`, `${copy.offer}: ${name}`, ...(epCount ? [`${copy.tracks}: ${epCount}`] : []), `${copy.usd}: $${price}`, ...(arsAmount ? [`${copy.ars}: ${formatArs(arsAmount)}`] : []), ""].join("\n");
     return `mailto:tonart.space@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   }
 
@@ -258,12 +318,35 @@
     for (const link of handoverLinks) link.href = handoverUrl;
     mpHandoverLink.href = `handover.html?service=${encodeURIComponent(handoverKey)}&payment=mercadopago`;
     transferHandoverLink.href = `handover.html?service=${encodeURIComponent(handoverKey)}&payment=transfer`;
-    mpQuoteButton.href = quoteUrl("mercadopago", copy.name, price, ep ? epTrackCount : null);
-    transferQuoteButton.href = quoteUrl("transfer", copy.name, price, ep ? epTrackCount : null);
+    const checkedRate = currentArsRate();
+    const transferArs = checkedRate ? Math.round(price * checkedRate.rate) : 0;
+    const mpArs = checkedRate ? Math.round(price * checkedRate.rate * 1.1) : 0;
+    const hasArsAmounts = Boolean(checkedRate && Number.isSafeInteger(transferArs) && Number.isSafeInteger(mpArs) && transferArs > 0 && mpArs > 0);
+    if (arsExpiryTimer) clearTimeout(arsExpiryTimer);
+    arsExpiryTimer = hasArsAmounts
+      ? setTimeout(() => { arsExpiryTimer = null; renderOffer(); }, Math.max(0, checkedRate.checkedAt.getTime() + 24 * 60 * 60 * 1000 - Date.now() + 50))
+      : null;
+    const rateText = rateCopy[language];
+    const localized = localizedTranslations[language];
+    arsIntro.textContent = hasArsAmounts ? rateText.activeIntro : localized?.arsIntro ?? originals.get(arsIntro);
+    mpQuoteNote.textContent = hasArsAmounts ? rateText.mpNote : localized?.mpQuoteNote ?? originals.get(mpQuoteNote);
+    transferQuoteNote.textContent = hasArsAmounts ? rateText.transferNote : localized?.transferQuoteNote ?? originals.get(transferQuoteNote);
+    mpQuoteButton.querySelector("span").textContent = hasArsAmounts ? rateText.confirm : localized?.mpQuoteButton ?? "Request an ARS quote";
+    transferQuoteButton.querySelector("span").textContent = hasArsAmounts ? rateText.confirm : localized?.transferQuoteButton ?? "Request the ARS amount";
+    const checkedText = hasArsAmounts ? new Intl.DateTimeFormat(rateText.locale, { dateStyle: "medium", timeStyle: "short", hourCycle: "h23", timeZone: "America/Argentina/Buenos_Aires" }).format(checkedRate.checkedAt) : "";
+    const exchangeText = hasArsAmounts ? new Intl.NumberFormat(rateText.locale, { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(checkedRate.rate) : "";
+    arsRateMeta.textContent = hasArsAmounts ? rateText.rateMeta(checkedRate.label, exchangeText, checkedText) : "";
+    arsRateMeta.hidden = !hasArsAmounts;
+    mpAmountValue.textContent = hasArsAmounts ? formatArs(mpArs) : "";
+    transferAmountValue.textContent = hasArsAmounts ? formatArs(transferArs) : "";
+    mpAmountRow.hidden = !hasArsAmounts;
+    transferAmountRow.hidden = !hasArsAmounts;
+    mpQuoteButton.href = quoteUrl("mercadopago", copy.name, price, ep ? epTrackCount : null, hasArsAmounts ? mpArs : 0);
+    transferQuoteButton.href = quoteUrl("transfer", copy.name, price, ep ? epTrackCount : null, hasArsAmounts ? transferArs : 0);
     const mpLink = mercadoPagoUrl();
     if (mpLink) mpPayButton.href = mpLink;
     else mpPayButton.removeAttribute("href");
-    mpPayButton.hidden = !mpLink;
+    mpPayButton.hidden = !hasArsAmounts || !mpLink;
     const alias = /^[a-z0-9._-]{3,40}$/i.test(TRANSFER_ALIAS) ? TRANSFER_ALIAS : "";
     transferAliasText.textContent = alias;
     transferAliasRow.hidden = !alias;
@@ -313,6 +396,13 @@
 
   select.addEventListener("change", () => { selected = select.value; updateUrl(); renderOffer(); });
   epTrackCountSelect.addEventListener("change", () => { epTrackCount = Number(epTrackCountSelect.value); updateUrl(); renderOffer(); });
+  mpPayButton.addEventListener("click", (event) => {
+    if (!currentArsRate() || mpPayButton.hidden) {
+      event.preventDefault();
+      renderOffer();
+    }
+  });
+  document.addEventListener("visibilitychange", () => { if (!document.hidden) renderOffer(); });
   languageSelect.addEventListener("change", () => {
     language = languageSelect.value;
     try { localStorage.setItem("tonart-language", language); } catch {}

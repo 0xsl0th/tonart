@@ -33,7 +33,7 @@
       <section class="booking-intro shell">
         <div class="eyebrow booking-eyebrow"><span class="pulse-dot"></span><span data-book-i18n="eyebrow">TONART / PROJECT BOOKING</span></div>
         <h1 data-book-i18n-html="title">Good sound starts<br /><em>with a good brief.</em></h1>
-        <p data-book-i18n="lede">Choose a launch offer. Pay in USD with PayPal or ask for an ARS quote to pay through Mercado Pago or by transfer, then send us your music and project details.</p>
+        <p data-book-i18n="lede">Choose a launch offer. Pay in USD with PayPal, or check the current ARS amount for Mercado Pago or transfer. Then send us your music and project details.</p>
       </section>
 
       <section class="booking-content shell" aria-labelledby="booking-offer-title">
@@ -60,15 +60,18 @@
           <div class="ars-payments" aria-labelledby="ars-payments-title">
             <h3 id="ars-payments-title" data-book-i18n="arsTitle">Paying in Argentina?</h3>
             <p class="ars-intro" data-book-i18n="arsIntro">Mercado Pago and transfers to Mercado Pago are charged in Argentine pesos. Ask us for the exact ARS amount for this offer before paying.</p>
+            <p class="ars-rate-meta" id="ars-rate-meta" hidden></p>
             <div class="ars-payment-option">
               <h4 data-book-i18n="mpTitle">Mercado Pago</h4>
+              <p class="ars-amount" id="mp-ars-amount" aria-live="polite" hidden><span data-book-i18n="mpAmountLabel">Amount to enter (+10%)</span><strong id="mp-ars-value"></strong></p>
               <a class="text-link ars-quote-link" id="mp-quote" href="mailto:tonart.space@gmail.com"><span data-book-i18n="mpQuoteButton">Request an ARS quote</span><span aria-hidden="true">↗</span></a>
-              <p class="ars-payment-note" data-book-i18n="mpQuoteNote">We will send the exact amount and payment instructions. Use the payment link only after receiving your quote.</p>
-              <a class="button ars-pay-link" id="mp-pay-link" hidden target="_blank" rel="noopener noreferrer"><span data-book-i18n="mpPayButton">Pay the quoted ARS amount</span><span aria-hidden="true">↗</span></a>
+              <p class="ars-payment-note" data-book-i18n="mpQuoteNote">We will send the exact ARS amount. Enter only that amount at the link; the merchant will appear as Enrique Herranz. Review the details before paying.</p>
+              <a class="button ars-pay-link" id="mp-pay-link" hidden target="_blank" rel="noopener noreferrer"><span data-book-i18n="mpPayButton">Pay the shown ARS amount</span><span aria-hidden="true">↗</span></a>
               <a class="text-link ars-handover-link" id="mp-handover" href="handover.html?service=stereo&payment=mercadopago"><span data-book-i18n="arsHandoverButton">Already paid? Send project details</span><span aria-hidden="true">↗</span></a>
             </div>
             <div class="ars-payment-option">
               <h4 data-book-i18n="transferTitle">Transfer to Mercado Pago</h4>
+              <p class="ars-amount" id="transfer-ars-amount" aria-live="polite" hidden><span data-book-i18n="transferAmountLabel">Amount to transfer</span><strong id="transfer-ars-value"></strong></p>
               <a class="text-link ars-quote-link" id="transfer-quote" href="mailto:tonart.space@gmail.com"><span data-book-i18n="transferQuoteButton">Request the ARS amount</span><span aria-hidden="true">↗</span></a>
               <p class="ars-payment-note" data-book-i18n="transferQuoteNote">Wait for us to confirm the exact ARS amount before transferring to the alias below. Check the recipient in your bank or wallet.</p>
               <p class="ars-transfer-alias" id="transfer-alias-row" hidden><span data-book-i18n="transferAliasLabel">Receiving alias</span><strong id="transfer-alias"></strong></p>
@@ -85,7 +88,7 @@
           <div class="booking-card-kicker"><span>02 /</span> <span data-book-i18n="next">WHAT HAPPENS NEXT</span></div>
           <h2 data-book-i18n="stepsTitle">Pay. Send. Confirm.</h2>
           <ol class="booking-steps">
-            <li><span>01</span><div><h3 data-book-i18n="step1Title">Pay for your service</h3><p data-book-i18n="step1Text">Pay the shown USD amount through PayPal, or request the exact ARS amount before using Mercado Pago or a transfer. Keep your payment receipt or transfer reference.</p></div></li>
+            <li><span>01</span><div><h3 data-book-i18n="step1Title">Pay for your service</h3><p data-book-i18n="step1Text">Pay the shown USD amount through PayPal. For Mercado Pago or transfer, use the current ARS amount below or request an updated quote. Keep your payment receipt or transfer reference.</p></div></li>
             <li><span>02</span><div><h3 data-book-i18n="step2Title">Send your project details</h3><p data-book-i18n="step2Text">Use the handover page to send your track details, payment method and reference, and a private download link to the final files.</p></div></li>
             <li><span>03</span><div><h3 data-book-i18n="step3Title">We check and confirm</h3><p data-book-i18n="step3Text">We match your payment, review the files and scope, then confirm your first-preview date. The turnaround starts when payment and usable files are received.</p></div></li>
           </ol>
