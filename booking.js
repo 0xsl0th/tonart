@@ -23,9 +23,9 @@
   // time. An ISO timestamp must include a timezone offset; amounts disappear
   // 24 hours after the source update. If any
   // value is unset, customers can request an exact ARS quote by email.
-  const USD_ARS_SELL_RATE = 1600;
+  const USD_ARS_SELL_RATE = 1605;
   const USD_ARS_RATE_LABEL = "DolarHoy dólar blue venta";
-  const USD_ARS_RATE_CHECKED_AT = "2026-11-17T06:09:00-03:00";
+  const USD_ARS_RATE_CHECKED_AT = "2026-11-17T19:23:00-03:00";
   const MERCADO_PAGO_LINK = "https://link.mercadopago.com.ar/tonart";
   const TRANSFER_ALIAS = "enrique.berlin";
   const offers = {
